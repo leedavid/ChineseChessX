@@ -760,16 +760,16 @@ int PolyglotDatabase::get_promotion(Move m) const
         case King:
             Q_ASSERT(false);
             break;
-        case Queen:
+        case Che:
             promote = MovePromoteQueen;
             break;
-        case Rook:
+        case Ma:
             promote = MovePromoteRook;
             break;
-        case Bishop:
+        case Pao:
             promote = MovePromoteBishop;
             break;
-        case Knight:
+        case Shi:
             promote = MovePromoteKnight;
             break;
         }

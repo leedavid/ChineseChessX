@@ -28,12 +28,12 @@ class CBoard;
 
 inline bool isFile(const char c)
 {
-    return c >= 'a' && c <= 'h';
+    return c >= 'a' && c <= 'j';
 }
 
 inline bool isRank(const char c)
 {
-    return c >= '1' && c <= '8';
+    return c >= '1' && c <= '9';
 }
 
 class Move
@@ -56,7 +56,7 @@ public:
     inline Move fromUCI(const QByteArray& bs);
 
     /** Set type of piece (Queen, Rook, Bishop, Knight, Pawn) pawn promoted to */
-    void setPromoted(PieceType p);
+    //void setPromoted(PieceType p);
 
     // Query
     /** return Square piece sits on after move */
@@ -64,11 +64,11 @@ public:
     /** return Square piece sat on before move */
     Square from() const;
     /** return Square where rook is placed after castling */
-    Square castlingRookTo() const;
+    //Square castlingRookTo() const;
     /** return Square when en-passant is captured. Undefined if there is no en-passant. */
-    Square enPassantSquare() const;
+    //Square enPassantSquare() const;
     /** return Square where rook was placed before castling */
-    Square castlingRookFrom() const;
+    //Square castlingRookFrom() const;
     /** Convert to algebraic notation (e2e4, g8f6 etc.) */
     QString toAlgebraic() const;
     QString dumpAlgebraic() const;
@@ -79,7 +79,7 @@ public:
     /** Piece captured from the opponent by this move */
     Piece capturedPiece() const;
     /** If move is promotion, get promotion piece. Result is undefined if there is no promotion */
-    Piece promotedPiece() const;
+    //Piece promotedPiece() const;
 
     /** Check whether a given move is a null move ( an illegal move by the king to its own square ) often used as a placeholder in ebooks */
     bool isNullMove() const;
@@ -88,13 +88,13 @@ public:
     /** Check whether move is special (promotion, castling, en passant */
     bool isSpecial() const;
     /** Check whether move is a promotion */
-    bool isPromotion() const;
+    //bool isPromotion() const;
     /** Check whether move is a castling */
-    bool isCastling() const;
+    //bool isCastling() const;
     /** Check whether the move is a pawn double advance */
-    bool isDoubleAdvance() const;
+    //bool isDoubleAdvance() const;
     /** Check whether move is an en passant */
-    bool isEnPassant() const;
+    //bool isEnPassant() const;
     /** Check if move is completely legal in the context it was created */
     bool isLegal() const;
 
@@ -130,32 +130,32 @@ public:
 
     friend class CBoard;
 private:
-    static const quint64 CASTLE = 9;
-    static const quint64 TWOFORWARD = 22;
-    static const quint64 PROMOTE = 38;
-    static const quint64 ENPASSANT = 14;
+    //static const quint64 CASTLE = 9;
+    //static const quint64 TWOFORWARD = 22;
+    //static const quint64 PROMOTE = 38;
+    //static const quint64 ENPASSANT = 14;
 
-    static const quint64 CASTLINGBIT =  1uL << 15;
-    static const quint64 TWOFORWARDBIT = 1uL << 16;
-    static const quint64 PROMOTEBIT = 1uL << 17;
-    static const quint64 ENPASSANTBIT = 1uL << 21;
-    static const quint64 LEGALITYBIT =  1uL << 31;
-    static const quint64 SPECIALBITS = CASTLINGBIT | TWOFORWARDBIT | PROMOTEBIT | ENPASSANTBIT;
-    static const quint64 PTCLEAR = ~(7uL << 12);
+    //static const quint64 CASTLINGBIT =  1uL << 15;
+    //static const quint64 TWOFORWARDBIT = 1uL << 16;
+    //static const quint64 PROMOTEBIT = 1uL << 17;
+    //static const quint64 ENPASSANTBIT = 1uL << 21;
+    static const quint64 LEGALITYBIT =  1uL << 31;  // 有效走步
+    //static const quint64 SPECIALBITS = CASTLINGBIT | TWOFORWARDBIT | PROMOTEBIT | ENPASSANTBIT;
+    static const quint64 PTCLEAR = ~(7uL << 15);
     static const quint64 CAPCLEAR = ~(7uL << 18);
-    static const quint64 PROCLEAR = ~((7uL << 22) | PROMOTEBIT);
-    static const quint64 BLACKTM = 1uL << 26;
+    //static const quint64 PROCLEAR = ~((7uL << 22) | PROMOTEBIT);
+    static const quint64 BLACKTM = 1uL << 26;  // 黑方还是白方
 
     /** Set Pawn move of one forward */
-    void genOneForward(unsigned int from, unsigned int to);
+    //void genOneForward(unsigned int from, unsigned int to);
     /** Set two-squares forward move of Pawn */
-    void genTwoForward(unsigned int from, unsigned int to);
+    //void genTwoForward(unsigned int from, unsigned int to);
     /** Set pawn promotion move to given Piecetype */
-    void genPromote(unsigned int from, unsigned int to, unsigned int type);
+    //void genPromote(unsigned int from, unsigned int to, unsigned int type);
     /** Set pawn capture and promotion, promote to piece type, capturing type */
     void genCapturePromote(unsigned int from, unsigned int to, unsigned int type, unsigned int captured);
     /** Set pawn en passant capture of opponent pawn */
-    void genEnPassant(unsigned int from, unsigned int to);
+    //void genEnPassant(unsigned int from, unsigned int to);
     /** Set simple pawn move with capture of piece type */
     void genPawnMove(unsigned int from, unsigned int to, unsigned int captured);
     /** Set knight move, capturing piece type */
@@ -169,13 +169,13 @@ private:
     /** Set king move, capturing piece type */
     void genKingMove(unsigned int from, unsigned int to, unsigned int captured);
     /** Set castling short move for White with king and rook */
-    void genWhiteOO();
-    /** Set castling long move for White with king and rook */
-    void genWhiteOOO();
-    /** Set castling short move for Black with king and rook */
-    void genBlackOO();
-    /** Set castling long move for Black with king and rook */
-    void genBlackOOO();
+    //void genWhiteOO();
+    ///** Set castling long move for White with king and rook */
+    //void genWhiteOOO();
+    ///** Set castling short move for Black with king and rook */
+    //void genBlackOO();
+    ///** Set castling long move for Black with king and rook */
+    //void genBlackOOO();
     /** Mark this move as validated and fully legal in position */
     void setLegalMove();
     /** Set source square for this move */
@@ -185,21 +185,21 @@ private:
     /** Mark this move as being made by the Black side */
     void setBlack();
     /** Return piece type of promoted piece (or 0 if none) */
-    unsigned int promoted() const;
+    //unsigned int promoted() const;
     /** Set type of piece (Queen, Rook, Bishop, Knight, Pawn) making move */
     void setPieceType(unsigned char p);
     /** Set type of piece (Queen, Rook, Bishop, Knight, Pawn) captured */
     void setCaptureType(unsigned char p);
     /** Mark this move as an initial pawn move of 2 squares */
-    void setTwoForward();
+    //void setTwoForward();
     /** Mark this move capturing a pawn en passant */
-    void setEnPassant();
+    //void setEnPassant();
     /** Mark this move as giving check */
     void setCheck();
     /** Mark this move as giving checkmate */
     void setMate();
     /** Add castling bit in addition to other flags */
-    void SetCastlingBit();
+    //void SetCastlingBit();
 
 
     /** Return pawn2forward, castle or piece type for doMove() and undoMove() */
@@ -244,19 +244,19 @@ inline bool Move::isNullMove() const
 
 inline Move& Move::setNullMove()
 {
-    m = a2 | (a2 << 6);
+    m = a2 | (a2 << 8);
     u = 0;
     return *this;
 }
 
 inline Square Move::from() const
 {
-    return Square(m & 63);
+    return Square(m & 0xff);
 }
 
 inline Square Move::to() const
 {
-    return Square((m >> 6) & 63);
+    return Square((m >> 8) & 0xff);
 }
 
 inline Move::Move()
@@ -264,7 +264,7 @@ inline Move::Move()
 {}
 
 inline Move::Move(const Square from, const Square to)
-    : m(from | (to << 6)), u(0)
+    : m(from | (to << 8)), u(0)
 {}
 
 inline Move Move::fromUCI(const QByteArray& bs)
@@ -293,33 +293,33 @@ inline Move Move::fromUCI(const QByteArray& bs)
                     Square toSquare = Square((c - '1') * 8 + f);
                     Move m(fromSquare, toSquare);
                     c = *(s++);
-                    if(c == '=' || c == '(' || QString("QRBN").indexOf(toupper(c))>=0)
-                    {
-                        if(c == '=' || c == '(')
-                        {
-                            c = *(s++);
-                        }
-                        PieceType promotePiece;
-                        switch(toupper(c))
-                        {
-                        case 'Q':
-                            promotePiece = Queen;
-                            break;
-                        case 'R':
-                            promotePiece = Rook;
-                            break;
-                        case 'B':
-                            promotePiece = Bishop;
-                            break;
-                        case 'N':
-                            promotePiece = Knight;
-                            break;
-                        default:
-                            promotePiece = None;
-                            break;
-                        }
-                        m.setPromoted(promotePiece);
-                    }
+                    //if(c == '=' || c == '(' || QString("QRBN").indexOf(toupper(c))>=0)
+                    //{
+                    //    if(c == '=' || c == '(')
+                    //    {
+                    //        c = *(s++);
+                    //    }
+                    //    PieceType promotePiece;
+                    //    switch(toupper(c))
+                    //    {
+                    //    case 'Q':
+                    //        promotePiece = Queen;
+                    //        break;
+                    //    case 'R':
+                    //        promotePiece = Rook;
+                    //        break;
+                    //    case 'B':
+                    //        promotePiece = Bishop;
+                    //        break;
+                    //    case 'N':
+                    //        promotePiece = Knight;
+                    //        break;
+                    //    default:
+                    //        promotePiece = None;
+                    //        break;
+                    //    }
+                    //    m.setPromoted(promotePiece);
+                    //}
                     return m;
                 }
             }
@@ -329,15 +329,15 @@ inline Move Move::fromUCI(const QByteArray& bs)
     return Move();
 }
 
-inline Square Move::castlingRookFrom() const
-{
-    return Square((to() % 8 == 2) ? to() - 2 : to() + 1);
-}
-
-inline Square Move::castlingRookTo() const
-{
-    return Square((from() + to()) / 2);
-}
+//inline Square Move::castlingRookFrom() const
+//{
+//    return Square((to() % 8 == 2) ? to() - 2 : to() + 1);
+//}
+//
+//inline Square Move::castlingRookTo() const
+//{
+//    return Square((from() + to()) / 2);
+//}
 
 inline QString Move::dumpAlgebraic() const
 {
@@ -346,11 +346,11 @@ inline QString Move::dumpAlgebraic() const
     alg += QChar('1' + from() / 8);
     alg += QChar('a' + to() % 8);
     alg += QChar('1' + to() / 8);
-    if (isPromotion())
-    {
-        alg += QChar('=');
-        alg += "XKQRBNPKQRBNP"[promotedPiece()];
-    }
+    //if (isPromotion())
+    //{
+    //    alg += QChar('=');
+    //    alg += "XKQRBNPKQRBNP"[promotedPiece()];
+    //}
     return alg;
 }
 
@@ -378,10 +378,10 @@ inline QString Move::toAlgebraicDebug() const
     return alg;
 }
 
-inline Square Move::enPassantSquare() const
-{
-    return Square(from() > 31 ? to() - 8 : to() + 8);
-}
+//inline Square Move::enPassantSquare() const
+//{
+//    return Square(from() > 31 ? to() - 8 : to() + 8);
+//}
 
 inline Piece Move::pieceMoved() const
 {
@@ -398,35 +398,35 @@ inline Piece Move::capturedPiece() const
     return  Piece(p + (m & BLACKTM ? 0 : 6));
 }
 
-inline Piece Move::promotedPiece() const
-{
-    return Piece((7 & (m >> 22)) + (m & BLACKTM ? 6 : 0));
-}
+//inline Piece Move::promotedPiece() const
+//{
+//    return Piece((7 & (m >> 22)) + (m & BLACKTM ? 6 : 0));
+//}
 
-inline bool Move::isSpecial() const
-{
-    return m & SPECIALBITS;
-}
+//inline bool Move::isSpecial() const
+//{
+//    return m & SPECIALBITS;
+//}
 
-inline bool Move::isPromotion() const
-{
-    return m & PROMOTEBIT;
-}
+//inline bool Move::isPromotion() const
+//{
+//    return m & PROMOTEBIT;
+//}
+//
+//inline bool Move::isCastling() const
+//{
+//    return m & CASTLINGBIT;
+//}
 
-inline bool Move::isCastling() const
-{
-    return m & CASTLINGBIT;
-}
-
-inline bool Move::isDoubleAdvance() const
-{
-    return m & TWOFORWARDBIT;
-}
-
-inline bool Move::isEnPassant() const
-{
-    return m & ENPASSANTBIT;
-}
+//inline bool Move::isDoubleAdvance() const
+//{
+//    return m & TWOFORWARDBIT;
+//}
+//
+//inline bool Move::isEnPassant() const
+//{
+//    return m & ENPASSANTBIT;
+//}
 
 inline bool Move::isLegal() const
 {
@@ -438,85 +438,86 @@ inline Color Move::color() const
     return ((m & BLACKTM) ? Black : White);
 }
 
-inline void Move::genOneForward(unsigned int from, unsigned int to)
-{
-    m = from | (to << 6) | (Pawn << 12);
-}
+//inline void Move::genOneForward(unsigned int from, unsigned int to)
+//{
+//    m = from | (to << 6) | (Pawn << 12);
+//}
 
-inline void Move::genTwoForward(unsigned int from, unsigned int to)
-{
-    m = from | (to << 6) | (Pawn << 12)   | (1 << 16);
-}
+//inline void Move::genTwoForward(unsigned int from, unsigned int to)
+//{
+//    m = from | (to << 6) | (Pawn << 12)   | (1 << 16);
+//}
+//
+//inline void Move::genPromote(unsigned int from, unsigned int to, unsigned int type)
+//{
+//    m = from  | (to << 6) | (Pawn << 12)   | (type << 22)  | (1 << 17);
+//}
 
-inline void Move::genPromote(unsigned int from, unsigned int to, unsigned int type)
-{
-    m = from  | (to << 6) | (Pawn << 12)   | (type << 22)  | (1 << 17);
-}
+//inline void Move::genCapturePromote(unsigned int from, unsigned int to, unsigned int type, unsigned int captured)
+//{
+//    //m = from | (to << 8) | (Pawn << 12) | (captured << 18) | (type << 22) | (1 << 17);
+//	m = from | (to << 8) | (captured << 18); // | (type << 22); //  | (1 << 17);
+//}
 
-inline void Move::genCapturePromote(unsigned int from, unsigned int to, unsigned int type, unsigned int captured)
-{
-    m = from | (to << 6) | (Pawn << 12) | (captured << 18) | (type << 22) | (1 << 17);
-}
-
-inline void Move::genEnPassant(unsigned int from, unsigned int to)
-{
-    m = from  | (to << 6) | (Pawn << 12) | (Pawn << 18) | (1 << 21);
-}
+//inline void Move::genEnPassant(unsigned int from, unsigned int to)
+//{
+//    m = from  | (to << 6) | (Pawn << 12) | (Pawn << 18) | (1 << 21);
+//}
 
 inline void Move::genPawnMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (Pawn << 12) | (captured << 18);
+    m = from  | (to << 8) | (Pawn << 15) | (captured << 18);
 }
 
 inline void Move::genKnightMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (Knight << 12) | (captured << 18);
+    m = from  | (to << 8) | (Shi << 15) | (captured << 18);
 }
 
 inline void Move::genBishopMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (Bishop << 12) | (captured << 18);
+    m = from  | (to << 8) | (Pao << 15) | (captured << 18);
 }
 
 inline void Move::genRookMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (Rook << 12)   | (captured << 18);
+    m = from  | (to << 8) | (Ma << 15)   | (captured << 18);
 }
 
 inline void Move::genQueenMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (Queen << 12)  | (captured << 18);
+    m = from  | (to << 8) | (Che << 15)  | (captured << 18);
 }
 
 inline void Move::genKingMove(unsigned int from, unsigned int to, unsigned int captured)
 {
-    m = from  | (to << 6) | (King << 12)   | (captured << 18);
+    m = from  | (to << 8) | (King << 15)   | (captured << 18);
 }
 
-inline void Move::genWhiteOO()
-{
-    m = 4 | (6 << 6) | (King << 12) | CASTLINGBIT;
-}
+//inline void Move::genWhiteOO()
+//{
+//    m = 4 | (6 << 6) | (King << 12) | CASTLINGBIT;
+//}
+//
+//inline void Move::genWhiteOOO()
+//{
+//    m = 4 | (2 << 6) | (King << 12) | CASTLINGBIT;
+//}
+//
+//inline void Move::genBlackOO()
+//{
+//    m = 60 | (62 << 6) | (King << 12) | CASTLINGBIT;
+//}
+//
+//inline void Move::genBlackOOO()
+//{
+//    m = 60 | (58 << 6) | (King << 12) | CASTLINGBIT;
+//}
 
-inline void Move::genWhiteOOO()
-{
-    m = 4 | (2 << 6) | (King << 12) | CASTLINGBIT;
-}
-
-inline void Move::genBlackOO()
-{
-    m = 60 | (62 << 6) | (King << 12) | CASTLINGBIT;
-}
-
-inline void Move::genBlackOOO()
-{
-    m = 60 | (58 << 6) | (King << 12) | CASTLINGBIT;
-}
-
-inline void Move::SetCastlingBit()
-{
-    m |= CASTLINGBIT;
-}
+//inline void Move::SetCastlingBit()
+//{
+//    m |= CASTLINGBIT;
+//}
 
 inline void Move::setLegalMove()
 {

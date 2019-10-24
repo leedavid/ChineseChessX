@@ -68,7 +68,7 @@ void ArenaBook::add_move(Game* game, const ABK_MOVE* move)
     // Check the promotion piece and convert
     if (m.isPromotion() && move->promotion)
     {
-        static const PieceType promotionPiece[] = { None, Rook, Knight, Bishop, Queen };
+        static const PieceType promotionPiece[] = { None, Ma, Shi, Pao, Che };
         m.setPromoted(promotionPiece[move->promotion]);
     }
 

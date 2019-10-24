@@ -314,7 +314,7 @@ Move CtgDatabase::squares_to_move(const Board& position, Square from, Square to)
     // Check the promotion piece and convert
     if (m.isPromotion())
     {
-        m.setPromoted(Queen); // CTG does not support underpromotion
+        m.setPromoted(Che); // CTG does not support underpromotion
     }
 
     return m;
@@ -416,10 +416,10 @@ Move CtgDatabase::byte_to_move(const Board& pos, uint8_t byte) const
     char glyph = piece_code[byte];
     switch (glyph) {
         case 'P': pc = WhitePawn; break;
-        case 'N': pc = WhiteKnight; break;
-        case 'B': pc = WhiteBishop; break;
-        case 'R': pc = WhiteRook; break;
-        case 'Q': pc = WhiteQueen; break;
+        case 'N': pc = WhiteShi; break;
+        case 'B': pc = WhitePao; break;
+        case 'R': pc = WhiteMa; break;
+        case 'Q': pc = WhiteChe; break;
         case 'K': pc = WhiteKing; break;
         default: break;
     }
@@ -489,14 +489,14 @@ void CtgDatabase::position_to_ctg_signature(const Board& pos, ctg_signature_t* s
                 case Empty: bits = 0x0; num_bits = 1; break;
                 case WhitePawn: bits = 0x3; num_bits = 3; break;
                 case BlackPawn: bits = 0x7; num_bits = 3; break;
-                case WhiteKnight: bits = 0x9; num_bits = 5; break;
-                case BlackKnight: bits = 0x19; num_bits = 5; break;
-                case WhiteBishop: bits = 0x5; num_bits = 5; break;
-                case BlackBishop: bits = 0x15; num_bits = 5; break;
-                case WhiteRook: bits = 0xD; num_bits = 5; break;
-                case BlackRook: bits = 0x1D; num_bits = 5; break;
-                case WhiteQueen: bits = 0x11; num_bits = 6; break;
-                case BlackQueen: bits = 0x31; num_bits = 6; break;
+                case WhiteShi: bits = 0x9; num_bits = 5; break;
+                case BlackShi: bits = 0x19; num_bits = 5; break;
+                case WhitePao: bits = 0x5; num_bits = 5; break;
+                case BlackPao: bits = 0x15; num_bits = 5; break;
+                case WhiteMa: bits = 0xD; num_bits = 5; break;
+                case BlackMa: bits = 0x1D; num_bits = 5; break;
+                case WhiteChe: bits = 0x11; num_bits = 6; break;
+                case BlackChe: bits = 0x31; num_bits = 6; break;
                 case WhiteKing: bits = 0x1; num_bits = 6; break;
                 case BlackKing: bits = 0x21; num_bits = 6; break;
                 default: break;

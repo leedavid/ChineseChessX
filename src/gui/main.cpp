@@ -22,6 +22,8 @@
 #include "settings.h"
 #include "logstream.h"
 
+#include "bitboard.h"
+
 // Necessary includes and defines for memory leak detection:
 #ifdef _MSC_VER
 #define _CRTDBG_MAP_ALLOC
@@ -87,6 +89,9 @@ int customReportHook(int /* reportType */, char* message, int* /* returnValue */
 
 int main(int argc, char** argv)
 {
+
+	init_bitboards();		// by LGL
+
 #if defined(_MSC_VER)
 _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 prevHook = _CrtSetReportHook(customReportHook);

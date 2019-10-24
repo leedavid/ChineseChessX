@@ -187,49 +187,49 @@ void FicsConsole::SendCommand()
 
 void FicsConsole::HandleBoard(int cmd, QString s)
 {
-    QStringList l = s.split(' ');
-    m_bWhiteToMove = (l[C64_COLOR_TO_MOVE]=="W");
+    //QStringList l = s.split(' ');
+    //m_bWhiteToMove = (l[C64_COLOR_TO_MOVE]=="W");
 
-    bool handleBoard = true;
-    if (gameMode && !puzzleMode)
-    {
-        Char64Relation relation = static_cast<Char64Relation>(l[C64_GAME_RELATION].toInt());
-        if (m_lastRelation == relation)
-        {
-            handleBoard = false;
-        }
-        else
-        {
-            m_lastRelation = relation;
-        }
-    }
+    //bool handleBoard = true;
+    //if (gameMode && !puzzleMode)
+    //{
+    //    Char64Relation relation = static_cast<Char64Relation>(l[C64_GAME_RELATION].toInt());
+    //    if (m_lastRelation == relation)
+    //    {
+    //        handleBoard = false;
+    //    }
+    //    else
+    //    {
+    //        m_lastRelation = relation;
+    //    }
+    //}
 
-    if (handleBoard)
-    {
-        emit ReceivedBoard(cmd, s);
-    }
+    //if (handleBoard)
+    //{
+    //    emit ReceivedBoard(cmd, s);
+    //}
 
-    if (cmd == FicsClient::BLKCMD_EXAMINE || cmd == FicsClient::BLKCMD_FORWARD)
-    {
-        m_ficsClient->sendCommand("forward");
-    }
-    if (handleBoard && gameMode)
-    {
-        emit RequestStoredMove();
-    }
+    //if (cmd == FicsClient::BLKCMD_EXAMINE || cmd == FicsClient::BLKCMD_FORWARD)
+    //{
+    //    m_ficsClient->sendCommand("forward");
+    //}
+    //if (handleBoard && gameMode)
+    //{
+    //    emit RequestStoredMove();
+    //}
 
-    if (gameMode && !puzzleMode)
-    {
-        QString timeWhite = l[C64_REMAINDER_TIME_WHITE];
-        QString timeBlack = l[C64_REMAINDER_TIME_BLACK];
-        QTime tw(0,0,0,0);
-        tw = tw.addSecs(timeWhite.toInt());
-        QTime tb(0,0,0,0);
-        tb = tb.addSecs(timeBlack.toInt());
-        emit FicsShowTime(White, tw.toString("h:mm:ss"));
-        emit FicsShowTime(Black, tb.toString("h:mm:ss"));
-        emit SignalStartTime(m_bWhiteToMove);
-    }
+    //if (gameMode && !puzzleMode)
+    //{
+    //    QString timeWhite = l[C64_REMAINDER_TIME_WHITE];
+    //    QString timeBlack = l[C64_REMAINDER_TIME_BLACK];
+    //    QTime tw(0,0,0,0);
+    //    tw = tw.addSecs(timeWhite.toInt());
+    //    QTime tb(0,0,0,0);
+    //    tb = tb.addSecs(timeBlack.toInt());
+    //    emit FicsShowTime(White, tw.toString("h:mm:ss"));
+    //    emit FicsShowTime(Black, tb.toString("h:mm:ss"));
+    //    emit SignalStartTime(m_bWhiteToMove);
+    //}
 }
 
 void FicsConsole::HandleExamineRequest(QListWidgetItem* item)
@@ -814,7 +814,7 @@ void FicsConsole::HandleMessage(int blockCmd,QString s)
             {
                 gameMode = true;
                 m_ficsClient->sendCommand("time");
-                m_lastRelation = C64_REL_ISOLATED; // Anything invalid in this context
+                //m_lastRelation = C64_REL_ISOLATED; // Anything invalid in this context
                 emit FicsShowTimer(true);
                 m_bWhiteToMove = true;
                 emit RequestNewGame();

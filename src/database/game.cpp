@@ -178,51 +178,52 @@ MoveId Game::addMove(const QString& sanMove, const QString& annotation, NagSet n
 
 MoveId Game::addMoveFrom64Char(const QString &qcharboard)
 {
-    QStringList l = qcharboard.split(' ');
-    if (l.size() < 30) return NO_MOVE;
-    Char64Relation relation = (Char64Relation) l[C64_GAME_RELATION].toInt();
-    QString s=l[C64_PP_LAST_MOVE];
-    s.remove('+');
-    s.remove('#');
+    //QStringList l = qcharboard.split(' ');
+    //if (l.size() < 30) return NO_MOVE;
+    //Char64Relation relation = (Char64Relation) l[C64_GAME_RELATION].toInt();
+    //QString s=l[C64_PP_LAST_MOVE];
+    //s.remove('+');
+    //s.remove('#');
 
-    QString t = l[C64_ELAPSED_TIME_LAST_MOVE];
-    t.remove("(");
-    t.remove(")");
-    QStringList tl = t.split(':');
-    QString emt;
-    if (tl.size()>=2)
-    {
-        emt = QString("[%emt 0:%1:%2]").arg(tl[0],-2,'0').arg(tl[1],-2,'0');
-    }
+    //QString t = l[C64_ELAPSED_TIME_LAST_MOVE];
+    //t.remove("(");
+    //t.remove(")");
+    //QStringList tl = t.split(':');
+    //QString emt;
+    //if (tl.size()>=2)
+    //{
+    //    emt = QString("[%emt 0:%1:%2]").arg(tl[0],-2,'0').arg(tl[1],-2,'0');
+    //}
 
-    if (relation == C64_REL_PLAY_OPPONENT_MOVE)
-    {
-        if (s=="none")
-        {
-            return NO_MOVE;
-        }
-        else
-        {
-            if (!emt.isEmpty())
-            {
-                setAnnotation(emt);
-            }
-            return CURRENT_MOVE;
-        }
-    }
-    else
-    {
-        Color thisMoveColor = (l[C64_COLOR_TO_MOVE]=="W") ? Black : White;
-        if (thisMoveColor == board().toMove())
-        {
-            MoveId moveId = addMove(s,emt);
-            return moveId;
-        }
-        else
-        {
-            return NO_MOVE;
-        }
-    }
+    //if (relation == C64_REL_PLAY_OPPONENT_MOVE)
+    //{
+    //    if (s=="none")
+    //    {
+    //        return NO_MOVE;
+    //    }
+    //    else
+    //    {
+    //        if (!emt.isEmpty())
+    //        {
+    //            setAnnotation(emt);
+    //        }
+    //        return CURRENT_MOVE;
+    //    }
+    //}
+    //else
+    //{
+    //    Color thisMoveColor = (l[C64_COLOR_TO_MOVE]=="W") ? Black : White;
+    //    if (thisMoveColor == board().toMove())
+    //    {
+    //        MoveId moveId = addMove(s,emt);
+    //        return moveId;
+    //    }
+    //    else
+    //    {
+    //        return NO_MOVE;
+    //    }
+    //}
+	return NO_MOVE;
 }
 
 bool Game::mergeNode(Game& otherGame)

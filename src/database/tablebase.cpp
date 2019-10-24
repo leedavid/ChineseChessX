@@ -213,16 +213,16 @@ void OnlineTablebase::httpDone(QNetworkReply *reply)
                             switch(score)
                             {
                             case 8:
-                                move.setPromoted(Queen);
+                                move.setPromoted(Che);
                                 break;
                             case 9:
-                                move.setPromoted(Rook);
+                                move.setPromoted(Ma);
                                 break;
                             case 10:
-                                move.setPromoted(Bishop);
+                                move.setPromoted(Pao);
                                 break;
                             case 11:
-                                move.setPromoted(Knight);
+                                move.setPromoted(Shi);
                                 break;
                             default:
                                 return;

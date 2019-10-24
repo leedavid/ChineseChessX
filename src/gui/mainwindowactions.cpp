@@ -713,8 +713,8 @@ void MainWindow::HandleFicsBoardRequest(int cmd,QString s)
         if (b.from64Char(s))
         {
             QStringList l = s.split(' ');
-            QString nameWhite = l[C64_NAME_WHITE];
-            QString nameBlack = l[C64_NAME_BLACK];
+			QString nameWhite = "white"; // l[C64_NAME_WHITE];
+			QString nameBlack = "black";  // l[C64_NAME_BLACK];
             game().setTag(TagNameWhite, nameWhite);
             game().setTag(TagNameBlack, nameBlack);
             if (game().board() != b)
@@ -893,7 +893,7 @@ void MainWindow::doBoardMove(Move m, unsigned int button, Square from, Square to
                         return;
                     }
                 }
-                promotionPiece = PieceType(Queen + index);
+                promotionPiece = PieceType(Che + index);
                 m.setPromoted(promotionPiece);
             }
             else if (m.isPromotion())

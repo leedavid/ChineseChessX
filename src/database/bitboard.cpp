@@ -26,23 +26,23 @@
 #endif // _MSC_VER
 
 // Global data that is initialized early on and only read afterward
-quint64 bb_PawnAttacks[2][64];
-quint64 bb_PawnF1[2][64];
-quint64 bb_PawnF2[2][64];
-quint64 bb_PawnALL[2][64];
-quint64 bb_PromotionRank[2];
-quint64 bb_KnightAttacks[64];
-quint64 bb_R45Attacks[64][64];
-quint64 bb_L45Attacks[64][64];
-quint64 bb_KingAttacks[64];
-quint64 bb_RankAttacks[64][64];
-quint64 bb_FileAttacks[64][64];
-quint64 bb_fileMask[8];
-quint64 bb_rankMask[8];
-quint64 bb_Mask[64];
-quint64 bb_MaskL90[64];
-quint64 bb_MaskL45[64];
-quint64 bb_MaskR45[64];
+//quint64 bb_PawnAttacks[2][64];
+//quint64 bb_PawnF1[2][64];
+//quint64 bb_PawnF2[2][64];
+//quint64 bb_PawnALL[2][64];
+//quint64 bb_PromotionRank[2];
+//quint64 bb_KnightAttacks[64];
+//quint64 bb_R45Attacks[64][64];
+//quint64 bb_L45Attacks[64][64];
+//quint64 bb_KingAttacks[64];
+//quint64 bb_RankAttacks[64][64];
+//quint64 bb_FileAttacks[64][64];
+//quint64 bb_fileMask[8];
+//quint64 bb_rankMask[8];
+//quint64 bb_Mask[64];
+//quint64 bb_MaskL90[64];
+//quint64 bb_MaskL45[64];
+//quint64 bb_MaskR45[64];
 
 CBoard getStandardPosition();
 // Calling the function getStandardPosition for initialization avoids
@@ -52,104 +52,104 @@ CBoard standardPosition = getStandardPosition();
 CBoard clearedPosition;
 
 
-bool bitBoardInitRun;
+//bool bitBoardInitRun;
 void bitBoardInit();
 
 
-const quint64 A1 = 1,       B1 = A1 << 1, C1 = B1 << 1, D1 = C1 << 1, E1 = D1 << 1, F1 = E1 << 1, G1 = F1 << 1, H1 = G1 << 1;
-const quint64 A2 = H1 << 1, B2 = A2 << 1, C2 = B2 << 1, D2 = C2 << 1, E2 = D2 << 1, F2 = E2 << 1, G2 = F2 << 1, H2 = G2 << 1;
-const quint64 A3 = H2 << 1, B3 = A3 << 1, C3 = B3 << 1, D3 = C3 << 1, E3 = D3 << 1, F3 = E3 << 1, G3 = F3 << 1, H3 = G3 << 1;
-const quint64 A4 = H3 << 1, B4 = A4 << 1, C4 = B4 << 1, D4 = C4 << 1, E4 = D4 << 1, F4 = E4 << 1, G4 = F4 << 1, H4 = G4 << 1;
-const quint64 A5 = H4 << 1, B5 = A5 << 1, C5 = B5 << 1, D5 = C5 << 1, E5 = D5 << 1, F5 = E5 << 1, G5 = F5 << 1, H5 = G5 << 1;
-const quint64 A6 = H5 << 1, B6 = A6 << 1, C6 = B6 << 1, D6 = C6 << 1, E6 = D6 << 1, F6 = E6 << 1, G6 = F6 << 1, H6 = G6 << 1;
-const quint64 A7 = H6 << 1, B7 = A7 << 1, C7 = B7 << 1, D7 = C7 << 1, E7 = D7 << 1, F7 = E7 << 1, G7 = F7 << 1, H7 = G7 << 1;
-const quint64 A8 = H7 << 1, B8 = A8 << 1, C8 = B8 << 1, D8 = C8 << 1, E8 = D8 << 1, F8 = E8 << 1, G8 = F8 << 1, H8 = G8 << 1;
+//const quint64 A1 = 1,       B1 = A1 << 1, C1 = B1 << 1, D1 = C1 << 1, E1 = D1 << 1, F1 = E1 << 1, G1 = F1 << 1, H1 = G1 << 1;
+//const quint64 A2 = H1 << 1, B2 = A2 << 1, C2 = B2 << 1, D2 = C2 << 1, E2 = D2 << 1, F2 = E2 << 1, G2 = F2 << 1, H2 = G2 << 1;
+//const quint64 A3 = H2 << 1, B3 = A3 << 1, C3 = B3 << 1, D3 = C3 << 1, E3 = D3 << 1, F3 = E3 << 1, G3 = F3 << 1, H3 = G3 << 1;
+//const quint64 A4 = H3 << 1, B4 = A4 << 1, C4 = B4 << 1, D4 = C4 << 1, E4 = D4 << 1, F4 = E4 << 1, G4 = F4 << 1, H4 = G4 << 1;
+//const quint64 A5 = H4 << 1, B5 = A5 << 1, C5 = B5 << 1, D5 = C5 << 1, E5 = D5 << 1, F5 = E5 << 1, G5 = F5 << 1, H5 = G5 << 1;
+//const quint64 A6 = H5 << 1, B6 = A6 << 1, C6 = B6 << 1, D6 = C6 << 1, E6 = D6 << 1, F6 = E6 << 1, G6 = F6 << 1, H6 = G6 << 1;
+//const quint64 A7 = H6 << 1, B7 = A7 << 1, C7 = B7 << 1, D7 = C7 << 1, E7 = D7 << 1, F7 = E7 << 1, G7 = F7 << 1, H7 = G7 << 1;
+//const quint64 A8 = H7 << 1, B8 = A8 << 1, C8 = B8 << 1, D8 = C8 << 1, E8 = D8 << 1, F8 = E8 << 1, G8 = F8 << 1, H8 = G8 << 1;
 
-const unsigned int RotateL90[64] =
-{
-    h1, h2, h3, h4, h5, h6, h7, h8,
-    g1, g2, g3, g4, g5, g6, g7, g8,
-    f1, f2, f3, f4, f5, f6, f7, f8,
-    e1, e2, e3, e4, e5, e6, e7, e8,
-    d1, d2, d3, d4, d5, d6, d7, d8,
-    c1, c2, c3, c4, c5, c6, c7, c8,
-    b1, b2, b3, b4, b5, b6, b7, b8,
-    a1, a2, a3, a4, a5, a6, a7, a8,
-};
+//const unsigned int RotateL90[64] =
+//{
+//    h1, h2, h3, h4, h5, h6, h7, h8,
+//    g1, g2, g3, g4, g5, g6, g7, g8,
+//    f1, f2, f3, f4, f5, f6, f7, f8,
+//    e1, e2, e3, e4, e5, e6, e7, e8,
+//    d1, d2, d3, d4, d5, d6, d7, d8,
+//    c1, c2, c3, c4, c5, c6, c7, c8,
+//    b1, b2, b3, b4, b5, b6, b7, b8,
+//    a1, a2, a3, a4, a5, a6, a7, a8,
+//};
+//
+//const unsigned int RotateR45[64] =
+//{
+//    a1, b8, c7, d6, e5, f4, g3, h2,
+//    a2, b1, c8, d7, e6, f5, g4, h3,
+//    a3, b2, c1, d8, e7, f6, g5, h4,
+//    a4, b3, c2, d1, e8, f7, g6, h5,
+//    a5, b4, c3, d2, e1, f8, g7, h6,
+//    a6, b5, c4, d3, e2, f1, g8, h7,
+//    a7, b6, c5, d4, e3, f2, g1, h8,
+//    a8, b7, c6, d5, e4, f3, g2, h1
+//};
 
-const unsigned int RotateR45[64] =
-{
-    a1, b8, c7, d6, e5, f4, g3, h2,
-    a2, b1, c8, d7, e6, f5, g4, h3,
-    a3, b2, c1, d8, e7, f6, g5, h4,
-    a4, b3, c2, d1, e8, f7, g6, h5,
-    a5, b4, c3, d2, e1, f8, g7, h6,
-    a6, b5, c4, d3, e2, f1, g8, h7,
-    a7, b6, c5, d4, e3, f2, g1, h8,
-    a8, b7, c6, d5, e4, f3, g2, h1
-};
+//const unsigned int RotateL45[64] =
+//{
+//    a2, b3, c4, d5, e6, f7, g8, h1,
+//    a3, b4, c5, d6, e7, f8, g1, h2,
+//    a4, b5, c6, d7, e8, f1, g2, h3,
+//    a5, b6, c7, d8, e1, f2, g3, h4,
+//    a6, b7, c8, d1, e2, f3, g4, h5,
+//    a7, b8, c1, d2, e3, f4, g5, h6,
+//    a8, b1, c2, d3, e4, f5, g6, h7,
+//    a1, b2, c3, d4, e5, f6, g7, h8
+//};
+//
+//const unsigned char Castle[64] =
+//{
+//    0xFB, 255, 255, 255, 0xFA, 255, 255, 0xFE,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    255, 255, 255, 255, 255, 255, 255, 255,
+//    0xF7, 255, 255, 255, 0xF5, 255, 255, 0xFD
+//};
 
-const unsigned int RotateL45[64] =
-{
-    a2, b3, c4, d5, e6, f7, g8, h1,
-    a3, b4, c5, d6, e7, f8, g1, h2,
-    a4, b5, c6, d7, e8, f1, g2, h3,
-    a5, b6, c7, d8, e1, f2, g3, h4,
-    a6, b7, c8, d1, e2, f3, g4, h5,
-    a7, b8, c1, d2, e3, f4, g5, h6,
-    a8, b1, c2, d3, e4, f5, g6, h7,
-    a1, b2, c3, d4, e5, f6, g7, h8
-};
-
-const unsigned char Castle[64] =
-{
-    0xFB, 255, 255, 255, 0xFA, 255, 255, 0xFE,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    255, 255, 255, 255, 255, 255, 255, 255,
-    0xF7, 255, 255, 255, 0xF5, 255, 255, 0xFD
-};
-
-const quint64 fileA       = A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8;
-const quint64 fileB       = B1 | B2 | B3 | B4 | B5 | B6 | B7 | B8;
-const quint64 fileG       = G1 | G2 | G3 | G4 | G5 | G6 | G7 | G8;
-const quint64 fileH       = H1 | H2 | H3 | H4 | H5 | H6 | H7 | H8;
-const quint64 rank4       = A4 | B4 | C4 | D4 | E4 | F4 | G4 | H4;
-const quint64 rank5       = A5 | B5 | C5 | D5 | E5 | F5 | G5 | H5;
-const quint64 fileNotA    = ~ fileA;
-const quint64 fileNotH    = ~ fileH;
-const quint64 fileNotAB   = ~(fileA | fileB);
-const quint64 fileNotGH   = ~(fileG | fileH);
-
-#define SetBitL90(s)      (bb_MaskL90[s])
-#define SetBitL45(s)      (bb_MaskL45[s])
-#define SetBitR45(s)      (bb_MaskR45[s])
-#define ShiftDown(b)      ((b)>>8)
-#define Shift2Down(b)     ((b)>>16)
-#define ShiftUp(b)        ((b)<<8)
-#define Shift2Up(b)       ((b)<<16)
-#define ShiftRight(b)     (((b)<<1)&fileNotA)
-#define Shift2Right(b)    (((b)<<2)&fileNotAB)
-#define ShiftLeft(b)      (((b)>>1)&fileNotH)
-#define Shift2Left(b)     (((b)>>2)&fileNotGH)
-#define ShiftUpLeft(b)    (((b)<<7)&fileNotH)
-#define ShiftUpRight(b)   (((b)<<9)&fileNotA)
-#define ShiftDownLeft(b)  (((b)>>9)&fileNotH)
-#define ShiftDownRight(b) (((b)>>7)&fileNotA)
-#define SetBit(s)         (bb_Mask[s])
+//const quint64 fileA       = A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8;
+//const quint64 fileB       = B1 | B2 | B3 | B4 | B5 | B6 | B7 | B8;
+//const quint64 fileG       = G1 | G2 | G3 | G4 | G5 | G6 | G7 | G8;
+//const quint64 fileH       = H1 | H2 | H3 | H4 | H5 | H6 | H7 | H8;
+//const quint64 rank4       = A4 | B4 | C4 | D4 | E4 | F4 | G4 | H4;
+//const quint64 rank5       = A5 | B5 | C5 | D5 | E5 | F5 | G5 | H5;
+//const quint64 fileNotA    = ~ fileA;
+//const quint64 fileNotH    = ~ fileH;
+//const quint64 fileNotAB   = ~(fileA | fileB);
+//const quint64 fileNotGH   = ~(fileG | fileH);
+//
+//#define SetBitL90(s)      (bb_MaskL90[s])
+//#define SetBitL45(s)      (bb_MaskL45[s])
+//#define SetBitR45(s)      (bb_MaskR45[s])
+//#define ShiftDown(b)      ((b)>>8)
+//#define Shift2Down(b)     ((b)>>16)
+//#define ShiftUp(b)        ((b)<<8)
+//#define Shift2Up(b)       ((b)<<16)
+//#define ShiftRight(b)     (((b)<<1)&fileNotA)
+//#define Shift2Right(b)    (((b)<<2)&fileNotAB)
+//#define ShiftLeft(b)      (((b)>>1)&fileNotH)
+//#define Shift2Left(b)     (((b)>>2)&fileNotGH)
+//#define ShiftUpLeft(b)    (((b)<<7)&fileNotH)
+//#define ShiftUpRight(b)   (((b)<<9)&fileNotA)
+//#define ShiftDownLeft(b)  (((b)>>9)&fileNotH)
+//#define ShiftDownRight(b) (((b)>>7)&fileNotA)
+//#define SetBit(s)         (bb_Mask[s])
 
 
 /** Initialize a new bitboard, and ensure global data has been initialized */
 CBoard::CBoard()
 {
     memset(this, 0, sizeof(CBoard));
-    if(!bitBoardInitRun)
-    {
-        bitBoardInit();
-    }
+    //if(!bitBoardInitRun)
+    //{
+    //    bitBoardInit();
+    //}
     //m_epSquare = NoEPSquare;
 }
 
@@ -250,100 +250,100 @@ QString CBoard::moveToSan(const Move& move, bool translate, bool extend) const
         return san;
     }
 
-    if(move.isCastling())
-    {
-        if (File(to)==File(g1))
-        {
-            san += "O-O";
-        }
-        else
-        {
-            san += "O-O-O";
-        }
-    }
-    else
-    {
-        if(!isPawn)
-        {
-            san += sanPiece(m_piece[from], translate);
+    //if(move.isCastling())
+    //{
+    //    if (File(to)==File(g1))
+    //    {
+    //        san += "O-O";
+    //    }
+    //    else
+    //    {
+    //        san += "O-O-O";
+    //    }
+    //}
+    //else
+    //{
+    //    if(!isPawn)
+    //    {
+    //        san += sanPiece(m_piece[from], translate);
 
-            // We may need disambiguation
-            quint64 others = 0;
-            switch(m_piece[from])
-            {
-            case Knight:
-                others = m_knights & knightAttacksFrom(to);
-                break;
-            case Bishop:
-                others = m_bishops & bishopAttacksFrom(to);
-                break;
-            case Rook:
-                others = m_rooks & rookAttacksFrom(to);
-                break;
-            case Queen:
-                others = m_queens & queenAttacksFrom(to);
-                break;
-            case King:
-                others = m_kings & kingAttacksFrom(to);
-                break;
-            default:
-                break; // Something really wrong
-            }
+    //        // We may need disambiguation
+    //        quint64 others = 0;
+    //        switch(m_piece[from])
+    //        {
+    //        case Knight:
+    //            others = m_knights & knightAttacksFrom(to);
+    //            break;
+    //        case Bishop:
+    //            others = m_bishops & bishopAttacksFrom(to);
+    //            break;
+    //        case Rook:
+    //            others = m_rooks & rookAttacksFrom(to);
+    //            break;
+    //        case Queen:
+    //            others = m_queens & queenAttacksFrom(to);
+    //            break;
+    //        case King:
+    //            others = m_kings & kingAttacksFrom(to);
+    //            break;
+    //        default:
+    //            break; // Something really wrong
+    //        }
 
-            others ^= SetBit(from);
-            others &= m_occupied_co[m_stm];
-            // Do not disambiguate with moves that put oneself in check.
-            //    This is an expensive operation of dubious value, but people seem to want it
-            if(others)
-            {
-                removeIllegal(move, others);
-            }
-            if(others)
-            {
-                bool row = false, column = false;
-                if(others & bb_rankMask[Rank(from)])
-                {
-                    column = true;
-                }
-                if(others & bb_fileMask[File(from)])
-                {
-                    row = true;
-                }
-                else
-                {
-                    column = true;
-                }
-                if(column)
-                {
-                    san += 'a' + File(from);
-                }
-                if(row)
-                {
-                    san += '1' + Rank(from);
-                }
-            }
-        }
+    //        others ^= SetBit(from);
+    //        others &= m_occupied_co[m_stm];
+    //        // Do not disambiguate with moves that put oneself in check.
+    //        //    This is an expensive operation of dubious value, but people seem to want it
+    //        if(others)
+    //        {
+    //            removeIllegal(move, others);
+    //        }
+    //        if(others)
+    //        {
+    //            bool row = false, column = false;
+    //            if(others & bb_rankMask[Rank(from)])
+    //            {
+    //                column = true;
+    //            }
+    //            if(others & bb_fileMask[File(from)])
+    //            {
+    //                row = true;
+    //            }
+    //            else
+    //            {
+    //                column = true;
+    //            }
+    //            if(column)
+    //            {
+    //                san += 'a' + File(from);
+    //            }
+    //            if(row)
+    //            {
+    //                san += '1' + Rank(from);
+    //            }
+    //        }
+    //    }
 
-        //capture x
-        if(m_piece[to] || (move.isEnPassant()))
-        {
-            if(isPawn)
-            {
-                san += 'a' + File(from);
-            }
-            san += 'x';
-        }
+    //    //capture x
+    //    if(m_piece[to] || (move.isEnPassant()))
+    //    {
+    //        if(isPawn)
+    //        {
+    //            san += 'a' + File(from);
+    //        }
+    //        san += 'x';
+    //    }
 
-        //destination square
-        san += 'a' + File(to);
-        san += '1' + Rank(to);
-    }
+    //    //destination square
+    //    san += 'a' + File(to);
+    //    san += '1' + Rank(to);
+    //}
 
-    if(move.isPromotion())
-    {
-        san += '=';
-        san += sanPiece(move.promoted(), translate);
-    }
+    //if(move.isPromotion())
+    //{
+    //    san += '=';
+    //    san += sanPiece(move.promoted(), translate);
+    //}
 
     CBoard check(*this);
     check.doMove(move);
@@ -399,170 +399,170 @@ void CBoard::setStandardPosition()
 
 bool CBoard::isMovable(const Square from) const
 {
-    Q_ASSERT(from < 64);
+    Q_ASSERT(from < 90);
 
-    if(m_occupied_co[m_stm] & SetBit(from))
-    {
-        quint64 squares = 0;
-        switch(m_piece[from])
-        {
-        case Pawn:
-            squares = pawnMovesFrom(from);
-            break;
-        case Knight:
-            squares = knightAttacksFrom(from);
-            break;
-        case Bishop:
-            squares = bishopAttacksFrom(from);
-            break;
-        case Rook:
-            squares = rookAttacksFrom(from);
-            break;
-        case Queen:
-            squares = queenAttacksFrom(from);
-            break;
-        case King:
-            squares = kingAttacksFrom(m_ksq[m_stm]);
-            if (m_stm == White)
-            {
-                squares |= SetBit(g1);
-                squares |= SetBit(c1);
-            }
-            else if (m_stm == Black)
-            {
-                squares |= SetBit(g8);
-                squares |= SetBit(c8);
-            }
-            break;
-        default:
-            break;
-        }
-        squares &= ~m_occupied_co[m_stm];
-        while(squares)
-        {
-            Square to = getFirstBitAndClear64<Square>(squares);
-            if(prepareMove(from, to).isLegal())
-            {
-                return true;
-            }
-        }
-    }
+    //if(m_occupied_co[m_stm] & SetBit(from))
+    //{
+    //    quint64 squares = 0;
+    //    switch(m_piece[from])
+    //    {
+    //    case Pawn:
+    //        squares = pawnMovesFrom(from);
+    //        break;
+    //    case Knight:
+    //        squares = knightAttacksFrom(from);
+    //        break;
+    //    case Bishop:
+    //        squares = bishopAttacksFrom(from);
+    //        break;
+    //    case Rook:
+    //        squares = rookAttacksFrom(from);
+    //        break;
+    //    case Queen:
+    //        squares = queenAttacksFrom(from);
+    //        break;
+    //    case King:
+    //        squares = kingAttacksFrom(m_ksq[m_stm]);
+    //        if (m_stm == White)
+    //        {
+    //            squares |= SetBit(g1);
+    //            squares |= SetBit(c1);
+    //        }
+    //        else if (m_stm == Black)
+    //        {
+    //            squares |= SetBit(g8);
+    //            squares |= SetBit(c8);
+    //        }
+    //        break;
+    //    default:
+    //        break;
+    //    }
+    //    squares &= ~m_occupied_co[m_stm];
+    //    while(squares)
+    //    {
+    //        Square to = getFirstBitAndClear64<Square>(squares);
+    //        if(prepareMove(from, to).isLegal())
+    //        {
+    //            return true;
+    //        }
+    //    }
+    //}
     return false;
 }
 
 void CBoard::setAt(const Square s, const Piece p)
 {
-    Q_ASSERT(s < 64);
+    Q_ASSERT(s < 90);
     Q_ASSERT(isValidPiece(p) || p == Empty);
 
-    quint64 bit = SetBit(s);
-    if(m_occupied & bit)
-    {
-        removeAt(s);
-    }
+    //quint64 bit = SetBit(s);
+    //if(m_occupied & bit)
+    //{
+    //    removeAt(s);
+    //}
 
-    PieceType pt = pieceType(p);
-    if(pt == None)
-    {
-        return;
-    }
+    //PieceType pt = pieceType(p);
+    //if(pt == None)
+    //{
+    //    return;
+    //}
 
-    Color _color = pieceColor(p);
-    ++m_pieceCount[_color];
-    switch(pt)
-    {
-    case Pawn:
-        m_pawns   |= bit;
-        ++m_pawnCount[_color];
-        break;
-    case Knight:
-        m_knights |= bit;
-        break;
-    case Bishop:
-        m_bishops |= bit;
-        break;
-    case Rook:
-        m_rooks   |= bit;
-        break;
-    case Queen:
-        m_queens  |= bit;
-        break;
-    case King:
-        if(m_kings & m_occupied_co[_color])
-        {
-            removeAt(m_ksq[_color]);
-        }
-        m_kings   |= bit;
-        m_ksq[_color] = s;
-        break;
-    default:
-        break; // ERROR
-    }
+    //Color _color = pieceColor(p);
+    //++m_pieceCount[_color];
+    //switch(pt)
+    //{
+    //case Pawn:
+    //    m_pawns   |= bit;
+    //    ++m_pawnCount[_color];
+    //    break;
+    //case Knight:
+    //    m_knights |= bit;
+    //    break;
+    //case Bishop:
+    //    m_bishops |= bit;
+    //    break;
+    //case Rook:
+    //    m_rooks   |= bit;
+    //    break;
+    //case Queen:
+    //    m_queens  |= bit;
+    //    break;
+    //case King:
+    //    if(m_kings & m_occupied_co[_color])
+    //    {
+    //        removeAt(m_ksq[_color]);
+    //    }
+    //    m_kings   |= bit;
+    //    m_ksq[_color] = s;
+    //    break;
+    //default:
+    //    break; // ERROR
+    //}
 
-    m_piece[s] = pt;
-    m_occupied ^= bit;
-    m_occupied_co[_color] ^= bit;
-    m_occupied_l90 ^= SetBitL90(s);
-    m_occupied_l45 ^= SetBitL45(s);
-    m_occupied_r45 ^= SetBitR45(s);
+    //m_piece[s] = pt;
+    //m_occupied ^= bit;
+    //m_occupied_co[_color] ^= bit;
+    //m_occupied_l90 ^= SetBitL90(s);
+    //m_occupied_l45 ^= SetBitL45(s);
+    //m_occupied_r45 ^= SetBitR45(s);
 }
 
 void CBoard::removeAt(const Square s)
 {
     Q_ASSERT(s < 64);
 
-    quint64 bit = SetBit(s);
-    if(!(m_occupied & bit))
-    {
-        return;
-    }
+    //quint64 bit = SetBit(s);
+    //if(!(m_occupied & bit))
+    //{
+    //    return;
+    //}
 
-    Color _color = (m_occupied_co[White] & bit) ? White : Black;
-    --m_pieceCount[_color];
-    switch(m_piece[s])
-    {
-    case Pawn:
-        m_pawns   ^= bit;
-        --m_pawnCount[_color];
-        break;
-    case Knight:
-        m_knights ^= bit;
-        break;
-    case Bishop:
-        m_bishops ^= bit;
-        break;
-    case Rook:
-        m_rooks   ^= bit;
-        //if (!chess960())
-        //{
-        //    m_castle &= Castle[s];
-        //}
-        //else
-        //{
-        //    if (m_castlingRooks & bit)
-        //    {
-        //        destroyCastleInDirection(_color, s);
-        //    }
-        //}
-        break;
-    case Queen:
-        m_queens  ^= bit;
-        break;
-    case King:
-        m_kings   ^= bit;
-        m_ksq[_color] = InvalidSquare;
-        //destroyCastle(_color);
-        break;
-    default:
-        break; // ERROR
-    }
+    //Color _color = (m_occupied_co[White] & bit) ? White : Black;
+    //--m_pieceCount[_color];
+    //switch(m_piece[s])
+    //{
+    //case Pawn:
+    //    m_pawns   ^= bit;
+    //    --m_pawnCount[_color];
+    //    break;
+    //case Knight:
+    //    m_knights ^= bit;
+    //    break;
+    //case Bishop:
+    //    m_bishops ^= bit;
+    //    break;
+    //case Rook:
+    //    m_rooks   ^= bit;
+    //    //if (!chess960())
+    //    //{
+    //    //    m_castle &= Castle[s];
+    //    //}
+    //    //else
+    //    //{
+    //    //    if (m_castlingRooks & bit)
+    //    //    {
+    //    //        destroyCastleInDirection(_color, s);
+    //    //    }
+    //    //}
+    //    break;
+    //case Queen:
+    //    m_queens  ^= bit;
+    //    break;
+    //case King:
+    //    m_kings   ^= bit;
+    //    m_ksq[_color] = InvalidSquare;
+    //    //destroyCastle(_color);
+    //    break;
+    //default:
+    //    break; // ERROR
+    //}
 
-    m_piece[s] = Empty;
-    m_occupied ^= bit;
-    m_occupied_co[_color] ^= bit;
-    m_occupied_l90 ^= SetBitL90(s);
-    m_occupied_l45 ^= SetBitL45(s);
-    m_occupied_r45 ^= SetBitR45(s);
+    //m_piece[s] = Empty;
+    //m_occupied ^= bit;
+    //m_occupied_co[_color] ^= bit;
+    //m_occupied_l90 ^= SetBitL90(s);
+    //m_occupied_l45 ^= SetBitL45(s);
+    //m_occupied_r45 ^= SetBitR45(s);
 }
 
 bool CBoard::isValidFen(const QString& fen) const
@@ -828,186 +828,186 @@ public:
 
 bool CBoard::fromGoodFen(const QString& qfen)
 {
-    SaneString fen(qfen);
-    int i;
-    unsigned int s;
-    char c = fen[0];
+    //SaneString fen(qfen);
+    //int i;
+    //unsigned int s;
+    //char c = fen[0];
 
-    memset(this, 0, sizeof(CBoard));
-    //setChess960(chess960);
-    m_moveNumber = 1;
-    //m_epSquare = NoEPSquare;
+    //memset(this, 0, sizeof(CBoard));
+    ////setChess960(chess960);
+    //m_moveNumber = 1;
+    ////m_epSquare = NoEPSquare;
 
-    // Piece position
-    i = 0;
-    s = 56;
-    while(c && c != ' ' && s <= 64)
-    {
-        switch(c)
-        {
-        case '/':
-            s -= 16;
-            break;
-        case '1':
-            s += 1;
-            break;
-        case '2':
-            s += 2;
-            break;
-        case '3':
-            s += 3;
-            break;
-        case '4':
-            s += 4;
-            break;
-        case '5':
-            s += 5;
-            break;
-        case '6':
-            s += 6;
-            break;
-        case '7':
-            s += 7;
-            break;
-        case '8':
-            s += 8;
-            break;
-        case 'p':
-            m_piece[s] = Pawn;
-            m_pawns |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            ++m_pawnCount[Black];
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'n':
-            m_piece[s] = Knight;
-            m_knights |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'b':
-            m_piece[s] = Bishop;
-            m_bishops |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'r':
-            m_piece[s] = Rook;
-            m_rooks |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'q':
-            m_piece[s] = Queen;
-            m_queens |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'k':
-            m_piece[s] = King;
-            m_kings |= SetBit(s);
-            m_occupied_co[Black] |= SetBit(s);
-            m_ksq[Black] = Square(s);
-            ++m_pieceCount[Black];
-            s++;
-            break;
-        case 'P':
-            m_piece[s] = Pawn;
-            m_pawns |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            ++m_pawnCount[White];
-            ++m_pieceCount[White];
-            s++;
-            break;
-        case 'N':
-            m_piece[s] = Knight;
-            m_knights |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            ++m_pieceCount[White];
-            s++;
-            break;
-        case 'B':
-            m_piece[s] = Bishop;
-            m_bishops |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            ++m_pieceCount[White];
-            s++;
-            break;
-        case 'R':
-            m_piece[s] = Rook;
-            m_rooks |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            ++m_pieceCount[White];
-            s++;
-            break;
-        case 'Q':
-            m_piece[s] = Queen;
-            m_queens |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            ++m_pieceCount[White];
-            s++;
-            break;
-        case 'K':
-            m_piece[s] = King;
-            m_kings |= SetBit(s);
-            m_occupied_co[White] |= SetBit(s);
-            m_ksq[White] = Square(s);
-            ++m_pieceCount[White];
-            s++;
-            break;
-        default:
-            return false;
-        }
-        c = fen[++i];
-    }
-    if(s != 8)
-    {
-        return false;
-    }
+    //// Piece position
+    //i = 0;
+    //s = 56;
+    //while(c && c != ' ' && s <= 64)
+    //{
+    //    switch(c)
+    //    {
+    //    case '/':
+    //        s -= 16;
+    //        break;
+    //    case '1':
+    //        s += 1;
+    //        break;
+    //    case '2':
+    //        s += 2;
+    //        break;
+    //    case '3':
+    //        s += 3;
+    //        break;
+    //    case '4':
+    //        s += 4;
+    //        break;
+    //    case '5':
+    //        s += 5;
+    //        break;
+    //    case '6':
+    //        s += 6;
+    //        break;
+    //    case '7':
+    //        s += 7;
+    //        break;
+    //    case '8':
+    //        s += 8;
+    //        break;
+    //    case 'p':
+    //        m_piece[s] = Pawn;
+    //        //m_pawns |= SetBit(s);
+    //        //m_occupied_co[Black] |= SetBit(s);
+    //        ++m_pawnCount[Black];
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'n':
+    //        m_piece[s] = Knight;
+    //        m_knights |= SetBit(s);
+    //        m_occupied_co[Black] |= SetBit(s);
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'b':
+    //        m_piece[s] = Bishop;
+    //        m_bishops |= SetBit(s);
+    //        m_occupied_co[Black] |= SetBit(s);
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'r':
+    //        m_piece[s] = Rook;
+    //        m_rooks |= SetBit(s);
+    //        m_occupied_co[Black] |= SetBit(s);
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'q':
+    //        m_piece[s] = Queen;
+    //        m_queens |= SetBit(s);
+    //        m_occupied_co[Black] |= SetBit(s);
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'k':
+    //        m_piece[s] = King;
+    //        m_kings |= SetBit(s);
+    //        m_occupied_co[Black] |= SetBit(s);
+    //        m_ksq[Black] = Square(s);
+    //        ++m_pieceCount[Black];
+    //        s++;
+    //        break;
+    //    case 'P':
+    //        m_piece[s] = Pawn;
+    //        m_pawns |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        ++m_pawnCount[White];
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    case 'N':
+    //        m_piece[s] = Knight;
+    //        m_knights |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    case 'B':
+    //        m_piece[s] = Bishop;
+    //        m_bishops |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    case 'R':
+    //        m_piece[s] = Rook;
+    //        m_rooks |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    case 'Q':
+    //        m_piece[s] = Queen;
+    //        m_queens |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    case 'K':
+    //        m_piece[s] = King;
+    //        m_kings |= SetBit(s);
+    //        m_occupied_co[White] |= SetBit(s);
+    //        m_ksq[White] = Square(s);
+    //        ++m_pieceCount[White];
+    //        s++;
+    //        break;
+    //    default:
+    //        return false;
+    //    }
+    //    c = fen[++i];
+    //}
+    //if(s != 8)
+    //{
+    //    return false;
+    //}
 
-    // Set remainder of bitboard data appropriately
-    m_occupied = m_occupied_co[White] + m_occupied_co[Black];
-    for(int i = 0; i < 64; ++i)
-    {
-        if(SetBit(i)&m_occupied)
-        {
-            m_occupied_l90 |= SetBitL90(i);
-            m_occupied_l45 |= SetBitL45(i);
-            m_occupied_r45 |= SetBitR45(i);
-        }
-    }
+    //// Set remainder of bitboard data appropriately
+    //m_occupied = m_occupied_co[White] + m_occupied_co[Black];
+    //for(int i = 0; i < 64; ++i)
+    //{
+    //    if(SetBit(i)&m_occupied)
+    //    {
+    //        m_occupied_l90 |= SetBitL90(i);
+    //        m_occupied_l45 |= SetBitL45(i);
+    //        m_occupied_r45 |= SetBitR45(i);
+    //    }
+    //}
 
-    // Side to move
-    c = fen[++i];
-    if(c == 'w')
-    {
-        m_stm = White;
-    }
-    else if(c == 'b')
-    {
-        m_stm = Black;
-    }
-    else if(c == 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    ++i;
+    //// Side to move
+    //c = fen[++i];
+    //if(c == 'w')
+    //{
+    //    m_stm = White;
+    //}
+    //else if(c == 'b')
+    //{
+    //    m_stm = Black;
+    //}
+    //else if(c == 0)
+    //{
+    //    return true;
+    //}
+    //else
+    //{
+    //    return false;
+    //}
+    //++i;
 
-    // Castling Rights
-    c = fen[++i];
-    if(c == 0)
-    {
-        return true;
-    }
+    //// Castling Rights
+    //c = fen[++i];
+    //if(c == 0)
+    //{
+    //    return true;
+    //}
 
     //m_castlingRooks = 0;
 
@@ -1075,25 +1075,25 @@ bool CBoard::fromGoodFen(const QString& qfen)
     //    }
     //}
     //else
-    //{
-        ++i;    // Bypass space
-    //}
+    ////{
+    //    ++i;    // Bypass space
+    ////}
 
-    //if (!m_castlingRooks)
-    //{
-    //    setCastlingRooks();
-    //}
-    //else
-    //{
-    //    fixCastlingRooks(true);
-    //}
+    ////if (!m_castlingRooks)
+    ////{
+    ////    setCastlingRooks();
+    ////}
+    ////else
+    ////{
+    ////    fixCastlingRooks(true);
+    ////}
 
-    // EnPassant Square
-    c = fen[++i];
-    if(c == 0)
-    {
-        return true;
-    }
+    //// EnPassant Square
+    //c = fen[++i];
+    //if(c == 0)
+    //{
+    //    return true;
+    //}
     //if(c != '-')
     //{
     //    bool epgood = true;
@@ -1127,61 +1127,61 @@ bool CBoard::fromGoodFen(const QString& qfen)
     //    }
     //}
     //epFile2Square();
-    ++i;
+    //++i;
 
-    // Half move clock
-    c = fen[++i];
-    if(c == 0)
-    {
-        return true;
-    }
-    if (c=='-')
-    {
-        m_halfMoves = 0; // Workaround for some lazy generators
-        ++i; // Eat ws
-    }
-    else
-    {
-        if(c < '0' || c > '9')
-        {
-            return false;
-        }
-        int j = i;
-        while(c >= '0' && c <= '9')
-        {
-            c = fen[++i];
-        }
-        m_halfMoves = fen.midRef(j, i - j).toInt();
-    }
+    //// Half move clock
+    //c = fen[++i];
+    //if(c == 0)
+    //{
+    //    return true;
+    //}
+    //if (c=='-')
+    //{
+    //    m_halfMoves = 0; // Workaround for some lazy generators
+    //    ++i; // Eat ws
+    //}
+    //else
+    //{
+    //    if(c < '0' || c > '9')
+    //    {
+    //        return false;
+    //    }
+    //    int j = i;
+    //    while(c >= '0' && c <= '9')
+    //    {
+    //        c = fen[++i];
+    //    }
+    //    m_halfMoves = fen.midRef(j, i - j).toInt();
+    //}
 
-    // Move number
-    c = fen[++i];
-    if(c == 0)
-    {
-        return true;
-    }
-    if (c=='-')
-    {
-        m_moveNumber=1; // Workaround for some lazy generators
-    }
-    else
-    {
-        if(c < '0' || c > '9')
-        {
-            return false;
-        }
-        m_moveNumber = fen.midRef(i).toInt();
-        while(c >= '0' && c <= '9')
-        {
-            c = fen[++i];
-        }
+    //// Move number
+    //c = fen[++i];
+    //if(c == 0)
+    //{
+    //    return true;
+    //}
+    //if (c=='-')
+    //{
+    //    m_moveNumber=1; // Workaround for some lazy generators
+    //}
+    //else
+    //{
+    //    if(c < '0' || c > '9')
+    //    {
+    //        return false;
+    //    }
+    //    m_moveNumber = fen.midRef(i).toInt();
+    //    while(c >= '0' && c <= '9')
+    //    {
+    //        c = fen[++i];
+    //    }
 
-        if(m_moveNumber <= 0)
-        {
-            // Silently fix illegal movenumber
-            m_moveNumber = 1;
-        }
-    }
+    //    if(m_moveNumber <= 0)
+    //    {
+    //        // Silently fix illegal movenumber
+    //        m_moveNumber = 1;
+    //    }
+    //}
 
     return true;
 }
@@ -1431,11 +1431,11 @@ int CBoard::chess960Pos() const
     int n0s[] = { 0,4,7,9 };
     for (Square square=a1; square<=h1; ++square)
     {
-        if (pieceAt(square) == WhiteQueen)
+        if (pieceAt(square) == WhiteChe)
         {
             qf = true;
         }
-        else if ((pieceAt(square) == WhiteRook) || (pieceAt(square) == WhiteKing))
+        else if ((pieceAt(square) == WhiteMa) || (pieceAt(square) == WhiteKing))
         {
             if (pieceAt(square) == WhiteKing)
             {
@@ -1448,7 +1448,7 @@ int CBoard::chess960Pos() const
             if (!qf) { ++q; };
             if (!n0f) { ++n0; } else { if (!n1f) ++n1; }
         }
-        else if (pieceAt(square) == WhiteKnight)
+        else if (pieceAt(square) == WhiteShi)
         {
             if (!qf) { ++q; };
             if (!n0f) { n0f = true; } else { n1f = true; }
@@ -1486,193 +1486,193 @@ MoveList CBoard::generateMoves() const
 
     MoveList p;
 
-    if(m_stm == White)
-    {
-        // castle moves
-        //if(canCastle(White))
-        //{
-        //    if(canCastleShort(White) && !((F1 | G1)&m_occupied))
-        //        if(!isAttackedBy(Black, e1) &&
-        //                !isAttackedBy(Black, f1)
-        //                && !isAttackedBy(Black, g1))
-        //        {
-        //            p.add().genWhiteOO();
-        //        }
-        //    if(canCastleLong(White)  && !((B1 | C1 | D1)&m_occupied))
-        //        if(!isAttackedBy(Black, c1) &&
-        //                !isAttackedBy(Black, d1)
-        //                && !isAttackedBy(Black, e1))
-        //        {
-        //            p.add().genWhiteOOO();
-        //        }
-        //}
+    //if(m_stm == White)
+    //{
+    //    // castle moves
+    //    //if(canCastle(White))
+    //    //{
+    //    //    if(canCastleShort(White) && !((F1 | G1)&m_occupied))
+    //    //        if(!isAttackedBy(Black, e1) &&
+    //    //                !isAttackedBy(Black, f1)
+    //    //                && !isAttackedBy(Black, g1))
+    //    //        {
+    //    //            p.add().genWhiteOO();
+    //    //        }
+    //    //    if(canCastleLong(White)  && !((B1 | C1 | D1)&m_occupied))
+    //    //        if(!isAttackedBy(Black, c1) &&
+    //    //                !isAttackedBy(Black, d1)
+    //    //                && !isAttackedBy(Black, e1))
+    //    //        {
+    //    //            p.add().genWhiteOOO();
+    //    //        }
+    //    //}
 
-        // pawn en passant moves
-        movers = m_pawns & m_occupied_co[White];
-        //if(m_epSquare != NoEPSquare)
-        //{
-        //    moves = bb_PawnAttacks[Black][m_epSquare] & movers;
-        //    while(moves)
-        //    {
-        //        from = getFirstBitAndClear64<Square>(moves);
-        //        p.add().genEnPassant(from, m_epSquare);
-        //    }
-        //}
+    //    // pawn en passant moves
+    //    movers = m_pawns & m_occupied_co[White];
+    //    //if(m_epSquare != NoEPSquare)
+    //    //{
+    //    //    moves = bb_PawnAttacks[Black][m_epSquare] & movers;
+    //    //    while(moves)
+    //    //    {
+    //    //        from = getFirstBitAndClear64<Square>(moves);
+    //    //        p.add().genEnPassant(from, m_epSquare);
+    //    //    }
+    //    //}
 
-        // pawn captures
-        moves = ShiftUpRight(movers) & m_occupied_co[Black];
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 7)
-            {
-                p.add().genPawnMove(to - 9, to, m_piece[to]);
-            }
-            else
-            {
-                p.add().genCapturePromote(to - 9, to, Queen, m_piece[to]);
-                p.add().genCapturePromote(to - 9, to, Knight, m_piece[to]);
-                p.add().genCapturePromote(to - 9, to, Rook, m_piece[to]);
-                p.add().genCapturePromote(to - 9, to, Bishop, m_piece[to]);
-            }
-        }
-        moves = ShiftUpLeft(movers) & m_occupied_co[Black];
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 7)
-            {
-                p.add().genPawnMove(to - 7, to, m_piece[to]);
-            }
-            else
-            {
-                p.add().genCapturePromote(to - 7, to, Queen, m_piece[to]);
-                p.add().genCapturePromote(to - 7, to, Knight, m_piece[to]);
-                p.add().genCapturePromote(to - 7, to, Rook, m_piece[to]);
-                p.add().genCapturePromote(to - 7, to, Bishop, m_piece[to]);
-            }
-        }
+    //    // pawn captures
+    //    moves = ShiftUpRight(movers) & m_occupied_co[Black];
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 7)
+    //        {
+    //            p.add().genPawnMove(to - 9, to, m_piece[to]);
+    //        }
+    //        else
+    //        {
+    //            p.add().genCapturePromote(to - 9, to, Queen, m_piece[to]);
+    //            p.add().genCapturePromote(to - 9, to, Knight, m_piece[to]);
+    //            p.add().genCapturePromote(to - 9, to, Rook, m_piece[to]);
+    //            p.add().genCapturePromote(to - 9, to, Bishop, m_piece[to]);
+    //        }
+    //    }
+    //    moves = ShiftUpLeft(movers) & m_occupied_co[Black];
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 7)
+    //        {
+    //            p.add().genPawnMove(to - 7, to, m_piece[to]);
+    //        }
+    //        else
+    //        {
+    //            p.add().genCapturePromote(to - 7, to, Queen, m_piece[to]);
+    //            p.add().genCapturePromote(to - 7, to, Knight, m_piece[to]);
+    //            p.add().genCapturePromote(to - 7, to, Rook, m_piece[to]);
+    //            p.add().genCapturePromote(to - 7, to, Bishop, m_piece[to]);
+    //        }
+    //    }
 
-        // pawns 1 forward
-        moves = ShiftUp(movers) & ~m_occupied;
-        movers = moves;
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 7)
-            {
-                p.add().genOneForward(to - 8, to);
-            }
-            else
-            {
-                p.add().genPromote(to - 8, to, Queen);
-                p.add().genPromote(to - 8, to, Knight);
-                p.add().genPromote(to - 8, to, Rook);
-                p.add().genPromote(to - 8, to, Bishop);
-            }
-        }
-        // pawns 2 forward
-        moves = ShiftUp(movers) & rank4 & ~m_occupied;
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            p.add().genTwoForward(to - 16, to);
-        }
+    //    // pawns 1 forward
+    //    moves = ShiftUp(movers) & ~m_occupied;
+    //    movers = moves;
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 7)
+    //        {
+    //            p.add().genOneForward(to - 8, to);
+    //        }
+    //        else
+    //        {
+    //            p.add().genPromote(to - 8, to, Queen);
+    //            p.add().genPromote(to - 8, to, Knight);
+    //            p.add().genPromote(to - 8, to, Rook);
+    //            p.add().genPromote(to - 8, to, Bishop);
+    //        }
+    //    }
+    //    // pawns 2 forward
+    //    moves = ShiftUp(movers) & rank4 & ~m_occupied;
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        p.add().genTwoForward(to - 16, to);
+    //    }
 
-    }
-    else
-    {
-        // castle moves
-        //if(canCastle(Black))
-        //{
-        //    if(canCastleShort(Black) && !((F8 | G8)&m_occupied))
-        //        if(!isAttackedBy(White, e8) &&
-        //                !isAttackedBy(White, f8) &&
-        //                !isAttackedBy(White, g8))
-        //        {
-        //            p.add().genBlackOO();
-        //        }
-        //    if(canCastleLong(Black)  && !((B8 | C8 | D8)&m_occupied))
-        //        if(!isAttackedBy(White, e8) &&
-        //                !isAttackedBy(White, d8) &&
-        //                !isAttackedBy(White, c8))
-        //        {
-        //            p.add().genBlackOOO();
-        //        }
-        //}
+    //}
+    //else
+    //{
+    //    // castle moves
+    //    //if(canCastle(Black))
+    //    //{
+    //    //    if(canCastleShort(Black) && !((F8 | G8)&m_occupied))
+    //    //        if(!isAttackedBy(White, e8) &&
+    //    //                !isAttackedBy(White, f8) &&
+    //    //                !isAttackedBy(White, g8))
+    //    //        {
+    //    //            p.add().genBlackOO();
+    //    //        }
+    //    //    if(canCastleLong(Black)  && !((B8 | C8 | D8)&m_occupied))
+    //    //        if(!isAttackedBy(White, e8) &&
+    //    //                !isAttackedBy(White, d8) &&
+    //    //                !isAttackedBy(White, c8))
+    //    //        {
+    //    //            p.add().genBlackOOO();
+    //    //        }
+    //    //}
 
-        // pawn en passant moves
-        movers = m_pawns & m_occupied_co[Black];
-        //if(m_epSquare != NoEPSquare)
-        //{
-        //    moves = bb_PawnAttacks[White][m_epSquare] & movers;
-        //    while(moves)
-        //    {
-        //        from = getFirstBitAndClear64<Square>(moves);
-        //        p.add().genEnPassant(from, m_epSquare);
-        //    }
-        //}
+    //    // pawn en passant moves
+    //    movers = m_pawns & m_occupied_co[Black];
+    //    //if(m_epSquare != NoEPSquare)
+    //    //{
+    //    //    moves = bb_PawnAttacks[White][m_epSquare] & movers;
+    //    //    while(moves)
+    //    //    {
+    //    //        from = getFirstBitAndClear64<Square>(moves);
+    //    //        p.add().genEnPassant(from, m_epSquare);
+    //    //    }
+    //    //}
 
-        // pawn captures
-        moves = ShiftDownLeft(movers) & m_occupied_co[White];
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 0)
-            {
-                p.add().genPawnMove(to + 9, to, m_piece[to]);
-            }
-            else
-            {
-                p.add().genCapturePromote(to + 9, to, Queen, m_piece[to]);
-                p.add().genCapturePromote(to + 9, to, Knight, m_piece[to]);
-                p.add().genCapturePromote(to + 9, to, Rook, m_piece[to]);
-                p.add().genCapturePromote(to + 9, to, Bishop, m_piece[to]);
-            }
-        }
-        moves = ShiftDownRight(movers) & m_occupied_co[White];
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 0)
-            {
-                p.add().genPawnMove(to + 7, to, m_piece[to]);
-            }
-            else
-            {
-                p.add().genCapturePromote(to + 7, to, Queen, m_piece[to]);
-                p.add().genCapturePromote(to + 7, to, Knight, m_piece[to]);
-                p.add().genCapturePromote(to + 7, to, Rook, m_piece[to]);
-                p.add().genCapturePromote(to + 7, to, Bishop, m_piece[to]);
-            }
-        }
+    //    // pawn captures
+    //    moves = ShiftDownLeft(movers) & m_occupied_co[White];
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 0)
+    //        {
+    //            p.add().genPawnMove(to + 9, to, m_piece[to]);
+    //        }
+    //        else
+    //        {
+    //            p.add().genCapturePromote(to + 9, to, Queen, m_piece[to]);
+    //            p.add().genCapturePromote(to + 9, to, Knight, m_piece[to]);
+    //            p.add().genCapturePromote(to + 9, to, Rook, m_piece[to]);
+    //            p.add().genCapturePromote(to + 9, to, Bishop, m_piece[to]);
+    //        }
+    //    }
+    //    moves = ShiftDownRight(movers) & m_occupied_co[White];
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 0)
+    //        {
+    //            p.add().genPawnMove(to + 7, to, m_piece[to]);
+    //        }
+    //        else
+    //        {
+    //            p.add().genCapturePromote(to + 7, to, Queen, m_piece[to]);
+    //            p.add().genCapturePromote(to + 7, to, Knight, m_piece[to]);
+    //            p.add().genCapturePromote(to + 7, to, Rook, m_piece[to]);
+    //            p.add().genCapturePromote(to + 7, to, Bishop, m_piece[to]);
+    //        }
+    //    }
 
-        // pawns 1 forward
-        moves = ShiftDown(movers) & ~m_occupied;
-        movers = moves;
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            if(Rank(to) != 0)
-            {
-                p.add().genOneForward(to + 8, to);
-            }
-            else
-            {
-                p.add().genPromote(to + 8, to, Queen);
-                p.add().genPromote(to + 8, to, Knight);
-                p.add().genPromote(to + 8, to, Rook);
-                p.add().genPromote(to + 8, to, Bishop);
-            }
-        }
-        // pawns 2 forward
-        moves = ShiftDown(movers) & rank5 & ~m_occupied;
-        while(moves)
-        {
-            to = getFirstBitAndClear64<Square>(moves);
-            p.add().genTwoForward(to + 16, to);
-        }
-    }
+    //    // pawns 1 forward
+    //    moves = ShiftDown(movers) & ~m_occupied;
+    //    movers = moves;
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        if(Rank(to) != 0)
+    //        {
+    //            p.add().genOneForward(to + 8, to);
+    //        }
+    //        else
+    //        {
+    //            p.add().genPromote(to + 8, to, Queen);
+    //            p.add().genPromote(to + 8, to, Knight);
+    //            p.add().genPromote(to + 8, to, Rook);
+    //            p.add().genPromote(to + 8, to, Bishop);
+    //        }
+    //    }
+    //    // pawns 2 forward
+    //    moves = ShiftDown(movers) & rank5 & ~m_occupied;
+    //    while(moves)
+    //    {
+    //        to = getFirstBitAndClear64<Square>(moves);
+    //        p.add().genTwoForward(to + 16, to);
+    //    }
+    //}
 
     // knight moves
     movers = m_knights & m_occupied_co[m_stm];
@@ -1823,19 +1823,19 @@ Move CBoard::parseMove(const QString& algebraic) const
     switch(c)
     {
     case 'Q':
-        type = Queen;
+        type = Che;
         c = *(s++);
         break;
     case 'R':
-        type = Rook;
+        type = Ma;
         c = *(s++);
         break;
     case 'B':
-        type = Bishop;
+        type = Pao;
         c = *(s++);
         break;
     case 'N':
-        type = Knight;
+        type = Shi;
         c = *(s++);
         break;
     case 'K':
@@ -1927,16 +1927,16 @@ Move CBoard::parseMove(const QString& algebraic) const
             switch(toupper(c))
             {
             case 'Q':
-                promotePiece = Queen;
+                promotePiece = Che;
                 break;
             case 'R':
-                promotePiece = Rook;
+                promotePiece = Ma;
                 break;
             case 'B':
-                promotePiece = Bishop;
+                promotePiece = Pao;
                 break;
             case 'N':
-                promotePiece = Knight;
+                promotePiece = Shi;
                 break;
             default:
                 {
@@ -1955,11 +1955,11 @@ Move CBoard::parseMove(const QString& algebraic) const
             if(fromFile < 0)
             {
                 fromSquare = toSquare + base;
-                quint64 bit = SetBit(fromSquare);
-                if(!(m_occupied_co[m_stm] & bit))
-                {
-                    fromSquare += base;
-                }
+                //quint64 bit = SetBit(fromSquare);
+                //if(!(m_occupied_co[m_stm] & bit))
+                //{
+                //    fromSquare += base;
+                //}
             }
             else if(fromFile <= (int) File(toSquare))
             {
@@ -1984,16 +1984,16 @@ Move CBoard::parseMove(const QString& algebraic) const
     {
         switch(type)
         {
-        case Queen:
+        case Che:
             match = queenAttacksFrom(toSquare) & m_queens;
             break;
-        case Rook:
+        case Ma:
             match = rookAttacksFrom(toSquare) & m_rooks;
             break;
-        case Bishop:
+        case Pao:
             match = bishopAttacksFrom(toSquare) & m_bishops;
             break;
-        case Knight:
+        case Shi:
             match = knightAttacksFrom(toSquare) & m_knights;
             break;
         case King:
@@ -2006,11 +2006,11 @@ Move CBoard::parseMove(const QString& algebraic) const
         match &= m_occupied_co[m_stm];
         if(fromRank >= 0)
         {
-            match &= bb_rankMask[fromRank];
+            //match &= bb_rankMask[fromRank];
         }
         else if(fromFile >= 0)
         {
-            match &= bb_fileMask[fromFile];
+            //match &= bb_fileMask[fromFile];
         }
 
         if(match)
@@ -2047,8 +2047,8 @@ bool CBoard::doMove(const Move& m)
     Square from = m.from();
     Square to = m.to();
     unsigned int sntm = m_stm ^ 1; // side not to move
-    quint64 bb_from = SetBit(from);
-    quint64 bb_to = SetBit(to);
+	quint64 bb_from = 0; // SetBit(from);
+	quint64 bb_to = 0; // SetBit(to);
     Square rook_from = InvalidSquare, rook_to = InvalidSquare;
 
     //m_epFile = 0;
@@ -2063,25 +2063,25 @@ bool CBoard::doMove(const Move& m)
         m_pawns ^= bb_from ^ bb_to;
         m_piece[to] = Pawn;
         break;
-    case Knight:
+    case Shi:
         m_knights ^= bb_from ^ bb_to;
-        m_piece[to] = Knight;
+        m_piece[to] = Shi;
         break;
-    case Bishop:
+    case Pao:
         m_bishops ^= bb_from ^ bb_to;
-        m_piece[to] = Bishop;
+        m_piece[to] = Pao;
         break;
-    case Rook:
+    case Ma:
         m_rooks ^= bb_from ^ bb_to;
-        m_piece[to] = Rook;
+        m_piece[to] = Ma;
         //if(canCastle(m_stm) && (m_castlingRooks & bb_from))  // a rook is moving, destroy castle flags if needed
         //{
         //    destroyCastleInDirection(m_stm, from);
         //}
         break;
-    case Queen:
+    case Che:
         m_queens ^= bb_from ^ bb_to;
-        m_piece[to] = Queen;
+        m_piece[to] = Che;
         break;
     case King:
         m_kings ^= bb_from ^ bb_to;
@@ -2201,9 +2201,9 @@ bool CBoard::doMove(const Move& m)
     case Empty:
         if (to != from)
         {
-            m_occupied_l90 ^= SetBitL90(to);     // extra cleanup needed for non-captures
-            m_occupied_l45 ^= SetBitL45(to);
-            m_occupied_r45 ^= SetBitR45(to);
+            //m_occupied_l90 ^= SetBitL90(to);     // extra cleanup needed for non-captures
+            //m_occupied_l45 ^= SetBitL45(to);
+            //m_occupied_r45 ^= SetBitR45(to);
         }
         break;
     case Pawn:
@@ -2213,19 +2213,19 @@ bool CBoard::doMove(const Move& m)
         m_pawns ^= bb_to;
         m_occupied_co[sntm] ^= bb_to;
         break;
-    case Knight:
+    case Shi:
         --m_pieceCount[sntm];
         m_halfMoves = 0;
         m_knights ^= bb_to;
         m_occupied_co[sntm] ^= bb_to;
         break;
-    case Bishop:
+    case Pao:
         --m_pieceCount[sntm];
         m_halfMoves = 0;
         m_bishops ^= bb_to;
         m_occupied_co[sntm] ^= bb_to;
         break;
-    case Rook:
+    case Ma:
         --m_pieceCount[sntm];
         m_halfMoves = 0;
         m_rooks ^= bb_to;
@@ -2235,7 +2235,7 @@ bool CBoard::doMove(const Move& m)
         //    destroyCastleInDirection(sntm, to);
         //}
         break;
-    case Queen:
+    case Che:
         --m_pieceCount[sntm];
         m_halfMoves = 0;
         m_queens ^= bb_to;
@@ -2247,11 +2247,11 @@ bool CBoard::doMove(const Move& m)
         m_halfMoves = 0;
         unsigned int epsq = to + (m_stm == White ? -8 : 8);  // annoying move, the capture is not on the 'to' square
         m_piece[epsq] = Empty;
-        m_pawns ^= SetBit(epsq);
-        m_occupied_co[sntm] ^= SetBit(epsq);
-        m_occupied_l90 ^= SetBitL90(to) ^ SetBitL90(epsq);
-        m_occupied_l45 ^= SetBitL45(to) ^ SetBitL45(epsq);
-        m_occupied_r45 ^= SetBitR45(to) ^ SetBitR45(epsq);
+        //m_pawns ^= SetBit(epsq);
+        //m_occupied_co[sntm] ^= SetBit(epsq);
+        //m_occupied_l90 ^= SetBitL90(to) ^ SetBitL90(epsq);
+        //m_occupied_l45 ^= SetBitL45(to) ^ SetBitL45(epsq);
+        //m_occupied_r45 ^= SetBitR45(to) ^ SetBitR45(epsq);
         break;
     }  // ...no I did not forget the king :)
 
@@ -2264,9 +2264,9 @@ bool CBoard::doMove(const Move& m)
         if (bb_from != bb_to)
         {
             m_occupied_co[m_stm] ^= bb_from ^ bb_to;
-            m_occupied_l90 ^= SetBitL90(from);
-            m_occupied_l45 ^= SetBitL45(from);
-            m_occupied_r45 ^= SetBitR45(from);
+            //m_occupied_l90 ^= SetBitL90(from);
+            //m_occupied_l45 ^= SetBitL45(from);
+            //m_occupied_r45 ^= SetBitR45(from);
         }
         m_occupied = m_occupied_co[White] + m_occupied_co[Black];
     }
@@ -2286,8 +2286,8 @@ void CBoard::undoMove(const Move& m)
     Square from = m.from();
     Square to = m.to();
     unsigned int sntm = m_stm ^ 1; // side not to move
-    quint64 bb_from = SetBit(from);
-    quint64 bb_to = SetBit(to);
+	quint64 bb_from = 0; // SetBit(from);
+	quint64 bb_to = 0; // SetBit(to);
     Square rook_from = InvalidSquare, rook_to = InvalidSquare;
 
     bool cleanupFrom = true;
@@ -2300,21 +2300,21 @@ void CBoard::undoMove(const Move& m)
         m_pawns ^= bb_from ^ bb_to;
         m_piece[from] = Pawn;
         break;
-    case Knight:
+    case Shi:
         m_knights ^= bb_from ^ bb_to;
-        m_piece[from] = Knight;
+        m_piece[from] = Shi;
         break;
-    case Bishop:
+    case Pao:
         m_bishops ^= bb_from ^ bb_to;
-        m_piece[from] = Bishop;
+        m_piece[from] = Pao;
         break;
-    case Rook:
+    case Ma:
         m_rooks ^= bb_from ^ bb_to;
-        m_piece[from] = Rook;
+        m_piece[from] = Ma;
         break;
-    case Queen:
+    case Che:
         m_queens ^= bb_from ^ bb_to;
-        m_piece[from] = Queen;
+        m_piece[from] = Che;
         break;
     case King:
         m_kings ^= bb_from ^ bb_to;
@@ -2422,9 +2422,9 @@ void CBoard::undoMove(const Move& m)
     case Empty:
         if (to != from)
         {
-            m_occupied_l90 ^= SetBitL90(to);     // extra cleanup needed for non-captures
-            m_occupied_l45 ^= SetBitL45(to);
-            m_occupied_r45 ^= SetBitR45(to);
+            //m_occupied_l90 ^= SetBitL90(to);     // extra cleanup needed for non-captures
+            //m_occupied_l45 ^= SetBitL45(to);
+            //m_occupied_r45 ^= SetBitR45(to);
         }
         break;
     case Pawn:
@@ -2433,22 +2433,22 @@ void CBoard::undoMove(const Move& m)
         m_pawns ^= bb_to;
         m_occupied_co[m_stm] ^= bb_to;
         break;
-    case Knight:
+    case Shi:
         ++m_pieceCount[m_stm];
         m_knights ^= bb_to;
         m_occupied_co[m_stm] ^= bb_to;
         break;
-    case Bishop:
+    case Pao:
         ++m_pieceCount[m_stm];
         m_bishops ^= bb_to;
         m_occupied_co[m_stm] ^= bb_to;
         break;
-    case Rook:
+    case Ma:
         ++m_pieceCount[m_stm];
         m_rooks ^= bb_to;
         m_occupied_co[m_stm] ^= bb_to;
         break;
-    case Queen:
+    case Che:
         ++m_pieceCount[m_stm];
         m_queens ^= bb_to;
         m_occupied_co[m_stm] ^= bb_to;
@@ -2459,11 +2459,11 @@ void CBoard::undoMove(const Move& m)
         replace = Empty;
         unsigned int epsq = to + (sntm == White ? -8 : 8);  // annoying move, the capture is not on the 'to' square
         m_piece[epsq] = Pawn;
-        m_pawns ^= SetBit(epsq);
-        m_occupied_co[m_stm] ^= SetBit(epsq);
-        m_occupied_l90 ^= SetBitL90(to) ^ SetBitL90(epsq);
-        m_occupied_l45 ^= SetBitL45(to) ^ SetBitL45(epsq);
-        m_occupied_r45 ^= SetBitR45(to) ^ SetBitR45(epsq);
+        //m_pawns ^= SetBit(epsq);
+        //m_occupied_co[m_stm] ^= SetBit(epsq);
+        //m_occupied_l90 ^= SetBitL90(to) ^ SetBitL90(epsq);
+        //m_occupied_l45 ^= SetBitL45(to) ^ SetBitL45(epsq);
+        //m_occupied_r45 ^= SetBitR45(to) ^ SetBitR45(epsq);
         break;
     }  // ...no I did not forget the king :)
 
@@ -2476,9 +2476,9 @@ void CBoard::undoMove(const Move& m)
         if (bb_from != bb_to)
         {
             m_occupied_co[sntm] ^= bb_from ^ bb_to;
-            m_occupied_l90 ^= SetBitL90(from);
-            m_occupied_l45 ^= SetBitL45(from);
-            m_occupied_r45 ^= SetBitR45(from);
+            //m_occupied_l90 ^= SetBitL90(from);
+            //m_occupied_l45 ^= SetBitL45(from);
+            //m_occupied_r45 ^= SetBitR45(from);
         }
         m_occupied = m_occupied_co[White] + m_occupied_co[Black];
     }
@@ -2571,11 +2571,11 @@ void CBoard::undoMove(const Move& m)
 
 quint64 CBoard::pawnMovesFrom(const Square s) const
 {
-    quint64 targets = bb_PawnF1[m_stm][s] & ~m_occupied;
-    if(targets)
-    {
-        targets |= bb_PawnF2[m_stm][s] & ~m_occupied;
-    }
+    //quint64 targets = bb_PawnF1[m_stm][s] & ~m_occupied;
+    //if(targets)
+    //{
+    //    targets |= bb_PawnF2[m_stm][s] & ~m_occupied;
+    //}
     //if(m_epSquare == NoEPSquare)
     //{
     //    targets |= bb_PawnAttacks[m_stm][s] & m_occupied_co[m_stm ^ 1];
@@ -2584,7 +2584,8 @@ quint64 CBoard::pawnMovesFrom(const Square s) const
     //{
     //    targets |= bb_PawnAttacks[m_stm][s] & (m_occupied_co[m_stm ^ 1] | SetBit(m_epSquare));
     //}
-    return targets;
+    //return targets;
+	return quint64();
 }
 
 Move CBoard::prepareMove(const Square& from, const Square& to) const
@@ -2594,8 +2595,8 @@ Move CBoard::prepareMove(const Square& from, const Square& to) const
         return Move();
     }
 
-    quint64 src = SetBit(from);
-    quint64 dest = SetBit(to);
+	quint64 src = 0; // SetBit(from);
+	quint64 dest = 0; // SetBit(to);
     Move move(from, to);
 
     unsigned char p = m_piece[from];
@@ -2615,7 +2616,7 @@ Move CBoard::prepareMove(const Square& from, const Square& to) const
         // If the destination square is a piece of the moving color
         if(m_occupied_co[m_stm] & dest)
         {
-            if ((p!=King) || (m_piece[to] != Rook))
+            if ((p!=King) || (m_piece[to] != Ma))
             {
                 // Can't be castling move
                 return move;
@@ -2663,19 +2664,19 @@ Move CBoard::prepareMove(const Square& from, const Square& to) const
         else
         {
             quint64 reach = 0;
-            if(p == Queen)
+            if(p == Che)
             {
                 reach = queenAttacksFrom(to);
             }
-            else if(p == Rook)
+            else if(p == Ma)
             {
                 reach = rookAttacksFrom(to);
             }
-            else if(p == Bishop)
+            else if(p == Pao)
             {
                 reach = bishopAttacksFrom(to);
             }
-            else if(p == Knight)
+            else if(p == Shi)
             {
                 reach = knightAttacksFrom(to);
             }
@@ -2900,7 +2901,7 @@ Square CBoard::kingSquare(Color color) const
 Color CBoard::colorAt(Square s) const
 {
     Q_ASSERT(s < 64);
-    quint64 bit = SetBit(s);
+	quint64 bit = 0; // SetBit(s);
     if(m_occupied & bit)
     {
         if(m_occupied_co[White] & bit)
@@ -2918,7 +2919,7 @@ Color CBoard::colorAt(Square s) const
 Piece CBoard::pieceAt(Square s) const
 {
     Q_ASSERT(s < 64);
-    quint64 bit = SetBit(s);
+	quint64 bit = 0; // SetBit(s);
     if(m_occupied & bit)
     {
         if(m_occupied_co[White] & bit)
@@ -3127,198 +3128,198 @@ QString CBoard::toHumanFen() const
 /** Calculate global bit board values before starting */
 void bitBoardInit()
 {
-    bitBoardInitRun = true;
-    int i, q;
-    quint64 mask;
+    //bitBoardInitRun = true;
+    //int i, q;
+    //quint64 mask;
 
-    // Square masks
-    mask = 1;
-    for(i = 0; i < 64; ++i)
-    {
-        bb_Mask[i] = mask << i;
-    }
-    for(i = 0; i < 64; ++i)
-    {
-        bb_MaskL90[i] = SetBit(RotateL90[i]);
-        bb_MaskL45[i] = SetBit(RotateL45[i]);
-        bb_MaskR45[i] = SetBit(RotateR45[i]);
-    }
+    //// Square masks
+    //mask = 1;
+    //for(i = 0; i < 64; ++i)
+    //{
+    //    bb_Mask[i] = mask << i;
+    //}
+    //for(i = 0; i < 64; ++i)
+    //{
+    //    bb_MaskL90[i] = SetBit(RotateL90[i]);
+    //    bb_MaskL45[i] = SetBit(RotateL45[i]);
+    //    bb_MaskR45[i] = SetBit(RotateR45[i]);
+    //}
 
-    // Pawn moves and attacks
-    for(i = 0; i < 64; ++i)
-    {
-        mask = SetBit(i);
-        bb_PawnAttacks[White][i]  = ShiftUpLeft(mask);
-        bb_PawnAttacks[White][i] |= ShiftUpRight(mask);
+    //// Pawn moves and attacks
+    //for(i = 0; i < 64; ++i)
+    //{
+    //    mask = SetBit(i);
+    //    bb_PawnAttacks[White][i]  = ShiftUpLeft(mask);
+    //    bb_PawnAttacks[White][i] |= ShiftUpRight(mask);
 
-        bb_PawnAttacks[Black][i]  = ShiftDownLeft(mask);
-        bb_PawnAttacks[Black][i] |= ShiftDownRight(mask);
+    //    bb_PawnAttacks[Black][i]  = ShiftDownLeft(mask);
+    //    bb_PawnAttacks[Black][i] |= ShiftDownRight(mask);
 
-        bb_PawnF1[White][i]  = ShiftUp(mask);
-        bb_PawnF2[White][i]  = Shift2Up(mask) & rank4;
+    //    bb_PawnF1[White][i]  = ShiftUp(mask);
+    //    bb_PawnF2[White][i]  = Shift2Up(mask) & rank4;
 
-        bb_PawnF1[Black][i]  = ShiftDown(mask);
-        bb_PawnF2[Black][i]  = Shift2Down(mask) & rank5;
+    //    bb_PawnF1[Black][i]  = ShiftDown(mask);
+    //    bb_PawnF2[Black][i]  = Shift2Down(mask) & rank5;
 
-        bb_PawnALL[White][i] = bb_PawnAttacks[White][i] |
-                               bb_PawnF1[White][i] |
-                               bb_PawnF2[White][i];
+    //    bb_PawnALL[White][i] = bb_PawnAttacks[White][i] |
+    //                           bb_PawnF1[White][i] |
+    //                           bb_PawnF2[White][i];
 
-        bb_PawnALL[Black][i] = bb_PawnAttacks[Black][i] |
-                               bb_PawnF1[Black][i] |
-                               bb_PawnF2[Black][i];
-    }
+    //    bb_PawnALL[Black][i] = bb_PawnAttacks[Black][i] |
+    //                           bb_PawnF1[Black][i] |
+    //                           bb_PawnF2[Black][i];
+    //}
 
-    // Knight attacks
-    for(i = 0; i < 64; ++i)
-    {
-        mask = SetBit(i);
-        bb_KnightAttacks[i]  = ShiftLeft(Shift2Up(mask));
-        bb_KnightAttacks[i] |= ShiftRight(Shift2Up(mask));
-        bb_KnightAttacks[i] |= ShiftLeft(Shift2Down(mask));
-        bb_KnightAttacks[i] |= ShiftRight(Shift2Down(mask));
-        bb_KnightAttacks[i] |= Shift2Left(ShiftUp(mask));
-        bb_KnightAttacks[i] |= Shift2Right(ShiftUp(mask));
-        bb_KnightAttacks[i] |= Shift2Left(ShiftDown(mask));
-        bb_KnightAttacks[i] |= Shift2Right(ShiftDown(mask));
-    }
+    //// Knight attacks
+    //for(i = 0; i < 64; ++i)
+    //{
+    //    mask = SetBit(i);
+    //    bb_KnightAttacks[i]  = ShiftLeft(Shift2Up(mask));
+    //    bb_KnightAttacks[i] |= ShiftRight(Shift2Up(mask));
+    //    bb_KnightAttacks[i] |= ShiftLeft(Shift2Down(mask));
+    //    bb_KnightAttacks[i] |= ShiftRight(Shift2Down(mask));
+    //    bb_KnightAttacks[i] |= Shift2Left(ShiftUp(mask));
+    //    bb_KnightAttacks[i] |= Shift2Right(ShiftUp(mask));
+    //    bb_KnightAttacks[i] |= Shift2Left(ShiftDown(mask));
+    //    bb_KnightAttacks[i] |= Shift2Right(ShiftDown(mask));
+    //}
 
-    // Diagonal attacks
-    for(int s = 0; s < 64; ++s)
-    {
-        for(int b = 0; b < 64; ++b)
-        {
-            mask = 0;
-            q = s;
-            while(File(q) > 0 && Rank(q) < 7)
-            {
-                q += 7;
-                mask |= SetBit(q);
-                if(b & (SetBit(RotateL45[q]) >> bb_ShiftL45[s]))
-                {
-                    break;
-                }
-            }
-            q = s;
-            while(File(q) < 7 && Rank(q) > 0)
-            {
-                q -= 7;
-                mask |= SetBit(q);
-                if(b & (SetBit(RotateL45[q]) >> bb_ShiftL45[s]))
-                {
-                    break;
-                }
-            }
-            bb_L45Attacks[s][b] = mask;
+    //// Diagonal attacks
+    //for(int s = 0; s < 64; ++s)
+    //{
+    //    for(int b = 0; b < 64; ++b)
+    //    {
+    //        mask = 0;
+    //        q = s;
+    //        while(File(q) > 0 && Rank(q) < 7)
+    //        {
+    //            q += 7;
+    //            mask |= SetBit(q);
+    //            if(b & (SetBit(RotateL45[q]) >> bb_ShiftL45[s]))
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        q = s;
+    //        while(File(q) < 7 && Rank(q) > 0)
+    //        {
+    //            q -= 7;
+    //            mask |= SetBit(q);
+    //            if(b & (SetBit(RotateL45[q]) >> bb_ShiftL45[s]))
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        bb_L45Attacks[s][b] = mask;
 
-            mask = 0;
-            q = s;
-            while(File(q) < 7 && Rank(q) < 7)
-            {
-                q += 9;
-                mask |= SetBit(q);
-                if(b & (SetBit(RotateR45[q]) >> bb_ShiftR45[s]))
-                {
-                    break;
-                }
-            }
-            q = s;
-            while(File(q) > 0 && Rank(q) > 0)
-            {
-                q -= 9;
-                mask |= SetBit(q);
-                if(b & (SetBit(RotateR45[q]) >> bb_ShiftR45[s]))
-                {
-                    break;
-                }
-            }
-            bb_R45Attacks[s][b] = mask;
-        }
-    }
+    //        mask = 0;
+    //        q = s;
+    //        while(File(q) < 7 && Rank(q) < 7)
+    //        {
+    //            q += 9;
+    //            mask |= SetBit(q);
+    //            if(b & (SetBit(RotateR45[q]) >> bb_ShiftR45[s]))
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        q = s;
+    //        while(File(q) > 0 && Rank(q) > 0)
+    //        {
+    //            q -= 9;
+    //            mask |= SetBit(q);
+    //            if(b & (SetBit(RotateR45[q]) >> bb_ShiftR45[s]))
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        bb_R45Attacks[s][b] = mask;
+    //    }
+    //}
 
-    // Rank and File attacks
-    memset(bb_RankAttacks, 0, sizeof(bb_RankAttacks));
-    memset(bb_FileAttacks, 0, sizeof(bb_FileAttacks));
-    int file, rank;
-    for(int sq = 0; sq < 64; ++sq)
-    {
-        for(int bitrow = 0; bitrow < 64; ++bitrow)
-        {
-            file = File(sq);
-            q = sq + 1;
-            while(++file < 8)
-            {
-                bb_RankAttacks[sq][bitrow] |= SetBit(q);
-                if((1 << file) & (bitrow << 1))
-                {
-                    break;
-                }
-                ++q;
-            }
-            file = File(sq);
-            q = sq - 1;
-            while(--file >= 0)
-            {
-                bb_RankAttacks[sq][bitrow] |= SetBit(q);
-                if((1 << file) & (bitrow << 1))
-                {
-                    break;
-                }
-                --q;
-            }
-            rank = Rank(sq);
-            q = sq + 8;
-            while(++rank < 8)
-            {
-                bb_FileAttacks[sq][bitrow] |= SetBit(q);
-                if((1 << (7 - rank)) & (bitrow << 1))
-                {
-                    break;
-                }
-                q += 8;
-            }
-            rank = Rank(sq);
-            q = sq - 8;
-            while(--rank >= 0)
-            {
-                bb_FileAttacks[sq][bitrow] |= SetBit(q);
-                if((1 << (7 - rank)) & (bitrow << 1))
-                {
-                    break;
-                }
-                q -= 8;
-            }
-        }
-    }
+    //// Rank and File attacks
+    //memset(bb_RankAttacks, 0, sizeof(bb_RankAttacks));
+    //memset(bb_FileAttacks, 0, sizeof(bb_FileAttacks));
+    //int file, rank;
+    //for(int sq = 0; sq < 64; ++sq)
+    //{
+    //    for(int bitrow = 0; bitrow < 64; ++bitrow)
+    //    {
+    //        file = File(sq);
+    //        q = sq + 1;
+    //        while(++file < 8)
+    //        {
+    //            bb_RankAttacks[sq][bitrow] |= SetBit(q);
+    //            if((1 << file) & (bitrow << 1))
+    //            {
+    //                break;
+    //            }
+    //            ++q;
+    //        }
+    //        file = File(sq);
+    //        q = sq - 1;
+    //        while(--file >= 0)
+    //        {
+    //            bb_RankAttacks[sq][bitrow] |= SetBit(q);
+    //            if((1 << file) & (bitrow << 1))
+    //            {
+    //                break;
+    //            }
+    //            --q;
+    //        }
+    //        rank = Rank(sq);
+    //        q = sq + 8;
+    //        while(++rank < 8)
+    //        {
+    //            bb_FileAttacks[sq][bitrow] |= SetBit(q);
+    //            if((1 << (7 - rank)) & (bitrow << 1))
+    //            {
+    //                break;
+    //            }
+    //            q += 8;
+    //        }
+    //        rank = Rank(sq);
+    //        q = sq - 8;
+    //        while(--rank >= 0)
+    //        {
+    //            bb_FileAttacks[sq][bitrow] |= SetBit(q);
+    //            if((1 << (7 - rank)) & (bitrow << 1))
+    //            {
+    //                break;
+    //            }
+    //            q -= 8;
+    //        }
+    //    }
+    //}
 
-    // King:
-    for(i = 0; i < 64; ++i)
-    {
-        mask = SetBit(i);
-        bb_KingAttacks[i]  = ShiftLeft(mask);
-        bb_KingAttacks[i] |= ShiftRight(mask);
-        bb_KingAttacks[i] |= ShiftUp(mask);
-        bb_KingAttacks[i] |= ShiftDown(mask);
-        bb_KingAttacks[i] |= ShiftUpLeft(mask);
-        bb_KingAttacks[i] |= ShiftUpRight(mask);
-        bb_KingAttacks[i] |= ShiftDownLeft(mask);
-        bb_KingAttacks[i] |= ShiftDownRight(mask);
-    }
+    //// King:
+    //for(i = 0; i < 64; ++i)
+    //{
+    //    mask = SetBit(i);
+    //    bb_KingAttacks[i]  = ShiftLeft(mask);
+    //    bb_KingAttacks[i] |= ShiftRight(mask);
+    //    bb_KingAttacks[i] |= ShiftUp(mask);
+    //    bb_KingAttacks[i] |= ShiftDown(mask);
+    //    bb_KingAttacks[i] |= ShiftUpLeft(mask);
+    //    bb_KingAttacks[i] |= ShiftUpRight(mask);
+    //    bb_KingAttacks[i] |= ShiftDownLeft(mask);
+    //    bb_KingAttacks[i] |= ShiftDownRight(mask);
+    //}
 
-    // File and rank masks
-    quint64 rseed = 0xFF00000000000000ULL;
-    quint64 fseed = 0x8080808080808080ULL;
-    for(i = 7; i >= 0; --i)
-    {
-        bb_rankMask[i] = rseed;
-        rseed >>= 8;
-        bb_fileMask[i] = fseed;
-        fseed >>= 1;
-    }
+    //// File and rank masks
+    //quint64 rseed = 0xFF00000000000000ULL;
+    //quint64 fseed = 0x8080808080808080ULL;
+    //for(i = 7; i >= 0; --i)
+    //{
+    //    bb_rankMask[i] = rseed;
+    //    rseed >>= 8;
+    //    bb_fileMask[i] = fseed;
+    //    fseed >>= 1;
+    //}
 
-    // Pawn promotion ranks
-    bb_PromotionRank[White] = bb_rankMask[7];
-    bb_PromotionRank[Black] = bb_rankMask[0];
+    //// Pawn promotion ranks
+    //bb_PromotionRank[White] = bb_rankMask[7];
+    //bb_PromotionRank[Black] = bb_rankMask[0];
 
     // Now that global data has been calculated, we can create a start position
     standardPosition.fromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
@@ -3342,7 +3343,7 @@ QString CBoard::moveToFullSan(const Move &move, bool translate) const
 //dashes: empty space
 bool CBoard::from64Char(const QString& qcharboard)
 {
-    QStringList l = qcharboard.split(' ');
+  /*  QStringList l = qcharboard.split(' ');
     if (l.size() < 30) return false;
     int n = 7;
     for (int i=C64_ROW8; i<=C64_ROW1; ++i,--n)
@@ -3370,16 +3371,16 @@ bool CBoard::from64Char(const QString& qcharboard)
             default: removeAt(sq); break;
             }
         }
-    }
+    }*/
 
-    if (l[C64_COLOR_TO_MOVE]=="W")
-    {
-        setToMove(White);
-    }
-    else if (l[C64_COLOR_TO_MOVE]=="B")
-    {
-        setToMove(Black);
-    }
+    //if (l[C64_COLOR_TO_MOVE]=="W")
+    //{
+    //    setToMove(White);
+    //}
+    //else if (l[C64_COLOR_TO_MOVE]=="B")
+    //{
+    //    setToMove(Black);
+    //}
 
     //int ep = l[C64_COL_DOUBLE_PAWN_PUSH].toInt();
     //setEnPassantFile(ep);
@@ -3391,7 +3392,7 @@ bool CBoard::from64Char(const QString& qcharboard)
 
     //setCastlingRooks();
 
-    setMoveNumber(l[C64_NEXT_MOVE_NUMBER].toInt());
+    //setMoveNumber(l[C64_NEXT_MOVE_NUMBER].toInt());
 
     return true;
 }
@@ -3399,11 +3400,11 @@ bool CBoard::from64Char(const QString& qcharboard)
 int CBoard::numAttackedBy(const unsigned int color, Square square) const
 {
     int num = 0;
-    num += countSetBits(bb_PawnAttacks[color ^ 1][square] & m_pawns & m_occupied_co[color]);
-    num += countSetBits(knightAttacksFrom(square) & m_knights & m_occupied_co[color]);
-    num += countSetBits(bishopAttacksFrom(square) & (m_bishops | m_queens) & m_occupied_co[color]);
-    num += countSetBits(rookAttacksFrom(square) & (m_rooks | m_queens) & m_occupied_co[color]);
-    num += countSetBits(kingAttacksFrom(square) & m_kings & m_occupied_co[color]);
+    //num += countSetBits(bb_PawnAttacks[color ^ 1][square] & m_pawns & m_occupied_co[color]);
+    //num += countSetBits(knightAttacksFrom(square) & m_knights & m_occupied_co[color]);
+    //num += countSetBits(bishopAttacksFrom(square) & (m_bishops | m_queens) & m_occupied_co[color]);
+    //num += countSetBits(rookAttacksFrom(square) & (m_rooks | m_queens) & m_occupied_co[color]);
+    //num += countSetBits(kingAttacksFrom(square) & m_kings & m_occupied_co[color]);
     return num;
 };
 
@@ -3437,6 +3438,1710 @@ bool CBoard::positionIsSame(const CBoard &target) const
 void CBoard::swapToMove()
 {
     m_stm ^= 1;
+}
+
+void initFileRankconst(void) {
+
+	//static const uint64 XMM_ALIGN init_sbitmask[] = {
+	//	0x0000000000000000, 0x0000000000000000,
+	//	0xffffffffffffffff, 0xffffffffffffffff,
+	//	0x00000000000001ff, 0x0000000000000000,
+	//	0x000000000003fe00, 0x0000000000000000,
+	//	0x0000000007fc0000, 0x0000000000000000,
+	//	0x0000000ff8000000, 0x0000000000000000,
+	//	0x00001ff000000000, 0x0000000000000000,
+	//	0x003fe00000000000, 0x0000000000000000,
+	//	0x7fc0000000000000, 0x0000000000000000,
+	//	0x8000000000000000, 0x00000000000000ff,
+	//	0x0000000000000000, 0x000000000001ff00,
+	//	0x0000000000000000, 0x0000000003fe0000,
+	//	0x8040201008040201, 0x0000000000020100,
+	//	0x0080402010080402, 0x0000000000040201,
+	//	0x0100804020100804, 0x0000000000080402,
+	//	0x0201008040201008, 0x0000000000100804,
+	//	0x0402010080402010, 0x0000000000201008,
+	//	0x0804020100804020, 0x0000000000402010,
+	//	0x1008040201008040, 0x0000000000804020,
+	//	0x2010080402010080, 0x0000000001008040,
+	//	0x4020100804020100, 0x0000000002010080,
+	//	0x00001fffffffffff, 0x0000000000000000,
+	//	0xffffe00000000000, 0x0000000003ffffff,
+	//};
+	//EmptyBoardBB = _mm_set_epi64x(0,0);
+	//FullBoardBB  = _mm_load_si128((__m128i*)init_sbitmask[2]);
+	//Rank0BB      = _mm_load_si128((__m128i*)init_sbitmask[4]);	
+	//Rank1BB      = _mm_load_si128((__m128i*)init_sbitmask[6]);	
+	//Rank2BB      = _mm_load_si128((__m128i*)init_sbitmask[8]);	
+	//Rank3BB      = _mm_load_si128((__m128i*)init_sbitmask[10]);	
+	//Rank4BB      = _mm_load_si128((__m128i*)init_sbitmask[12]);		
+	//Rank5BB      = _mm_load_si128((__m128i*)init_sbitmask[14]);		
+	//Rank6BB      = _mm_load_si128((__m128i*)init_sbitmask[16]);	
+	//Rank7BB      = _mm_load_si128((__m128i*)init_sbitmask[18]);	
+	//Rank8BB      = _mm_load_si128((__m128i*)init_sbitmask[20]);		
+	//Rank9BB      = _mm_load_si128((__m128i*)init_sbitmask[22]);		
+	//File0BB      = _mm_load_si128((__m128i*)init_sbitmask[24]);		
+	//File1BB      = _mm_load_si128((__m128i*)init_sbitmask[26]);		
+	//File2BB      = _mm_load_si128((__m128i*)init_sbitmask[28]);		
+	//File3BB      = _mm_load_si128((__m128i*)init_sbitmask[30]);		
+	//File4BB      = _mm_load_si128((__m128i*)init_sbitmask[32]);	
+	//File5BB      = _mm_load_si128((__m128i*)init_sbitmask[34]);	
+	//File6BB      = _mm_load_si128((__m128i*)init_sbitmask[36]);	
+	//File7BB      = _mm_load_si128((__m128i*)init_sbitmask[38]);	
+	//File8BB      = _mm_load_si128((__m128i*)init_sbitmask[40]);	
+	//RpawnOverBB  = _mm_load_si128((__m128i*)init_sbitmask[42]);
+	//BpawnOverBB	 = _mm_load_si128((__m128i*)init_sbitmask[44]);
+
+ //   m128_from_2u64(EmptyBoardBB,0x0000000000000000, 0x0000000000000000);
+ //   m128_from_2u64(FullBoardBB, 0xffffffffffffffff, 0xffffffffffffffff);
+	//m128_from_2u64(Rank0BB,		0x00000000000001ff, 0x0000000000000000);
+	//m128_from_2u64(Rank1BB,		0x000000000003fe00, 0x0000000000000000);
+	//m128_from_2u64(Rank2BB,		0x0000000007fc0000, 0x0000000000000000);
+	//m128_from_2u64(Rank3BB,		0x0000000ff8000000, 0x0000000000000000);
+	//m128_from_2u64(Rank4BB,		0x00001ff000000000, 0x0000000000000000);
+	//m128_from_2u64(Rank5BB,		0x003fe00000000000, 0x0000000000000000);
+	//m128_from_2u64(Rank6BB,		0x7fc0000000000000, 0x0000000000000000);
+	//m128_from_2u64(Rank7BB,		0x8000000000000000, 0x00000000000000ff);
+	//m128_from_2u64(Rank8BB,		0x0000000000000000, 0x000000000001ff00);
+	//m128_from_2u64(Rank9BB,		0x0000000000000000, 0x0000000003fe0000);				 
+	//m128_from_2u64(File0BB,		0x8040201008040201, 0x0000000000020100);
+	//m128_from_2u64(File1BB,		0x0080402010080402, 0x0000000000040201);
+	//m128_from_2u64(File2BB,		0x0100804020100804, 0x0000000000080402);
+	//m128_from_2u64(File3BB,		0x0201008040201008, 0x0000000000100804);
+	//m128_from_2u64(File4BB,		0x0402010080402010, 0x0000000000201008);
+	//m128_from_2u64(File5BB,		0x0804020100804020, 0x0000000000402010);
+	//m128_from_2u64(File6BB,		0x1008040201008040, 0x0000000000804020);
+	//m128_from_2u64(File7BB,		0x2010080402010080, 0x0000000001008040);
+	//m128_from_2u64(File8BB,		0x4020100804020100, 0x0000000002010080);
+	//m128_from_2u64(RpawnOverBB, 0x00001fffffffffff, 0x0000000000000000);  //过河的红兵
+	//m128_from_2u64(BpawnOverBB, 0xffffe00000000000, 0x0000000003ffffff);  //过河的黑兵
+}
+
+
+
+//=================================================  By LGL
+Bitboard ShiAttackBB[90];                   // 双方的仕攻击到 90 的位棋盘
+
+
+Bitboard Attack_By_Rpawn_Rking[90];         // 所有可攻击到棋格的红兵, 红将 //兵是单向的
+Bitboard Attack_By_Bpawn_Bking[90];         // 所有可攻击到棋格的黑卒, 黑将
+
+
+Bitboard Ma_to_King_Mask[90];             //从马的位置,来吃将, 是算一下别脚
+Bitboard Ma_to_King_Attacks[NUM_MA_TO_KING_ATT];
+int      Ma_to_King_AttackIndex[90];
+
+Bitboard King_to_Ma_Mask[90];             //从将的位置,被马吃, 是算一下反别脚
+Bitboard King_to_Ma_Attacks[NUM_MA_TO_KING_ATT];
+int      King_to_Ma_AttackIndex[90];
+
+
+Bitboard XiangMask[90];               // 相,主要是用来算一下象眼,
+int      XiangAttackIndex[90];
+Bitboard XiangAttacks[NUM_XIANG_ATT];
+
+Bitboard SetMaskBB[90];
+Bitboard ClearMaskBB[90];
+
+
+Bitboard Che_Mask_FR[90];            // 车用来计算棋步的少最后一位,不包括自己
+Bitboard Che_Mask_F[90];             // 车FILE MASK, 不包括自己
+Bitboard Che_Mask_R[90];             // 车RANK MASK, 不包括自己
+
+Bitboard ChePseudoMask_FR[90];       //车可攻击的位,包括最后一位
+Bitboard Ma_Pseudo_Att[90];          // 马可能走到的所有位置
+
+Bitboard MaKingAttackZone[90];         // 棋子可攻击将的能力.
+Bitboard MaPosAttackKing[90];
+
+
+Bitboard Ma_good_mask[2];              // 白马不太好走的步子
+
+Bitboard CheAttacks_R[NUM_CHE_ATT_R];
+int      CheAttackIndex_R[90];
+
+Bitboard CheAttacks_F[NUM_CHE_ATT_F];
+int      CheAttackIndex_F[90];
+
+Bitboard Pao_Eat_Attacks_R[NUM_PAO_EAT_ATT_R];
+int      Pao_Eat_AttackIndex_R[90];
+
+Bitboard Pao_Eat_Attacks_F[NUM_PAO_EAT_ATT_F];
+int      Pao_Eat_AttackIndex_F[90];
+
+Bitboard PaoSUPER_R[NUM_PAO_SUPER_ATT_R];
+int      PaoSUPERIndex_R[90];
+
+Bitboard PaoSUPER_F[NUM_PAO_SUPER_ATT_F];
+int      PaoSUPERIndex_F[90];
+
+Bitboard FileBB_A[9];
+Bitboard RankBB_A[10];
+
+Bitboard LowBB[10];      //棋子下面的位棋盘
+Bitboard UpBB[10];       //棋子上面的位棋盘
+
+Bitboard LeftBB[9];      //棋子左边的位棋盘
+Bitboard RightBB[9];     //棋子右边的位棋盘
+
+Bitboard BetweenBB[90][90];          // 二个在同一线上的棋子之间的位棋盘．不包括自己的信息.
+
+Bitboard OneRpawnOrRking_AttackBB[90];      // 红兵,红将,攻击其它的棋格.
+Bitboard OneBpawnOrBking_AttackBB[90];      // 黑兵,黑将
+
+
+void initThisAndNeighboringFilesBB(void) {
+
+	//ThisAndNeighboringFilesBB[0] = m_or(FileBB_A[0],FileBB_A[1]);
+	//ThisAndNeighboringFilesBB[1] = m_or(m_or(FileBB_A[0],FileBB_A[1]),FileBB_A[2]);
+	//ThisAndNeighboringFilesBB[2] = m_or(m_or(FileBB_A[1],FileBB_A[2]),FileBB_A[3]);
+	//ThisAndNeighboringFilesBB[3] = m_or(m_or(FileBB_A[2],FileBB_A[3]),FileBB_A[4]);
+	//ThisAndNeighboringFilesBB[4] = m_or(m_or(FileBB_A[3],FileBB_A[4]),FileBB_A[5]);
+	//ThisAndNeighboringFilesBB[5] = m_or(m_or(FileBB_A[4],FileBB_A[5]),FileBB_A[6]);
+	//ThisAndNeighboringFilesBB[6] = m_or(m_or(FileBB_A[5],FileBB_A[6]),FileBB_A[7]);
+	//ThisAndNeighboringFilesBB[7] = m_or(m_or(FileBB_A[6],FileBB_A[7]),FileBB_A[8]);
+	//ThisAndNeighboringFilesBB[8] = m_or(FileBB_A[7],FileBB_A[8]);
+}
+
+
+void initNeighboringFilesBB() {
+	//NeighboringFilesBB[0] = _mm_load_si128 ((__m128i*) File1BB);
+	//NeighboringFilesBB[1] = m_or(_mm_load_si128 ((__m128i*)File0BB),_mm_load_si128 ((__m128i*)File2BB));
+	//NeighboringFilesBB[2] = m_or(_mm_load_si128 ((__m128i*)File1BB),_mm_load_si128 ((__m128i*)File3BB));
+	//NeighboringFilesBB[3] = m_or(_mm_load_si128 ((__m128i*)File2BB),_mm_load_si128 ((__m128i*)File4BB));
+	//NeighboringFilesBB[4] = m_or(_mm_load_si128 ((__m128i*)File3BB),_mm_load_si128 ((__m128i*)File5BB));
+	//NeighboringFilesBB[5] = m_or(_mm_load_si128 ((__m128i*)File4BB),_mm_load_si128 ((__m128i*)File6BB));
+	//NeighboringFilesBB[6] = m_or(_mm_load_si128 ((__m128i*)File5BB),_mm_load_si128 ((__m128i*)File7BB));
+	//NeighboringFilesBB[7] = m_or(_mm_load_si128 ((__m128i*)File6BB),_mm_load_si128 ((__m128i*)File8BB));
+	//NeighboringFilesBB[8] = _mm_load_si128 ((__m128i*) File7BB);
+};
+
+void initFileBB_A_RankBB_A(void) {
+	//
+	FileBB_A[0] = _mm_load_si128((__m128i*)File0BB);
+	FileBB_A[1] = _mm_load_si128((__m128i*)File1BB);
+	FileBB_A[2] = _mm_load_si128((__m128i*)File2BB);
+	FileBB_A[3] = _mm_load_si128((__m128i*)File3BB);
+	FileBB_A[4] = _mm_load_si128((__m128i*)File4BB);
+	FileBB_A[5] = _mm_load_si128((__m128i*)File5BB);
+	FileBB_A[6] = _mm_load_si128((__m128i*)File6BB);
+	FileBB_A[7] = _mm_load_si128((__m128i*)File7BB);
+	FileBB_A[8] = _mm_load_si128((__m128i*)File8BB);
+
+	//
+	RankBB_A[0] = _mm_load_si128((__m128i*)Rank0BB);
+	RankBB_A[1] = _mm_load_si128((__m128i*)Rank1BB);
+	RankBB_A[2] = _mm_load_si128((__m128i*)Rank2BB);
+	RankBB_A[3] = _mm_load_si128((__m128i*)Rank3BB);
+	RankBB_A[4] = _mm_load_si128((__m128i*)Rank4BB);
+	RankBB_A[5] = _mm_load_si128((__m128i*)Rank5BB);
+	RankBB_A[6] = _mm_load_si128((__m128i*)Rank6BB);
+	RankBB_A[7] = _mm_load_si128((__m128i*)Rank7BB);
+	RankBB_A[8] = _mm_load_si128((__m128i*)Rank8BB);
+	RankBB_A[9] = _mm_load_si128((__m128i*)Rank9BB);
+}
+
+void init_bb_const(void) {
+	initFileRankconst();
+	initFileBB_A_RankBB_A();    //
+	initNeighboringFilesBB();
+	initThisAndNeighboringFilesBB();
+}
+
+void initLeftRightBB(void) {
+
+	int i, j;
+
+	for (i = 0; i < 9; i++) {
+
+		LeftBB[i] = _mm_setzero_si128();
+		RightBB[i] = _mm_setzero_si128();
+
+		for (j = 0; j < i; j++) {
+			LeftBB[i] = m_or(LeftBB[i], FileBB_A[j]);
+		}
+
+		for (j = i + 1; j < 9; j++) {
+			RightBB[i] = m_or(RightBB[i], FileBB_A[j]);
+		}
+	}
+}
+
+void initLowUpBB(void) {
+	int i;
+	int j;
+	for (i = 0; i < 10; i++) {
+
+		UpBB[i] = LowBB[i] = _mm_setzero_si128();
+
+		for (j = 0; j < i; j++) {
+			UpBB[i] = m_or(UpBB[i], RankBB_A[j]);
+		}
+
+		for (j = 0; j < (9 - i); j++) {
+			LowBB[i] = m_or(LowBB[i], RankBB_A[9 - j]);
+		}
+	}
+}
+
+void find_che_pseudo_mask(Bitboard* result, int sq) {
+
+	int r, f;
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*result = _mm_setzero_si128();
+
+	//放上自己
+	set_bit(*result, sq);
+
+	//向上
+	for (r = rk + 1; r <= 9; r++) {
+		set_bit(*result, XYtoS(fl, r));
+	}
+	//向下
+	for (r = rk - 1; r >= 0; r--) {
+		set_bit(*result, XYtoS(fl, r));
+	}
+	//向右
+	for (f = fl + 1; f <= 8; f++) {
+		set_bit(*result, XYtoS(f, rk));
+	}
+	//向左
+	for (f = fl - 1; f >= 0; f--) {
+		set_bit(*result, XYtoS(f, rk));
+	}
+}
+
+/// 同一直线
+void init_BetweenBB(void) { //BetweenBB[90][90];          // 二个在同一线上的棋子之间的位棋盘．
+
+	int i, j, x, y;
+	int ix, iy, jx, jy;
+
+	//BetweenBB[90][90] 
+	for (i = 0; i < 90; i++) {
+		for (j = 0; j < 90; j++) {
+			BetweenBB[i][j] = _mm_setzero_si128();
+
+			ix = StoX(i);
+			iy = StoY(i);
+			jx = StoX(j);
+			jy = StoY(j);
+
+			if (ix == jx) {
+				if (iy < jy) {
+					for (y = iy + 1; y < jy; y++) {
+						set_bit(BetweenBB[i][j], XYtoS(ix, y));
+					}
+				}
+				else {
+					for (y = iy - 1; y > jy; y--) {
+						set_bit(BetweenBB[i][j], XYtoS(ix, y));
+					}
+				}
+			}
+			if (iy == jy) {
+				if (ix < jx) {
+					for (x = ix + 1; x < jx; x++) {
+						set_bit(BetweenBB[i][j], XYtoS(x, iy)); //print_bb(BetweenBB[i][j]);
+					}
+				}
+				else {
+					for (x = ix - 1; x > jx; x--) {
+						set_bit(BetweenBB[i][j], XYtoS(x, iy));
+					}
+				}
+			}
+		}
+	}
+}
+
+// 得到车的攻击位棋盘
+void find_che_mask(Bitboard* result, Bitboard* result_f, Bitboard* result_r, int sq) {
+
+	int r, f;
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*result = *result_f = *result_r = _mm_setzero_si128();
+
+	//向上
+	for (r = rk + 1; r <= 8; r++) {
+		set_bit(*result, XYtoS(fl, r));
+		set_bit(*result_f, XYtoS(fl, r));
+	}
+	//向下
+	for (r = rk - 1; r >= 1; r--) {
+		set_bit(*result, XYtoS(fl, r));
+		set_bit(*result_f, XYtoS(fl, r));
+	}
+	//向右
+	for (f = fl + 1; f <= 7; f++) {
+		set_bit(*result, XYtoS(f, rk));
+		set_bit(*result_r, XYtoS(f, rk));
+	}
+	//向左
+	for (f = fl - 1; f >= 1; f--) {
+		set_bit(*result, XYtoS(f, rk));
+		set_bit(*result_r, XYtoS(f, rk));
+	}
+}
+
+void find_ma_to_king_mask(Bitboard* result, int sq) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+	*result = _mm_setzero_si128();
+
+	if (rk >= 2) { //马可不可以向上
+		set_bit(*result, XYtoS(fl, rk - 1));
+	}
+
+	if (rk <= 7) { //马可不可以向下
+		set_bit(*result, XYtoS(fl, rk + 1));
+	}
+
+	if (fl >= 2) {
+		set_bit(*result, XYtoS(fl - 1, rk));
+	}
+
+	if (fl <= 6) {
+		set_bit(*result, XYtoS(fl + 1, rk));
+	}
+	//还可以再优化一下,把边角的MASK再去了.
+}
+
+// 这个是从King的角度,看有马能不能吃到
+void find_king_to_ma_mask(Bitboard* result, int sq) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*result = _mm_setzero_si128();
+
+	if (rk <= 8 && fl <= 7) set_bit(*result, XYtoS(fl + 1, rk + 1));
+	if (rk <= 8 && fl >= 1) set_bit(*result, XYtoS(fl - 1, rk + 1));
+	if (rk >= 1 && fl <= 7) set_bit(*result, XYtoS(fl + 1, rk - 1));
+	if (rk >= 1 && fl >= 1) set_bit(*result, XYtoS(fl - 1, rk - 1));
+}
+
+void find_xiang_mask(Bitboard* result, int sq) {
+
+	*result = _mm_setzero_si128();
+
+	if (sq == 2) {
+		set_bit(*result, 10);
+		set_bit(*result, 12);
+	}
+	if (sq == 6) {
+		set_bit(*result, 14);
+		set_bit(*result, 16);
+	}
+	if (sq == 18) {
+		set_bit(*result, 10);
+		set_bit(*result, 28);
+	}
+	if (sq == 22) {
+		set_bit(*result, 12);
+		set_bit(*result, 14);
+		set_bit(*result, 30);
+		set_bit(*result, 32);
+	}
+	if (sq == 26) {
+		set_bit(*result, 16);
+		set_bit(*result, 34);
+	}
+	if (sq == 38) {
+		set_bit(*result, 28);
+		set_bit(*result, 30);
+	}
+	if (sq == 42) {
+		set_bit(*result, 32);
+		set_bit(*result, 34);
+	}
+
+	//
+	if (sq == 47) {
+		set_bit(*result, 55);
+		set_bit(*result, 57);
+	}
+
+	if (sq == 51) {
+		set_bit(*result, 59);
+		set_bit(*result, 61);
+	}
+
+	if (sq == 63) {
+		set_bit(*result, 55);
+		set_bit(*result, 73);
+	}
+
+	if (sq == 67) {
+		set_bit(*result, 57);
+		set_bit(*result, 59);
+		set_bit(*result, 75);
+		set_bit(*result, 77);
+	}
+
+	if (sq == 71) {
+		set_bit(*result, 61);
+		set_bit(*result, 79);
+	}
+
+	if (sq == 83) {
+		set_bit(*result, 73);
+		set_bit(*result, 75);
+	}
+
+	if (sq == 87) {
+		set_bit(*result, 77);
+		set_bit(*result, 79);
+	}
+}
+
+// 找到仕的可攻击位棋盘, 仕是双向的,不用分开判断
+void find_stepshi_attack(Bitboard* result, int sq) {
+
+	*result = _mm_setzero_si128();
+
+	if (sq == 3) {
+		set_bit(*result, 13);
+	}
+	if (sq == 5) {
+		set_bit(*result, 13);     //
+	}
+	if (sq == 13) {
+		set_bit(*result, 3);
+		set_bit(*result, 5);
+		set_bit(*result, 21);
+		set_bit(*result, 23);
+	}
+	if (sq == 21) {
+		set_bit(*result, 13);
+	}
+	if (sq == 23) {
+		set_bit(*result, 13);
+	}
+
+	if (sq == 66) {
+		set_bit(*result, 76);
+	}
+	if (sq == 68) {
+		set_bit(*result, 76);
+	}
+	if (sq == 76) {
+		set_bit(*result, 66);
+		set_bit(*result, 68);
+		set_bit(*result, 84);
+		set_bit(*result, 86);
+	}
+	if (sq == 84) {
+		set_bit(*result, 76);
+	}
+	if (sq == 86) {
+		set_bit(*result, 76);
+	}
+}
+
+// 红将红兵攻击其它的子的情况
+void find_step_rking_rpawn_attack(Bitboard* result, int sq) {
+
+	int x = StoX(sq);
+	int y = StoY(sq);
+
+	*result = _mm_setzero_si128();
+
+	//红兵
+	if (y == 6 || y == 5) {  // 红兵还没有过河
+		set_bit(*result, XYtoS(x, y - 1));  //只能向前
+	}
+
+	if (y <= 4) {            // 红兵过河了
+		if (y != 0) {
+			set_bit(*result, XYtoS(x, y - 1));  //向前
+		}
+		if (x != 0) {
+			set_bit(*result, XYtoS(x - 1, y));   //向左
+		}
+		if (x != 8) {
+			set_bit(*result, XYtoS(x + 1, y));   //向右
+		}
+	}
+
+	//红将
+	if (y >= 7) {
+		if (y >= 8) {
+			set_bit(*result, XYtoS(x, y - 1));  //向前
+		}
+		if (y <= 8) {
+			set_bit(*result, XYtoS(x, y + 1));  //向下
+		}
+		if (x >= 4) {
+			set_bit(*result, XYtoS(x - 1, y));  //向左
+		}
+		if (x <= 4) {
+			set_bit(*result, XYtoS(x + 1, y));  //向右
+		}
+	}
+
+}
+
+// 黑将黑兵
+void find_step_bking_bpawn_attack(Bitboard* result, int sq) {
+
+	int x = StoX(sq);
+	int y = StoY(sq);
+
+	*result = _mm_setzero_si128();
+
+	//黑兵
+	if (y == 4 || y == 3) {  // 黑兵还没有过河
+		set_bit(*result, XYtoS(x, y + 1));  //只能向前
+	}
+
+	if (y >= 5) {            // 红兵过河了
+		if (y != 9) {
+			set_bit(*result, XYtoS(x, y + 1));  //向前
+		}
+		if (x != 0) {
+			set_bit(*result, XYtoS(x - 1, y));   //向左
+		}
+		if (x != 8) {
+			set_bit(*result, XYtoS(x + 1, y));   //向右
+		}
+	}
+
+	//黑将
+	if (y <= 2) {
+		if (y >= 1) {
+			set_bit(*result, XYtoS(x, y - 1));  //向前
+		}
+		if (y <= 1) {
+			set_bit(*result, XYtoS(x, y + 1));  //向下
+		}
+		if (x >= 4) {
+			set_bit(*result, XYtoS(x - 1, y));  //向左
+		}
+		if (x <= 4) {
+			set_bit(*result, XYtoS(x + 1, y));  //向右
+		}
+	}
+}
+
+// find_sq_attack_by_pawn(BB_Attack_By_Rpawn[sq],BB_Attack_By_Bpawn[sq],sq);
+void find_sq_attack_by_pawn(Bitboard* byrpawn, Bitboard* bybpawn, int sq) {
+
+	int x = StoX(sq);
+	int y = StoY(sq);
+
+	*byrpawn = *bybpawn = _mm_setzero_si128();
+
+	if (y <= 5) {
+		set_bit(*byrpawn, XYtoS(x, y + 1));
+	}
+	if (y >= 4) {
+		set_bit(*bybpawn, XYtoS(x, y - 1));
+	}
+
+	if (y <= 4) {
+		if (x >= 1) {
+			set_bit(*byrpawn, sq - 1);
+		}
+		if (x <= 7) {
+			set_bit(*byrpawn, sq + 1);
+		}
+	}
+
+	if (y >= 5) {
+		if (x >= 1) {
+			set_bit(*bybpawn, sq - 1);
+		}
+		if (x <= 7) {
+			set_bit(*bybpawn, sq + 1);
+		}
+	}
+
+	if (x >= 3 && x <= 5) {
+		//红将
+		if (y >= 7) {
+			if (y >= 8) {
+				set_bit(*byrpawn, XYtoS(x, y - 1));
+			}
+			if (y <= 8) {
+				set_bit(*byrpawn, XYtoS(x, y + 1));
+			}
+			if (x >= 4) {
+				set_bit(*byrpawn, XYtoS(x - 1, y));
+			}
+			if (x <= 4) {
+				set_bit(*byrpawn, XYtoS(x + 1, y));
+			}
+		}
+
+		//黑将
+		if (y <= 2) {
+			if (y >= 1) {
+				set_bit(*bybpawn, XYtoS(x, y - 1));
+			}
+			if (y <= 1) {
+				set_bit(*bybpawn, XYtoS(x, y + 1));
+			}
+			if (x >= 4) {
+				set_bit(*bybpawn, XYtoS(x - 1, y));
+			}
+			if (x <= 4) {
+				set_bit(*bybpawn, XYtoS(x + 1, y));
+			}
+		}
+	}
+}
+
+void Init_Ma_Pseudo_Good_Mask(Bitboard* all, int sq) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*all = _mm_setzero_si128();
+
+	//马的8个方向,1,上左
+	if (rk >= 2 && fl >= 1) {
+		set_bit(*all, XYtoS(fl - 1, rk - 2));
+
+	}
+	//马的8个方向,1,上右
+	if (rk >= 2 && fl <= 7) {
+		set_bit(*all, XYtoS(fl + 1, rk - 2));
+
+	}
+
+	//马的8个方向,1,右上
+	if (rk >= 1 && fl <= 6) {
+		set_bit(*all, XYtoS(fl + 2, rk - 1));
+	}
+
+	//马的8个方向,1,右下
+	if (rk <= 8 && fl <= 6) {
+		set_bit(*all, XYtoS(fl + 2, rk + 1));
+
+	}
+
+	//马的8个方向,1,下右
+	if (rk <= 7 && fl <= 7) {
+		set_bit(*all, XYtoS(fl + 1, rk + 2));
+
+	}
+
+	//马的8个方向,1,下左
+	if (rk <= 7 && fl >= 1) {
+		set_bit(*all, XYtoS(fl - 1, rk + 2));
+
+	}
+
+	//马的8个方向,1,左下
+	if (rk <= 8 && fl >= 2) {
+		set_bit(*all, XYtoS(fl - 2, rk + 1));
+
+	}
+
+	//马的8个方向,1,左上
+	if (rk >= 1 && fl >= 2) {
+		set_bit(*all, XYtoS(fl - 2, rk - 1));
+
+	}
+}
+
+void index_to_Bitboard(Bitboard* result, int index, int bits, Bitboard mask) {
+	int i, j;
+	*result = _mm_setzero_si128();      //print_bb(mask);
+	for (i = 0; i < bits; i++) {
+		j = pop_1st_bit_sq(mask);   // 这儿有错
+		if (index & (1 << i)) {
+			set_bit(*result, j);
+		}
+	}
+};
+
+void che_att_by_block_r(Bitboard* result, int sq, Bitboard block) {
+
+	//m128_from_2u64(result,0,0);
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+	int f;
+
+	*result = _mm_setzero_si128();
+
+	//向右
+	for (f = fl + 1; f <= 8; f++) {
+		set_bit(*result, XYtoS(f, rk));
+		if (bit_is_set(block, XYtoS(f, rk))) break;
+	}
+	//向左
+	for (f = fl - 1; f >= 0; f--) {
+		set_bit(*result, XYtoS(f, rk));
+		if (bit_is_set(block, XYtoS(f, rk))) break;
+	}
+}
+
+void init_rool_attack_r(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+	int sq, j, k, index = 0;
+	int n;
+	Bitboard att;
+	int tra;
+
+	Bitboard b;
+
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+		m = m_and(RankBB_A[StoY(sq)], mask[sq]);
+		n = (int)count_1s(m);  //得到mask的位数6         
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+			che_att_by_block_r(&att, sq, b);
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_CHE_ATT_R);
+}
+
+void che_att_by_block_f(Bitboard* result, int sq, Bitboard block) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+	int r;
+	*result = _mm_setzero_si128();
+	//向上
+	for (r = rk + 1; r <= 9; r++) {
+		set_bit(*result, XYtoS(fl, r));
+		if (bit_is_set(block, XYtoS(fl, r))) break;
+	}
+	//向下
+	for (r = rk - 1; r >= 0; r--) {
+		set_bit(*result, XYtoS(fl, r));
+		if (bit_is_set(block, XYtoS(fl, r))) break;
+	}
+}
+
+void init_rool_attack_f(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+	int sq, j, k, index = 0;
+	Bitboard b;
+	Bitboard m;  //车要中另外算MASK
+	int n, tra;
+	Bitboard att;
+	//Bitboard occ;
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+		m = m_and(FileBB_A[StoX(sq)], mask[sq]);
+		n = (int)count_1s(m);  //得到mask的位数6
+		j = (1 << shift);
+		//这个没有检测冲突, 要检测一下.
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+			che_att_by_block_f(&att, sq, b);
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+			attacks[index + tra] = att;
+		}
+		index += j;
+	}
+	//ASSERT(index <= NUM_CHE_ATT_F);
+}
+
+void pao_eat_by_block_r(Bitboard* result, int sq, Bitboard block) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	//int pao;
+
+
+
+	int f;
+	//向右
+	int pao = 0;
+
+	*result = _mm_setzero_si128();
+	for (f = fl + 1; f <= 8; f++) {
+
+		if (pao == 1) {
+			set_bit(*result, XYtoS(f, rk)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(f, rk))) {
+			pao++;
+		};
+		if (pao == 2) {
+			//这儿要把前面的几位清除了	
+			//for(int a = f - 1; a > fl; a--){
+			//	clear_bit(result,XYtoS(a,rk));
+			//}			
+			break;
+		}
+	}
+	//向左
+	pao = 0;
+	for (f = fl - 1; f >= 0; f--) {
+		if (pao == 1) {
+			set_bit(*result, XYtoS(f, rk)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(f, rk))) {
+			pao++;
+		};
+		if (pao == 2) {
+			//这儿要把前面的几位清除了	
+			//for(int a = f + 1; a < fl; a++){
+			//	clear_bit(result,XYtoS(a,rk));
+			//}
+			break;
+		}
+	}
+
+	//print_bb(block);
+	//print_bb(result);
+
+}
+void init_paoeat_attack_r(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+	int n;
+	int tra;
+	Bitboard att;
+
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		m = m_and(RankBB_A[StoY(sq)], mask[sq]);
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);  // 1 << 7  = 
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			pao_eat_by_block_r(&att, sq, b);
+
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+
+			attacks[index + tra] = att;
+
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_PAO_EAT_ATT_R);
+}
+
+void pao_eat_by_block_f(Bitboard* result, int sq, Bitboard block) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+	int pao;
+	int r;
+	*result = _mm_setzero_si128();
+
+	//Square rk = StoY(sq);
+	//int fl = StoX(sq);
+
+
+	//向下
+	pao = 0;
+	for (r = rk + 1; r <= 9; r++) {
+
+		if (pao == 1) {
+			set_bit(*result, XYtoS(fl, r)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(fl, r))) {
+			pao++;
+		};
+		if (pao == 2) {
+			//这儿要把前面的几位清除了
+			//for(int a = r - 1; a > rk; a--){
+			//	clear_bit(result,XYtoS(fl,a));
+			//}
+			break;
+		}
+	}
+
+	//向上
+	pao = 0;
+	for (r = rk - 1; r >= 0; r--) {
+		if (pao == 1) {
+			set_bit(*result, XYtoS(fl, r)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(fl, r))) {
+			pao++;
+		};
+		if (pao == 2) {
+			//这儿要把前面的几位清除了
+			//for(int a = r + 1; a < rk; a++){
+			//	clear_bit(result,XYtoS(fl,a));
+			//}
+			break;
+		}
+	}
+
+	//if(sq == 70){
+	//	//if(
+	//}
+
+}
+
+void init_paoeat_attack_f(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+
+	Bitboard m;  //车要中另外算MASK
+
+	int n, tra;
+	Bitboard att;
+
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		m = m_and(FileBB_A[StoX(sq)], mask[sq]);
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			pao_eat_by_block_f(&att, sq, b);
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_PAO_EAT_ATT_F);
+}
+
+void pao_super_by_block_f(Bitboard* result, int sq, Bitboard block) {
+
+
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+
+	//向下
+	int pao = 0;
+
+	int r;
+
+	*result = _mm_setzero_si128();
+
+	for (r = rk + 1; r <= 9; r++) {
+
+		if (pao == 2) {
+			set_bit(*result, XYtoS(fl, r)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(fl, r))) {
+			pao++;
+		};
+		if (pao == 3) {
+			//这儿要把前面的几位清除了
+			//for(int a = r - 1; a > rk; a--){
+			//	clear_bit(result,XYtoS(fl,a));
+			//}
+
+			break;
+		}
+	}
+
+	//向上
+	pao = 0;
+	for (r = rk - 1; r >= 0; r--) {
+
+		if (pao == 2) {
+			set_bit(*result, XYtoS(fl, r)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(fl, r))) {
+			pao++;
+		};
+		if (pao == 3) {
+			//这儿要把前面的几位清除了
+			//for(int a = r + 1; a < rk; a++){
+			//	clear_bit(result,XYtoS(fl,a));
+			//}
+			break;
+		}
+	}
+}
+
+void init_paosuper_attack_f(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+	int sq, j, k, index = 0;
+	Bitboard b;
+	Bitboard att;
+	int n, tra;
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		//BB_from_BB(m,FileBB_A[StoX(sq)]);
+		//m_and(m,mask[sq]);
+
+		m = m_and(FileBB_A[StoX(sq)], mask[sq]);
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+			pao_super_by_block_f(&att, sq, b); //print_bb(att);
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+			//m128_BB_from_BB(attacks[index + tra],att);
+			attacks[index + tra] = att;
+		}
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_PAO_SUPER_ATT_F);
+}
+
+void pao_super_by_block_r(Bitboard* result, int sq, Bitboard block) {
+
+
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+	int f;
+
+
+
+	//向右
+	int pao = 0;
+
+	*result = _mm_setzero_si128();
+	for (f = fl + 1; f <= 8; f++) {
+
+		if (pao == 2) {
+			set_bit(*result, XYtoS(f, rk)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(f, rk))) {
+			pao++;
+		};
+		if (pao == 3) {
+
+			//这儿要把前面的几位清除了
+			//for(int a = f - 1; a > fl; a--){
+			//	clear_bit(result,XYtoS(a,rk));
+			//}
+
+			break;
+		}
+	}
+	//向左
+	pao = 0;
+	for (f = fl - 1; f >= 0; f--) {
+		if (pao == 2) {
+			set_bit(*result, XYtoS(f, rk)); //吃子  
+		}
+
+		if (bit_is_set(block, XYtoS(f, rk))) {
+			pao++;
+		};
+		if (pao == 3) {
+
+			//这儿要把前面的几位清除了
+			//for(int a = f + 1; a < fl; a++){
+			//	clear_bit(result,XYtoS(a,rk));
+			//}
+
+			break;
+		}
+	}
+
+	//print_bb(block);
+	//print_bb(result);
+
+}
+
+void init_paosuper_attack_r(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+	int n, tra;
+	Bitboard att;
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		m = m_and(RankBB_A[StoY(sq)], mask[sq]);
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			pao_super_by_block_r(&att, sq, b);  //print_bb(b); print_bb(att);
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+			//m128_BB_from_BB(attacks[index + tra],att);
+
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_PAO_SUPER_ATT_R);
+}
+
+void xiang_att_by_block(Bitboard* result, int sq, Bitboard block) {
+
+	*result = _mm_setzero_si128();
+
+	if (sq == 2) {
+		if (bit_is_set(block, Square(10)) == FALSE) {
+			set_bit(*result, 18);
+		}
+		if (bit_is_set(block, Square(12)) == FALSE) {
+			set_bit(*result, 22);
+		}
+	}
+	if (sq == 6) {
+		if (bit_is_set(block, Square(14)) == FALSE) {
+			set_bit(*result, 22);
+		}
+		if (bit_is_set(block, Square(16)) == FALSE) {
+			set_bit(*result, 26);
+		}
+	}
+	if (sq == 18) {
+		if (bit_is_set(block, Square(10)) == FALSE) {
+			set_bit(*result, 2);
+		}
+		if (bit_is_set(block, Square(28)) == FALSE) {
+			set_bit(*result, 38);
+		}
+	}
+	if (sq == 22) {
+
+		if (bit_is_set(block, Square(12)) == FALSE) {
+			set_bit(*result, 2);
+		}
+		if (bit_is_set(block, Square(14)) == FALSE) {
+			set_bit(*result, 6);
+		}
+
+		if (bit_is_set(block, Square(30)) == FALSE) {
+			set_bit(*result, 38);
+		}
+		if (bit_is_set(block, Square(32)) == FALSE) {
+			set_bit(*result, 42);
+		}
+	}
+	if (sq == 26) {
+		if (bit_is_set(block, Square(16)) == FALSE) {
+			set_bit(*result, 6);
+		}
+		if (bit_is_set(block, Square(34)) == FALSE) {
+			set_bit(*result, 42);
+		}
+	}
+	if (sq == 38) {
+		if (bit_is_set(block, Square(28)) == FALSE) {
+			set_bit(*result, 18);
+		}
+		if (bit_is_set(block, Square(30)) == FALSE) {
+			set_bit(*result, 22);
+		}
+	}
+	if (sq == 42) {
+		if (bit_is_set(block, Square(32)) == FALSE) {
+			set_bit(*result, 22);
+		}
+		if (bit_is_set(block, Square(34)) == FALSE) {
+			set_bit(*result, 26);
+		}
+	}
+
+	//
+	if (sq == 47) {
+		if (bit_is_set(block, Square(55)) == FALSE) {
+			set_bit(*result, 63);
+		}
+		if (bit_is_set(block, Square(57)) == FALSE) {
+			set_bit(*result, 67);
+		}
+	}
+
+	if (sq == 51) {
+		if (bit_is_set(block, Square(59)) == FALSE) {
+			set_bit(*result, 67);
+		}
+		if (bit_is_set(block, Square(61)) == FALSE) {
+			set_bit(*result, 71);
+		}
+	}
+
+	if (sq == 63) {
+		if (bit_is_set(block, Square(55)) == FALSE) {
+			set_bit(*result, 47);
+		}
+		if (bit_is_set(block, Square(73)) == FALSE) {
+			set_bit(*result, 83);
+		}
+	}
+
+	if (sq == 67) {
+		if (bit_is_set(block, Square(57)) == FALSE) {
+			set_bit(*result, 47);
+		}
+		if (bit_is_set(block, Square(59)) == FALSE) {
+			set_bit(*result, 51);
+		}
+		if (bit_is_set(block, Square(75)) == FALSE) {
+			set_bit(*result, 83);
+		}
+		if (bit_is_set(block, Square(77)) == FALSE) {
+			set_bit(*result, 87);
+		}
+	}
+
+	if (sq == 71) {
+		if (bit_is_set(block, Square(61)) == FALSE) {
+			set_bit(*result, 51);
+		}
+		if (bit_is_set(block, Square(79)) == FALSE) {
+			set_bit(*result, 87);
+		}
+	}
+
+	if (sq == 83) {
+		if (bit_is_set(block, Square(73)) == FALSE) {
+			set_bit(*result, Square(63));
+		}
+		if (bit_is_set(block, Square(75)) == FALSE) {
+			set_bit(*result, Square(67));
+		}
+	}
+
+	if (sq == 87) {
+		if (bit_is_set(block, Square(77)) == FALSE) {
+			set_bit(*result, 67);
+		}
+		if (bit_is_set(block, Square(79)) == FALSE) {
+			set_bit(*result, 71);
+		}
+	}
+}
+
+void init_xiang_attack(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+	Bitboard att;
+	int n, tra;
+
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		if ((sq == 2 || sq == 6 || sq == 18 || sq == 22 || sq == 26
+			|| sq == 38 || sq == 42
+			|| sq == 47 || sq == 51 || sq == 63 || sq == 67 || sq == 71
+			|| sq == 83 || sq == 87) == FALSE) {
+
+			//m128_from_2u64(attacks[index + 0],0,0);
+			attacks[index + 0] = _mm_setzero_si128();
+			index++;
+			continue;
+		}
+
+		//m128_BB_from_BB(m,mask[sq]);
+
+		m = mask[sq];
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			xiang_att_by_block(&att, sq, b);
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+			//m128_BB_from_BB(attacks[index + tra],att);
+
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//QAssert(index <= NUM_XIANG_ATT);
+}
+
+void ma_to_king_att_by_block(Bitboard* result, int sq, Bitboard block) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*result = _mm_setzero_si128();
+
+	//马的8个方向,1,上左
+	if (rk >= 2 && fl >= 1) {
+		if (bit_is_set(block, XYtoS(fl, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 1, rk - 2));
+		}
+	}
+	//马的8个方向,1,上右
+	if (rk >= 2 && fl <= 7) {
+		if (bit_is_set(block, XYtoS(fl, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 1, rk - 2));
+		}
+	}
+
+	//马的8个方向,1,右上
+	if (rk >= 1 && fl <= 6) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk)) == 0) {
+			set_bit(*result, XYtoS(fl + 2, rk - 1));
+		}
+	}
+
+	//马的8个方向,1,右下
+	if (rk <= 8 && fl <= 6) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk)) == 0) {
+			set_bit(*result, XYtoS(fl + 2, rk + 1));
+		}
+	}
+
+	//马的8个方向,1,下右
+	if (rk <= 7 && fl <= 7) {
+		if (bit_is_set(block, XYtoS(fl, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 1, rk + 2));
+		}
+	}
+
+	//马的8个方向,1,下左
+	if (rk <= 7 && fl >= 1) {
+		if (bit_is_set(block, XYtoS(fl, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 1, rk + 2));
+		}
+	}
+
+	//马的8个方向,1,左下
+	if (rk <= 8 && fl >= 2) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk)) == 0) {
+			set_bit(*result, XYtoS(fl - 2, rk + 1));
+		}
+	}
+
+	//马的8个方向,1,左上
+	if (rk >= 1 && fl >= 2) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk)) == 0) {
+			set_bit(*result, XYtoS(fl - 2, rk - 1));
+		}
+	}
+}
+
+void init_ma_to_king_attack(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+	Bitboard att;
+	int n, tra;
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		//m128_BB_from_BB(m,mask[sq]);
+
+		m = mask[sq];
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			ma_to_king_att_by_block(&att, sq, b);
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+			//m128_BB_from_BB(attacks[index + tra],att);
+
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_MA_TO_KING_ATT);
+}
+
+void king_to_ma_att_by_block(Bitboard* result, int sq, Bitboard block) {
+
+	int rk = StoY(sq);
+	int fl = StoX(sq);
+
+	*result = _mm_setzero_si128();
+
+	//马的8个方向,1,上左
+	if (rk >= 2 && fl >= 1) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 1, rk - 2));
+		}
+	}
+	//马的8个方向,1,上右
+	if (rk >= 2 && fl <= 7) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 1, rk - 2));
+		}
+	}
+
+	//马的8个方向,1,右上
+	if (rk >= 1 && fl <= 6) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 2, rk - 1));
+		}
+	}
+
+	//马的8个方向,1,右下
+	if (rk <= 8 && fl <= 6) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 2, rk + 1));
+		}
+	}
+
+	//马的8个方向,1,下右
+	if (rk <= 7 && fl <= 7) {
+		if (bit_is_set(block, XYtoS(fl + 1, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl + 1, rk + 2));
+		}
+	}
+
+	//马的8个方向,1,下左
+	if (rk <= 7 && fl >= 1) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 1, rk + 2));
+		}
+	}
+
+	//马的8个方向,1,左下
+	if (rk <= 8 && fl >= 2) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk + 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 2, rk + 1));
+		}
+	}
+
+	//马的8个方向,1,左上
+	if (rk >= 1 && fl >= 2) {
+		if (bit_is_set(block, XYtoS(fl - 1, rk - 1)) == 0) {
+			set_bit(*result, XYtoS(fl - 2, rk - 1));
+		}
+	}
+}
+
+
+void init_king_to_ma_attack(Bitboard attacks[],
+	int attackIndex[], Bitboard mask[],
+	const int shift, const quint64 mult[]) {
+
+
+	int sq, j, k, index = 0;
+
+	Bitboard b;
+	int n, tra;
+	Bitboard att;
+	Bitboard m;  //车要中另外算MASK
+
+	for (sq = 0; sq < 90; sq++) {
+
+		attackIndex[sq] = index;  //攻击位棋盘的开始编号
+
+		//m128_BB_from_BB(m,mask[sq]);
+
+		m = mask[sq];
+
+		n = (int)count_1s(m);  //得到mask的位数6
+
+		j = (1 << shift);
+
+		for (k = 0; k < j; k++) {
+			index_to_Bitboard(&b, k, n, m);
+
+
+			king_to_ma_att_by_block(&att, sq, b);
+
+			tra = (int)transform_bba(b, mult[sq], 64 - shift);
+
+			//m128_BB_from_BB(attacks[index + tra],att);
+
+			attacks[index + tra] = att;
+		}
+
+		index += j;
+	}
+
+	//ASSERT(index <= NUM_KING_TO_MA_ATT);
+}
+
+
+void init_attack_bitboard(void) {
+
+
+	init_rool_attack_r(CheAttacks_R, CheAttackIndex_R, Che_Mask_FR, 7, CHE_Mult_R);  //初始化车的攻击位棋盘
+	init_rool_attack_f(CheAttacks_F, CheAttackIndex_F, Che_Mask_FR, 8, CHE_Mult_F);  //初始化车的攻击位棋盘
+
+	init_paoeat_attack_r(Pao_Eat_Attacks_R, Pao_Eat_AttackIndex_R, Che_Mask_FR, 7, PAO_EAT_Mult_R);  //初始化炮吃子的攻击位棋盘
+	init_paoeat_attack_f(Pao_Eat_Attacks_F, Pao_Eat_AttackIndex_F, Che_Mask_FR, 8, PAO_EAT_Mult_F);  //初始化炮吃子的攻击位棋盘
+
+	init_paosuper_attack_r(PaoSUPER_R, PaoSUPERIndex_R, Che_Mask_FR, 7, PAO_SUPER_Mult_R);  //初始化超级炮的攻击位棋盘
+	init_paosuper_attack_f(PaoSUPER_F, PaoSUPERIndex_F, Che_Mask_FR, 8, PAO_SUPER_Mult_F);  //初始化超级炮的攻击位棋盘
+
+	//////////////////////////////////////////////////////////////////////////
+
+	init_xiang_attack(XiangAttacks, XiangAttackIndex, XiangMask, 4, XIANG_Mult);  //初始化象的攻击位棋盘
+	//////////////////////////////////////////////////////////////////////////
+
+	init_ma_to_king_attack(Ma_to_King_Attacks, Ma_to_King_AttackIndex, Ma_to_King_Mask, 4, Ma_to_King_Mult);  //初始化马到将的攻击位棋盘
+	//////////////////////////////////////////////////////////////////////////
+
+	init_king_to_ma_attack(King_to_Ma_Attacks, King_to_Ma_AttackIndex, King_to_Ma_Mask, 4, King_to_Ma_Mult);  //初始化马到将的攻击位棋盘
+
+}
+
+
+void init_bitboards() {
+
+	Bitboard btmp = _mm_setr_epi32(1, 0, 0, 0);
+	int s;
+	int sq;
+	init_bb_const();  //初始化数据.
+
+	for (s = 0; s < 90; s++) {
+		SetMaskBB[s] = btmp;
+
+		ClearMaskBB[s] = m_not(btmp);
+		m_Lsf(btmp, 0x1);
+	}
+
+
+	initLeftRightBB();
+	initLowUpBB();
+	init_BetweenBB(); //BetweenBB[90][90];          // 二个在同一线上的棋子之间的位棋盘．
+
+	//
+	for (sq = 0; sq < 90; sq++) {
+		find_che_pseudo_mask(&ChePseudoMask_FR[sq], sq);
+		find_che_mask(&Che_Mask_FR[sq], &Che_Mask_F[sq], &Che_Mask_R[sq], sq);
+		find_ma_to_king_mask(&Ma_to_King_Mask[sq], sq);
+		find_king_to_ma_mask(&King_to_Ma_Mask[sq], sq);
+		find_xiang_mask(&XiangMask[sq], sq);
+		find_stepshi_attack(&ShiAttackBB[sq], sq);
+		find_step_rking_rpawn_attack(&OneRpawnOrRking_AttackBB[sq], sq); //红将红兵
+		find_step_bking_bpawn_attack(&OneBpawnOrBking_AttackBB[sq], sq); //黑将黑兵
+		find_sq_attack_by_pawn(&Attack_By_Rpawn_Rking[sq], &Attack_By_Bpawn_Bking[sq], sq);
+		Init_Ma_Pseudo_Good_Mask(&Ma_Pseudo_Att[sq], sq);
+	}
+
+
+	//Ma_good_mask[WHITE] = _mm_setzero_si128();
+	//Ma_good_mask[BLACK] = _mm_setzero_si128();
+
+	//for (sq = 0; sq < 90; sq++) {
+	//	if (sq <= 0x2c) {
+	//		set_bit(Ma_good_mask[WHITE], sq);
+
+	//		if (StoY(sq) == 0x0 || StoY(sq) == 0x1 || sq == 0x0d || sq == 0x09 || sq == 0x12 || sq == 0x11 || sq == 0x1a) {
+	//		}
+	//		else {
+	//			set_bit(Ma_good_mask[BLACK], sq);
+	//		}
+	//	}
+	//	// fen rC2kab2/4a4/2c1b1nc1/p1p1n1p1p/3RC4/2P6/P5r1P/N3B4/9/1RBAKA1N1 w - - 0 1
+	//	if (sq >= 0x2d) {
+	//		set_bit(Ma_good_mask[BLACK], sq);
+
+	//		if (StoY(sq) == 0x9 || StoY(sq) == 0x8 || sq == 0x4c || sq == 0x3f || sq == 0x48 || sq == 0x50 || sq == 0x47) {
+	//		}
+	//		else {
+	//			set_bit(Ma_good_mask[WHITE], sq);
+	//		}
+	//	}
+	//}
+
+	//print_bb(Black_Ma_good_mask);
+	//print_bb(White_Ma_good_mask);
+#define NOT_USE_FIND_MUL
+#ifndef NOT_USE_FIND_MUL		
+	//找到磨术数字, 这个已找到.写入常数6669-8+-+----------------------
+	find_mul(TRUE);
+	//find_mul(FALSE);
+#endif
+
+	//初始化攻击位棋盘, 所有的有blocker的.
+	init_attack_bitboard();
 }
 
 //void CBoard::setCastlingRights(CastlingRights cr)

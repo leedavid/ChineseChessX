@@ -8,8 +8,8 @@
 enum Piece
 {
     Empty,
-    WhiteKing, WhiteQueen, WhiteRook, WhiteBishop, WhiteKnight, WhitePawn,
-    BlackKing, BlackQueen, BlackRook, BlackBishop, BlackKnight, BlackPawn,
+    WhiteKing, WhiteChe, WhiteMa, WhitePao, WhiteShi, WhiteXiang, WhitePawn,
+    BlackKing, BlackChe, BlackMa, BlackPao, BlackShi, BlackXiang, BlackPawn,
     ConstPieceTypes,
     InvalidPiece = 255
 };
@@ -20,70 +20,127 @@ Piece& operator++(Piece& w);
 // Post-Increment
 Piece operator++(Piece& w, int);
 
-enum PieceType { None, King, Queen, Rook, Bishop, Knight, Pawn };
+enum PieceType { None, King, Che, Ma, Pao, Shi, Xiang, Pawn };
 
 enum Color {White, Black, NoColor};
 
 /** Return opposite color */
 inline Color oppositeColor(Color c)
 {
-    if (c == White) return Black;
-    else if (c == Black) return White;
-    return NoColor;
+	static const  Color _oppositeColor[] = { Black, White, NoColor};
+	//if (c == White) return Black;
+ //   else if (c == Black) return White;
+ //   return NoColor;
+	return _oppositeColor[c];
 }
 
 /** Return true if given piece is White */
 inline bool isWhite(Piece p)
 {
-    return p >= WhiteKing && p <= WhitePawn;
+	static const bool _isWhite[] = {
+		 false,
+	true,  true,  true,  true,  true,  true,   true,
+	false, false, false, false, false, false,  false,
+	};
+
+	//return p >= WhiteKing && p <= WhitePawn;
+	return _isWhite[p];
 }
 
 /** Return true if given piece is Black */
 inline bool isBlack(Piece p)
 {
-    return p >= BlackKing && p <= BlackPawn;
+	static const bool _isBlack[] = {
+		 false,
+	false, false, false, false, false, false,  false,
+	true,  true,  true,  true,  true,  true,   true,
+	};
+	//return p >= BlackKing && p <= BlackPawn;
+	return _isBlack[p];
 }
 
 /** Return PieceType of given Piece */
 inline PieceType pieceType(Piece p)
 {
-    return PieceType(isWhite(p) ? p : (isBlack(p) ? p - 6 : 0));
+	static const PieceType _pType[] = {
+		None,
+		King, Che, Ma, Pao, Shi, Xiang, Pawn,
+		King, Che, Ma, Pao, Shi, Xiang, Pawn,
+		None
+	};
+	return _pType[p];
+	
+	//return PieceType(isWhite(p) ? p : (isBlack(p) ? p - 7 : 0));
 }
 
 /** Return Color of given Piece */
 inline Color pieceColor(Piece p)
 {
-    return isBlack(p) ? Black : White;
+	//return isBlack(p) ? Black : White;
+	//enum Color { White, Black, NoColor };
+	
+	static const Color _pColor[] = {
+		NoColor,
+		White, White, White, White, White, White, White,
+		Black, Black, Black, Black, Black, Black, Black,
+		NoColor,
+	};
+
+	return _pColor[p];
+	
 }
 
 /** Verify that given Piece is within range */
 inline bool isValidPiece(Piece p)
 {
-    return isWhite(p) || isBlack(p);
+    //return isWhite(p) || isBlack(p);
+
+	static const bool _pValid[] = {
+	false,
+	true,  true,  true,  true,  true,  true,   true,
+	true,  true,  true,  true,  true,  true,   true,
+	false,
+	};
+
+	return _pValid[p];
+
 }
 
 inline Piece flipPiece(Piece p)
 {
-    switch (p)
-    {
-    case WhiteKing:
-    case WhiteQueen:
-    case WhiteRook:
-    case WhiteBishop:
-    case WhiteKnight:
-    case WhitePawn:
-        return Piece((int)p+6);
-    case BlackKing:
-    case BlackQueen:
-    case BlackRook:
-    case BlackBishop:
-    case BlackKnight:
-    case BlackPawn:
-        return Piece((int)p-6);
-    default:
-        break;
-    }
-    return p;
+   
+	static const Piece _flipP[] = {
+	Empty,
+	BlackKing, BlackChe, BlackMa, BlackPao, BlackShi, BlackXiang, BlackPawn,
+	WhiteKing, WhiteChe, WhiteMa, WhitePao, WhiteShi, WhiteXiang, WhitePawn,	
+	ConstPieceTypes,
+	};
+
+	return _flipP [p];
+	
+	
+	//switch (p)
+ //   {
+ //   case WhiteKing:
+ //   case WhiteChe:
+ //   case WhiteMa:
+ //   case WhitePao:
+ //   case WhiteShi:
+	//case WhiteXiang:
+ //   case WhitePawn:
+ //       return Piece((int)p+7);
+ //   case BlackKing:
+ //   case BlackChe:
+ //   case BlackMa:
+ //   case BlackPao:
+ //   case BlackShi:
+	//case BlackXiang:
+ //   case BlackPawn:
+ //       return Piece((int)p-7);
+ //   default:
+ //       break;
+ //   }
+ //   return p;
 }
 
 #endif // PIECE_H

@@ -26,10 +26,10 @@ PromotionDialog::PromotionDialog(QWidget *parent, Color color) :
     move(pos);
 
     int offset = color==White ? 0 : (BlackKing-WhiteKing);
-    ui->btQueen->setIcon(view.theme().piece(Piece(WhiteQueen+offset)));
-    ui->btRook->setIcon(view.theme().piece(Piece(WhiteRook+offset)));
-    ui->btBishop->setIcon(view.theme().piece(Piece(WhiteBishop+offset)));
-    ui->btKnight->setIcon(view.theme().piece(Piece(WhiteKnight+offset)));
+    ui->btQueen->setIcon(view.theme().piece(Piece(WhiteChe+offset)));
+    ui->btRook->setIcon(view.theme().piece(Piece(WhiteMa+offset)));
+    ui->btBishop->setIcon(view.theme().piece(Piece(WhitePao+offset)));
+    ui->btKnight->setIcon(view.theme().piece(Piece(WhiteShi+offset)));
 }
 
 PromotionDialog::~PromotionDialog()

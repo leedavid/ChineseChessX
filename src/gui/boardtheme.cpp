@@ -94,16 +94,16 @@ bool BoardTheme::loadPieces(const QString& pieces, int effect)
     if(realsize == big.width() / 6)
     {
         /* Cut big theme bitmap into separate pieces */
-        m_originalPiece[WhiteRook] = big.copy(0 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteKnight] = big.copy(1 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteBishop] = big.copy(2 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteQueen] = big.copy(3 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteMa] = big.copy(0 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteShi] = big.copy(1 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhitePao] = big.copy(2 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteChe] = big.copy(3 * realsize, 0, realsize, realsize);
         m_originalPiece[WhiteKing] = big.copy(4 * realsize, 0, realsize, realsize);
         m_originalPiece[WhitePawn] = big.copy(5 * realsize, 0, realsize, realsize);
-        m_originalPiece[BlackRook] = big.copy(0 * realsize, realsize, realsize, realsize);
-        m_originalPiece[BlackKnight] = big.copy(1 * realsize, realsize, realsize, realsize);
-        m_originalPiece[BlackBishop] = big.copy(2 * realsize, realsize, realsize, realsize);
-        m_originalPiece[BlackQueen] = big.copy(3 * realsize, realsize, realsize, realsize);
+        m_originalPiece[BlackMa] = big.copy(0 * realsize, realsize, realsize, realsize);
+        m_originalPiece[BlackShi] = big.copy(1 * realsize, realsize, realsize, realsize);
+        m_originalPiece[BlackPao] = big.copy(2 * realsize, realsize, realsize, realsize);
+        m_originalPiece[BlackChe] = big.copy(3 * realsize, realsize, realsize, realsize);
         m_originalPiece[BlackKing] = big.copy(4 * realsize, realsize, realsize, realsize);
         m_originalPiece[BlackPawn] = big.copy(5 * realsize, realsize, realsize, realsize);
     }
@@ -117,16 +117,16 @@ bool BoardTheme::loadPieces(const QString& pieces, int effect)
         }
         /* Cut big theme bitmap into separate pieces */
         m_originalPiece[WhitePawn] = big.copy(0 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteKnight] = big.copy(1 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteBishop] = big.copy(2 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteRook] = big.copy(3 * realsize, 0, realsize, realsize);
-        m_originalPiece[WhiteQueen] = big.copy(4 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteShi] = big.copy(1 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhitePao] = big.copy(2 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteMa] = big.copy(3 * realsize, 0, realsize, realsize);
+        m_originalPiece[WhiteChe] = big.copy(4 * realsize, 0, realsize, realsize);
         m_originalPiece[WhiteKing] = big.copy(5 * realsize, 0, realsize, realsize);
         m_originalPiece[BlackPawn] = big.copy(6 * realsize, 0, realsize, realsize);
-        m_originalPiece[BlackKnight] = big.copy(7 * realsize, 0, realsize, realsize);
-        m_originalPiece[BlackBishop] = big.copy(8 * realsize, 0, realsize, realsize);
-        m_originalPiece[BlackRook] = big.copy(9 * realsize, 0, realsize, realsize);
-        m_originalPiece[BlackQueen] = big.copy(10 * realsize, 0, realsize, realsize);
+        m_originalPiece[BlackShi] = big.copy(7 * realsize, 0, realsize, realsize);
+        m_originalPiece[BlackPao] = big.copy(8 * realsize, 0, realsize, realsize);
+        m_originalPiece[BlackMa] = big.copy(9 * realsize, 0, realsize, realsize);
+        m_originalPiece[BlackChe] = big.copy(10 * realsize, 0, realsize, realsize);
         m_originalPiece[BlackKing] = big.copy(11 * realsize, 0, realsize, realsize);
     }
 
@@ -249,8 +249,8 @@ void BoardTheme::updateSquares()
     {
         return;
     }
-    bool scale = m_size.width() > m_originalPiece[WhiteRook].width()
-                 || m_size.height() > m_originalPiece[WhiteRook].height()
+    bool scale = m_size.width() > m_originalPiece[WhiteMa].width()
+                 || m_size.height() > m_originalPiece[WhiteMa].height()
                  || m_size.width() < 30 || m_size.height() < 30;
     if (AppSettings->getValue("/Board/AlwaysScale").toBool())
     {
