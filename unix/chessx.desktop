@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=ChessX
+Name[de]=ChessX
+Name[fr]=ChessX
+Comment=Chess database
+Comment[de]=Schachdatenbank
+Comment[fr]=Base de données d'échecs
+GenericName=Chess Game
+GenericName[de]=Schachspiel
+GenericName[fr]=Jeu d'échecs
+Icon=chessx
+Exec=chessx %f
+Terminal=false
+Type=Application
+Categories=Game;BoardGame;
+MimeType=application/x-chess-pgn;
+Keywords=PGN;FEN;Database;
+Keywords[de]=PGN;FEN;Datenbank;
+Keywords[fr]=PGN;FEN;Base de données;

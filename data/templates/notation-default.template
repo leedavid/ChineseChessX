@@ -1,0 +1,79 @@
+[OPTIONSDEFINITIONS]
+#Name - Name of the option. Use @Name@ in header, footer and markup
+#       tags to substitute the value.
+#Type - Can be one of String, Boolean, Integer, Color
+#Allow Values - The values that are allowed for this option. Ignored
+#               for type Boolean(1|0|true|false) and Color. Values are
+#               are a | separated list of values. For Integer types a
+#               range is allowed, specified as in 1:200
+#Default - The default to be used. Must be in allowed values (duh)
+#Description - Short description, will be used in the GUI to change the
+#              option.
+#Name , Type  ,  Allow Values , Default  , Description
+MainLineFontWeight,String,Bold|Normal,Bold,The weight of the font
+[OPTIONS]
+[OUTPUTHEADER]
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ChessX Output</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=utf-8">
+<style type="text/css">
+  p             {margin-top: 0; margin-bottom: 0}\n
+  p.var         {margin-left: 20px}\n
+  p.comment     {margin-left: 20px}\n
+  p.precomment  {margin-left: 0}\n
+  a             {text-decoration: none}\n
+  a.main        {font-family:"@FontBrowserMove@";color: @MainLineMoveColor@; font-weight: bold}\n
+  a.var         {font-family:"@FontBrowserMove@";color: @VariationColor@}\n
+  a.comment     {color: @CommentColor@}\n
+  a.nag         {color: @NagColor@}\n
+  td.mainline   {padding-left: 10px; padding-right: 10px; color: @MainLineMoveColor@; width:50%}\n
+  .diagram-indent {lfloat: right; margin-top: 8px;}\n
+  .mainline {margin-left: 20px; color: @MainLineMoveColor@}\n
+  table,th,td {border: 0px;}\n
+  ol.ebene1 {\n
+          counter-reset: listenpunkt_ebene1;\n
+          list-style-type: none;\n
+        }\n
+        ol.ebene1 li::before {\n
+          content: counter(listenpunkt_ebene1) ". ";\n
+          counter-increment: listenpunkt_ebene1;\n
+        }\n
+        ol.ebene2 {\n
+          counter-reset:listenpunkt_ebene2;\n
+          list-style-type:none;\n
+        }\n
+        ol.ebene2 li::before {\n
+          content: counter(listenpunkt_ebene1) counter(listenpunkt_ebene2,lower-alpha) ". ";\n
+          counter-increment:listenpunkt_ebene2;\n
+        }\n
+</style>\n
+</head>\n
+<body>
+[OUTPUTFOOTER]
+</body>
+</html>
+[MARKUPTAGS]
+MarkupHeaderBlock=,<br>\n
+MarkupNotationBlock=,
+MarkupResult=<b>,</b>
+MarkupDiagram=<br><br>,<br>
+MarkupMainLineMove=<a class="main" href="move:%1">,</a>
+MarkupVariationMove=<a class="var" href="move:%1">,</a>
+MarkupMainLine=,
+MarkupVariationInline=<span class="var">(,)</span>
+MarkupVariationIndent1=,\n
+MarkupVariationIndent=(,)\n
+MarkupVariationResume=<p class="var">,</p>\n
+MarkupNag=<a class="nag">,</a>
+MarkupColumnStyleMove=<td class="mainline">,</td>\n
+MarkupColumnStyleRow=<tr class="mainline">,</tr>\n
+MarkupColumnStyleMainline=<table>,</table>\n
+MarkupAnnotationInline= <a class="comment" href="cmt:%1">,</a>\n
+MarkupAnnotationIndent=<p class="comment"><a class="comment" href="cmt:%1">,</a></p>
+MarkupPreAnnotationInline= <a class="comment" href="precmt:%1">,</a>\n
+MarkupPreAnnotationIndent=<p class="precomment"><a class="comment" href="precmt:%1">,</a></p>
+MarkupHeaderLine=<b>,</b><br>\n
+MarkupHeaderTagName=[,
+MarkupHeaderTagValue=","]

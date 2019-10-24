@@ -1,0 +1,24 @@
+[OPTIONS]
+TextWidth=80
+[OUTPUTHEADER]
+[OUTPUTFOOTER]
+[MARKUPTAGS]
+MarkupHeaderBlock=,\n
+MarkupNotationBlock=, 
+MarkupResult=,
+MarkupMainLineMove=,
+MarkupVariationMove=,
+MarkupMainLine=,
+MarkupVariationInline=( ,) 
+MarkupVariationResume=,
+MarkupVariationIndent=( ,) 
+MarkupVariationIndent1=( ,)
+MarkupNag=,
+MarkupAnnotationInline= { ,} 
+MarkupAnnotationIndent= { ,} 
+MarkupPreAnnotationInline={ , } 
+MarkupPreAnnotationIndent={ , } 
+MarkupHeaderLine=[,]\n
+MarkupHeaderTagName=,
+MarkupHeaderTagValue=","
+MarkupMate=,

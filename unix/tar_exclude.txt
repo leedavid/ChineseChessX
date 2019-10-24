@@ -1,0 +1,13 @@
+mac_osx
+setup*.iss
+tests
+tools
+engines
+engines-mac
+timeseal
+resource.h
+chessx.rc
+.svn
+make_tarball
+.DS_Store
+Packages
