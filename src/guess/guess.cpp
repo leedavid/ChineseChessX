@@ -32,7 +32,7 @@ int attackersOnSquare(const char *fen, int target)
     return whiteDefenders-blackDefenders;
 }
 
-Result guessMove(const char* fen, bool chess960, quint64 castlingRooks, squareT square, MoveList& mlist, int thinkTime)
+Result guessMove(const char* fen, squareT square, MoveList& mlist, int thinkTime)
 {
     Result r;
 
@@ -40,7 +40,7 @@ Result guessMove(const char* fen, bool chess960, quint64 castlingRooks, squareT 
 
     Position pos;
     pos.ReadFromFEN(fen);
-    pos.setChess960Castling(chess960, castlingRooks);
+    //pos.setChess960Castling(chess960, castlingRooks);
 
     if (!pos.IsLegal()) return r;
 
@@ -104,13 +104,13 @@ Result evalPos(const char* fen, bool chess960, quint64 castlingRooks, int thinkT
 //  it will start from the position given in fen and think for ms milliseconds
 //  0 is returned if the first move is better or 1 if the second is better
 //  -1 is returned on error
-int pickBest(const char* fen, bool chess960, quint64 castlingRooks, squareT from1, squareT to1, squareT from2, squareT to2, int ms)
+int pickBest(const char* fen, squareT from1, squareT to1, squareT from2, squareT to2, int ms)
 {
     if (!s_guessAllowed) return -1;
 
     Position pos;
     pos.ReadFromFEN(fen);
-    pos.setChess960Castling(chess960, castlingRooks);
+    //pos.setChess960Castling(chess960, castlingRooks);
 
     MoveList mlist;
     pos.GenerateMoves(&mlist);

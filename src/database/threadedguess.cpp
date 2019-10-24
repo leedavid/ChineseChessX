@@ -49,11 +49,9 @@ void ThreadedGuess::run()
 {
     Board b = m_board;
     b.swapToMove();
-    b.clearEnPassantSquare();
+    //b.clearEnPassantSquare();
     Guess::MoveList moveList;
-    Guess::Result sm = Guess::guessMove(qPrintable(b.toFen()),
-                                        b.chess960(), b.castlingRooks(),
-                                        Guess::NULL_SQUARE,
+    Guess::Result sm = Guess::guessMove(qPrintable(b.toFen()), Guess::NULL_SQUARE,
                                         moveList, 1500);
     if (!m_dontGuess)
     {

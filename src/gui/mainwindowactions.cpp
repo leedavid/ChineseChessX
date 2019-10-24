@@ -495,7 +495,7 @@ bool MainWindow::pasteFen(QString& msg, QString fen, bool newGame)
     {
         slotGameNew();
     }
-    game().setStartingBoard(board,"Set starting board",board.chess960());
+    game().setStartingBoard(board,"Set starting board");
     emit signalGameLoaded(game().startingBoard());
     return true;
 }
@@ -601,7 +601,7 @@ void MainWindow::slotEditBoard()
     dlg.setFlipped(m_boardView->isFlipped());
     if(dlg.exec() == QDialog::Accepted)
     {
-        game().setStartingBoard(dlg.board(),tr("Set starting board"),dlg.board().chess960());
+        game().setStartingBoard(dlg.board(),tr("Set starting board"));
         emit signalGameLoaded(game().startingBoard());
     }
 }
@@ -719,7 +719,7 @@ void MainWindow::HandleFicsBoardRequest(int cmd,QString s)
             game().setTag(TagNameBlack, nameBlack);
             if (game().board() != b)
             {
-                game().setStartingBoard(b,tr("Set starting board"),b.chess960());
+                game().setStartingBoard(b,tr("Set starting board"));
                 playSound(":/sounds/ding1.wav");
             }
         }
@@ -1036,8 +1036,7 @@ void MainWindow::doBoardMove(Move m, unsigned int button, Square from, Square to
                     {
                         if (m_autoRespond->isChecked() || m_match->isChecked())
                         {
-                            if (game().board().isStalemate() ||
-                                game().board().isCheckmate())
+                            if (game().board().isCheckmate())
                             {
                                 playSound(":/sounds/fanfare.wav");
                                 if (m_autoRespond->isChecked())
@@ -2162,8 +2161,7 @@ bool MainWindow::doEngineMove(Move m, EngineParameter matchParameter)
     }
 
     game().addMove(m,annot);
-    if (game().board().isStalemate() ||
-        game().board().isCheckmate())
+    if (game().board().isCheckmate())
     {
         playSound(":/sounds/fanfare.wav");
         // The game is terminated immediately
@@ -2407,8 +2405,7 @@ void MainWindow::slotAutoPlayTimeout()
         {
             slotGameMoveNext();
         }
-        if (game().board().isCheckmate() ||
-            game().board().isStalemate())
+        if (game().board().isCheckmate())
         {
             AutoMoveAtEndOfGame();
         }

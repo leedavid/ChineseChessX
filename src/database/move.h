@@ -16,7 +16,7 @@
 
 #include <QString>
 
-class BitBoard;
+class CBoard;
 
 /** @ingroup Core
    Moves are dependent on current position, (remembers piece, check, capture etc)
@@ -128,7 +128,7 @@ public:
     unsigned int rawMove() const { return m; }
     unsigned short rawUndo() const { return u; }
 
-    friend class BitBoard;
+    friend class CBoard;
 private:
     static const quint64 CASTLE = 9;
     static const quint64 TWOFORWARD = 22;

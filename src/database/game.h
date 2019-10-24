@@ -309,7 +309,7 @@ public :
     /** Removes all tags and moves */
     void clear();
     /** Set the game start position from FEN. */
-    void dbSetStartingBoard(const QString& fen, bool chess960 = false);
+    void dbSetStartingBoard(const QString& fen);
     /** set comment associated with game */
     void setGameComment(const QString& gameComment);
     /** Remove all variations */
@@ -375,7 +375,7 @@ public :
     void copyFromGame(const Game& g);
 
     int resultAsInt() const;
-    void setStartingBoard(const Board &startingBoard, QString text, bool chess960 = false);
+    void setStartingBoard(const Board &startingBoard, QString text);
 
     /** Removes the node at @p moveId */
     void removeNode(MoveId moveId = CURRENT_MOVE);

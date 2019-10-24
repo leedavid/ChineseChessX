@@ -1947,18 +1947,18 @@ void Game::removeTag(const QString& tag)
     m_tags.remove(tag);
 }
 
-void Game::setStartingBoard(const Board& startingBoard, QString text, bool chess960)
+void Game::setStartingBoard(const Board& startingBoard, QString text)
 {
     Game state = *this;
-    dbSetStartingBoard(startingBoard.toFen(), chess960);
+    dbSetStartingBoard(startingBoard.toFen());
     emit signalGameModified(true, state, text);
 }
 
-void Game::dbSetStartingBoard(const QString& fen, bool chess960)
+void Game::dbSetStartingBoard(const QString& fen)
 {
     clear();
-    setChess960(chess960);
-    m_startingBoard.setChess960(chess960);
+    //setChess960(chess960);
+    //m_startingBoard.setChess960(chess960);
     m_startingBoard.fromFen(fen);
     if(m_startingBoard != Board::standardStartBoard)
     {

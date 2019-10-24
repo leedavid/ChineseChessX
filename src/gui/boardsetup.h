@@ -54,8 +54,8 @@ protected:
     /** Sets status message for the board (either fen or error message). */
     void setStatusMessage();
 
-    char castlingFile00() const;
-    char castlingFile000() const;
+    //char castlingFile00() const;
+    //char castlingFile000() const;
 public slots:
     /** Start a drag operation */
     void startDrag(QWidget* w, QMouseEvent* event);
@@ -95,11 +95,11 @@ private slots:
     /** Select square and insert piece */
     void slotSelected(Square s, int button);
     /** Manually adjust castling rights. */
-    void slotCastlingRights();
+    //void slotCastlingRights();
     /** Manually adjust en passant square. */
-    void slotEnPassantSquare();
+    //void slotEnPassantSquare();
     /** Select Chess960. */
-    void slotChess960();
+    //void slotChess960();
     /** Adjust halfmove clock. */
     void slotHalfmoveClock();
     /** Adjust move number. */

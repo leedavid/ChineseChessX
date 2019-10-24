@@ -33,7 +33,7 @@
    everything else the derived methods are used.
 */
 
-class Board : public BitBoard
+class Board : public CBoard
 {
 public:
     /** Empty constructor. Creates empty board with no pieces. */
@@ -133,9 +133,9 @@ private:
     /** Adjust hash value based on which side is to move */
     void hashToMove();
     /** Adjust hash value based on the current en passant square */
-    void hashEpSquare();
+    //void hashEpSquare();
     /** Adjust hash value based on the castling rights each side has */
-    void hashCastlingRights(CastlingRights oldCastlingRights);
+    //void hashCastlingRights(CastlingRights oldCastlingRights);
 };
 
 #endif

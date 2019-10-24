@@ -47,10 +47,10 @@ bool StreamDatabase::loadNextGame(Game& game)
                 loadGameHeaders(index, game);
                 QString fen = m_index.tagValue(TagNameFEN, index);
                 QString variant = m_index.tagValue(TagNameVariant, index).toLower();
-                bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
+                //bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
                 if(fen != "?")
                 {
-                    game.dbSetStartingBoard(fen, chess960);
+                    game.dbSetStartingBoard(fen);
                 }
                 m_index.setValidFlag(index, parseMoves(&game));
                 QString valLength = QString::number((game.plyCount() + 1) / 2);

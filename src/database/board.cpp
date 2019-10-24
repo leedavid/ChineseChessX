@@ -41,14 +41,14 @@ Board::Board(QString fen)
 
 void Board::clear()
 {
-    BitBoard::clear();
+    CBoard::clear();
     m_hashValue = 0;
     m_squareAnnotation = "";
 }
 
 void Board::setStandardPosition()
 {
-    BitBoard::setStandardPosition();
+    CBoard::setStandardPosition();
 
 //	Just use precalculated hash values which is _much_ faster
 //	createHash();
@@ -58,7 +58,7 @@ void Board::setStandardPosition()
 
 bool Board::fromFen(const QString& fen)
 {
-    if(BitBoard::fromFen(fen))
+    if(CBoard::fromFen(fen))
     {
         createHash();
         m_squareAnnotation = "";
@@ -69,7 +69,7 @@ bool Board::fromFen(const QString& fen)
 
 bool Board::from64Char(const QString& qcharboard)
 {
-    if (BitBoard::from64Char(qcharboard))
+    if (CBoard::from64Char(qcharboard))
     {
         createHash();
         m_squareAnnotation = "";
@@ -81,7 +81,7 @@ bool Board::from64Char(const QString& qcharboard)
 void Board::setAt(Square s, Piece p)
 {
     hashPiece(s, pieceAt(s));
-    BitBoard::setAt(s, p);
+    CBoard::setAt(s, p);
     hashPiece(s, p);
 }
 
@@ -95,7 +95,7 @@ void Board::setToMove(Color c)
 {
     if(toMove() != c)
     {
-        BitBoard::setToMove(c);
+        CBoard::setToMove(c);
         hashToMove();
     }
 }
@@ -109,16 +109,16 @@ bool Board::doIt(const Move& m, bool undo)
 {
     if(m.isNullMove())
     {
-        hashEpSquare();
+        //hashEpSquare();
         if(undo)
         {
-            BitBoard::undoMove(m);
+            CBoard::undoMove(m);
         }
         else
         {
-            BitBoard::doMove(m);
+            CBoard::doMove(m);
         }
-        hashEpSquare();
+        //hashEpSquare();
         hashToMove();
         return true;
     }
@@ -128,9 +128,9 @@ bool Board::doIt(const Move& m, bool undo)
         return false;
     }
 
-    CastlingRights oldCastlingRights = castlingRights();
+    //CastlingRights oldCastlingRights = castlingRights();
 
-    hashEpSquare();
+    //hashEpSquare();
     hashPiece(m.from(), m.pieceMoved());
     if(m.isPromotion())
     {
@@ -140,7 +140,7 @@ bool Board::doIt(const Move& m, bool undo)
     {
         hashPiece(m.to(), m.pieceMoved());
     }
-    if(m.isCastling())
+/*    if(m.isCastling())
     {
         Piece p = (m == White ? WhiteRook : BlackRook);
         hashPiece(m.castlingRookFrom(), p);
@@ -157,23 +157,24 @@ bool Board::doIt(const Move& m, bool undo)
             hashPiece(Square(m.to() + 8), m.capturedPiece());
         }
     }
-    else if(m.capturedPiece())
+    else */
+	if(m.capturedPiece())
     {
         hashPiece(m.to(), m.capturedPiece());
     }
 
     if(undo)
     {
-        BitBoard::undoMove(m);
+        CBoard::undoMove(m);
     }
     else
     {
-        BitBoard::doMove(m);
+        CBoard::doMove(m);
     }
 
     hashToMove();
-    hashEpSquare();
-    hashCastlingRights(oldCastlingRights);
+    //hashEpSquare();
+    //hashCastlingRights(oldCastlingRights);
     return true;
 }
 
@@ -190,45 +191,45 @@ void Board::hashToMove()
     m_hashValue = m_hashValue ^ RAND_TO_MOVE;
 }
 
-void Board::hashCastlingRights(CastlingRights oldCastlingRights)
-{
-    oldCastlingRights ^= castlingRights();
-    if(oldCastlingRights & WhiteKingside)
-    {
-        m_hashValue ^= RAND_WHITE_CASTLING_KS;
-    }
-    if(oldCastlingRights & WhiteQueenside)
-    {
-        m_hashValue ^= RAND_WHITE_CASTLING_QS;
-    }
-    if(oldCastlingRights & BlackKingside)
-    {
-        m_hashValue ^= RAND_BLACK_CASTLING_KS;
-    }
-    if(oldCastlingRights & BlackQueenside)
-    {
-        m_hashValue ^= RAND_BLACK_CASTLING_QS;
-    }
-}
-
-void Board::hashEpSquare()
-{
-    int epSquareIndex;
-    Square sq = enPassantSquare();
-    if(sq >= 16 && sq <= 23)
-    {
-        epSquareIndex = sq - 16;
-    }
-    else if(sq >= 40 && sq <= 47)
-    {
-        epSquareIndex = sq - 32;
-    }
-    else
-    {
-        return;
-    }
-    m_hashValue ^= RAND_EN_PASSANT[epSquareIndex];
-}
+//void Board::hashCastlingRights(CastlingRights oldCastlingRights)
+//{
+//    oldCastlingRights ^= castlingRights();
+//    if(oldCastlingRights & WhiteKingside)
+//    {
+//        m_hashValue ^= RAND_WHITE_CASTLING_KS;
+//    }
+//    if(oldCastlingRights & WhiteQueenside)
+//    {
+//        m_hashValue ^= RAND_WHITE_CASTLING_QS;
+//    }
+//    if(oldCastlingRights & BlackKingside)
+//    {
+//        m_hashValue ^= RAND_BLACK_CASTLING_KS;
+//    }
+//    if(oldCastlingRights & BlackQueenside)
+//    {
+//        m_hashValue ^= RAND_BLACK_CASTLING_QS;
+//    }
+//}
+//
+//void Board::hashEpSquare()
+//{
+//    int epSquareIndex;
+//    Square sq = enPassantSquare();
+//    if(sq >= 16 && sq <= 23)
+//    {
+//        epSquareIndex = sq - 16;
+//    }
+//    else if(sq >= 40 && sq <= 47)
+//    {
+//        epSquareIndex = sq - 32;
+//    }
+//    else
+//    {
+//        return;
+//    }
+//    m_hashValue ^= RAND_EN_PASSANT[epSquareIndex];
+//}
 
 void Board::createHash()
 {
@@ -241,8 +242,8 @@ void Board::createHash()
     {
         hashToMove();
     }
-    hashCastlingRights(CastlingRights(0));
-    hashEpSquare();
+    //hashCastlingRights(CastlingRights(0));
+    //hashEpSquare();
 }
 
 bool Board::ecoMove(const Square square, int* from, int* to) const

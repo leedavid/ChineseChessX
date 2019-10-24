@@ -74,7 +74,7 @@ private:
     QString m_line;
 
     QString m_position;
-    bool m_chess960;
+    //bool m_chess960;
     QString m_waitingOn;
     bool m_quitAfterAnalysis;
 };

@@ -386,10 +386,10 @@ void PgnDatabase::loadGameMoves(GameId gameId, Game& game)
     skipTags();
     QString fen = m_index.tagValue(TagNameFEN, gameId);
     QString variant = m_index.tagValue(TagNameVariant, gameId).toLower();
-    bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
+    //bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
     if(fen != "?")
     {
-        game.dbSetStartingBoard(fen, chess960);
+        game.dbSetStartingBoard(fen);
     }
     parseMoves(&game);
 }
@@ -416,10 +416,10 @@ bool PgnDatabase::loadGame(GameId gameId, Game& game)
     skipTags();
     QString fen = m_index.tagValue(TagNameFEN, gameId);
     QString variant = m_index.tagValue(TagNameVariant, gameId).toLower();
-    bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
+    //bool chess960 = (variant.startsWith("fischer") || variant.endsWith("960"));
     if(fen != "?")
     {
-        game.dbSetStartingBoard(fen, chess960);
+        game.dbSetStartingBoard(fen);
     }
 
     parseMoves(&game);

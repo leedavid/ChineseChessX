@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/chessx/v16/Preview/ipch/AutoPCH
+/debug
+/obj_dbg
+/src/generated
+/x64
+/.vs

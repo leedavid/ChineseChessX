@@ -25,7 +25,7 @@ UCIEngine::UCIEngine(const QString& name,
 {
     m_quitAfterAnalysis = false;
     m_invertBlack = true;
-    m_chess960 = false;
+    //m_chess960 = false;
 }
 
 void UCIEngine::setStartPos(const Board& startPos)
@@ -55,14 +55,14 @@ bool UCIEngine::startAnalysis(const Board& board, int nv, const EngineParameter 
     m_line = line;
     m_line.remove('=');
 
-    m_chess960 = board.chess960();
+    //m_chess960 = board.chess960();
     if (line.isEmpty())
     {
-        m_position = board.toFen(m_chess960);
+        m_position = board.toFen();
     }
     else
     {
-        m_position = m_startPos.toFen(m_chess960);
+        m_position = m_startPos.toFen();
     }
 
     send("stop");
@@ -173,15 +173,15 @@ void UCIEngine::setPosition()
     {
         send(QString("setoption name MultiPV value %1").arg(m_mpv));
     }
-    EngineOptionData chess960;
-    if(getOption("UCI_Chess960", chess960))
-    {
-        bool default960 = (chess960.m_defVal.compare("true", Qt::CaseInsensitive)==0);
-        if (default960 != m_chess960)
-        {
-            send(QString("setoption name UCI_Chess960 value %1").arg(m_chess960 ? "true":"false"));
-        }
-    }
+    //EngineOptionData chess960;
+    //if(getOption("UCI_Chess960", chess960))
+    //{
+    //    bool default960 = (chess960.m_defVal.compare("true", Qt::CaseInsensitive)==0);
+    //    if (default960 != m_chess960)
+    //    {
+    //        send(QString("setoption name UCI_Chess960 value %1").arg(m_chess960 ? "true":"false"));
+    //    }
+    //}
 
     if (m_line.isEmpty())
     {

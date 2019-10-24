@@ -327,7 +327,7 @@ void AnalysisWidget::setPosition(const Board& board, QString line)
 
         if(AppSettings->getValue("/General/onlineTablebases").toBool())
         {
-            if (!(m_board.isStalemate() || m_board.isCheckmate() || m_board.chess960()))
+            if (!(m_board.isCheckmate()))
             {
                 if(objectName() == "Analysis")
                 {

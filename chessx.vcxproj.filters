@@ -1,0 +1,1842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\quazip\JlCompress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\aboutdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\actiondialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\analysis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\analysiswidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\arenabook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\bitboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\boardsearchdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\boardsetup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\boardsetuptoolbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\boardtheme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\boardview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\boardviewex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\chartwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\chessbrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\clipboarddatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\colorlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\commentdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\compileeco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\copydialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ctgbookwriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ctgdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\databaseconversion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\databaseinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\databaselist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\databaselistmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\datesearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\digitalclock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\dlgsavebook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\dockwidgetex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\downloadmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\duplicatesearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ecoinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ecolistwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ecopositions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\editaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\elosearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\enginedata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\enginelist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\engineoptiondata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\engineoptiondialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\engineoptionlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\engineoptionmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\eventinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\eventlistwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\exclusiveactiongroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\exttool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ficsclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ficsconsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\ficsdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\filtermodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\filtersearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\formatproperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gamelist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gamelistsortmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gamewindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\guess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\guessengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\helpbrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\helpbrowsershell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\historylabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\historylist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\index.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\indexitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\kbaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\kzip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\listwidgetex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\loadquery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\logstream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\mainwindowabout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\mainwindowactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\matchparameterdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\memorydatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\messagedialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\movedata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\movelist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\nag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\numbersearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\openingtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\openingtreethread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\openingtreewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\outputoptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\partialdate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\pdbtest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\pgndatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\plaintextedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\playerdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\playerdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\playerinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\playerlistwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\polyglotdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\polyglotwriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\positionsearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\preferences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\promotiondialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\qioapi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\qled.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quaadler32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quacrc32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quagzipfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quaziodevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quazip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quazipdir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quazipfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\quazipnewinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\quicksearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\recipientaddressdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guess\recog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\refcount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\renametagdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\result.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\savedialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\shellhelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\simplelabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\spellchecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\streamdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\style.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\styleinformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\ooo\styleparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\tablebase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\tableview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dialogs\tagdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\tags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\tagsearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\telnetclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\textedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\threadedguess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\toolmainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\translatingslider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\uciengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\unzip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\database\wbengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quazip\zip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\gui\GameMimeData.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\JlCompress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\abk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\aboutdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\actiondialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\analysis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\analysiswidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\arenabook.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\attacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\bitboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\bitfind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\boardsearchdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\boardsetup.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\boardsetuptoolbutton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\boardtheme.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\boardview.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\boardviewex.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\chartwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\chessbrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\circularbuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\clipboarddatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\colorlist.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\commentdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\compileeco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\ooo\converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\copydialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\ctg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\ctgbookwriter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\ctgdatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\database.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\databaseconversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\databaseinfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\databaselist.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\databaselistmodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\datesearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\digitalclock.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\dlgsavebook.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\dockwidgetex.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\document.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\downloadmanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\duplicatesearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\ecoinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\ecolistwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\ecopositions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\ecothread.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\editaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\elosearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\engine.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\enginedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\enginelist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\engineoptiondata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\engineoptiondialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\engineoptionlist.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\engineoptionmodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\engineparameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\eventinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\eventlistwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\exclusiveactiongroup.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\exttool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\ficsclient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\ficsconsole.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\ficsdatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\filter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\filtermodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\filteroperator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\filtersearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\formatproperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\game.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\gameid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\gamelist.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\gamelistsortmodel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\gameundocommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\gamewindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\guess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\guessengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\helpbrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\helpbrowsershell.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\historylabel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\historylist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\index.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\indexitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\ioapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\kbaction.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\kzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\listwidgetex.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\loadquery.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\logstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\matchparameterdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\memorydatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\messagedialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\movedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\movelist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\nag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\numbersearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\openingtree.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\openingtreethread.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\openingtreewidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\output.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\outputoptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\partialdate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\pdbtest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\pgndatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\piece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\plaintextedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\playerdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\playerdatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\playerinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\playerlistwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\polyglotdatabase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\polyglotwriter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\positionsearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\preferences.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\promotiondialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\qled.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\quaadler32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\quachecksum32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\quacrc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\quazip\quagzipfile.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\quazip\quaziodevice.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\quazip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\quazip_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\quazipdir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\quazip\quazipfile.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\quazipfileinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\quazipnewinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\quicksearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\recipientaddressdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\guess\recog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\refcount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\renametagdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\result.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\dialogs\savedialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\search.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\settings.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\shellhelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\simplelabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\spellchecker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\sqlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\sqmove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guess\sqset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\square.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\streamdatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\style.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\styleinformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\ooo\styleparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\tablebase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\tableview.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\dialogs\tagdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\tags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\tagsearch.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\telnetclient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\textbrowserex.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\textedit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\database\threadedguess.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\toolmainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\gui\translatingslider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\database\uciengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quazip\unzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\database\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\database\wbengine.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\quazip\zip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <CustomBuild Include="src\generated\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="i18n\chessx_cz.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_da.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_es.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_it.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\dialogs\aboutdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\actiondialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\analysiswidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\boardsearchdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\boardsetup.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\boardviewex.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\commentdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\copydialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\dlgsavebook.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\engineoptiondialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\ficsconsole.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\gamewindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\helpbrowsershell.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\loadquery.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\matchparameterdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\openingtreewidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\preferences.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\promotiondialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\quicksearch.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\recipientaddressdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\renametagdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\savedialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\gui\tagdetailwidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="src\dialogs\tagdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\images\FlagFrance.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\FlagGermany.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\FlagPoland.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\FlagUK.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about-dark.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about0.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about1.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about1a.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about2.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about3.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about4.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about5.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\help\about6.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\accept.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\accessories_text_editor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\active.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\alpha.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\outline\alpha.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\alpha.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\aluminium.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\annotate.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_down_double.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_none.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_red.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_up_double.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\arrow_yellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\berlin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\outline\berlin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\berlin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\black_chess.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\black_wall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\brazilwood.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\brush_erase.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\brush_green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\brush_red.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\brush_yellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\bug_add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\button_ffw.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\button_first.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\button_last.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\button_rew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\camera.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\styles\checkbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\cherry.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\chessx.eco">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\chessx.gtm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\chessx.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_cz.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_da.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_de.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_fr.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_it.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="i18n\chessx_ru.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\chip.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_black.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_blue.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_green.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_grey.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_orange.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_red.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\circle_yellow.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\close_board.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\computer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\decline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\sounds\ding1.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\styles\down_arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\draw.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_copy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_cut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_find.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_find_tag.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_mail.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_out.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\edit_paste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editredo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editresize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\editundo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\engine.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\exportpdf.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\sounds\fanfare_x.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\fantasy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\fics.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\fileprint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\filter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\filter_reset.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\filter_rev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\flip-horizontal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\flip-vertical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\flip_board.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_closed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_favorite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_favorite2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_favorite3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_grey.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_new.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_open.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\folder_web.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\format_indent_less.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\fritzSWS.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\go_down_black.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\go_jump.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\go_up_black.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\styles\handle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\help_blue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\hint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\templates\html-default.template">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\insert_move.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\internet.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\label_blue_new.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\lanta.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\lapis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\templates\latex-default.template">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\leipzig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\outline\leipzig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\leipzig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\list_add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\mahogony.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\maple.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\marble.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\match.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\merida.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\outline\merida.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\merida.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\sounds\move.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\new_board.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\new_game.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\templates\notation-default.template">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\styles\orange.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\pen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\templates\pgn-default.template">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\pin.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\print.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\query_move.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\rating.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\redo_yellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\replace_move.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\replay.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="resources.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="data\images\respond.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\sand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\sandlewood.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\setup_board.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\show_targets.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\show_threat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\slate.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\shadow\spatial.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\square_green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\square_none.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\square_red.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\square_yellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\startup.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\swap-color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\text_clear.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\threat_black.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\threat_white.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\time_clear.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\training.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\undo_yellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\white_wall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\themes\boards\wood.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\sounds\woodthunk.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\images\textedit\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doxyfile">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="INSTALL">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="License.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="README.developers">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="TODO">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="mac_osx\fix_paths.sh">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="mac_osx\mac_deploy_dyn">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="unix\make_tarball">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="mac_osx\qt_menu.nib">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="data\lang\readme-lang.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="mac_osx\svnlist">
+      <Filter>Distribution Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\chessx.rc" />
+  </ItemGroup>
+</Project>

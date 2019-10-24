@@ -428,27 +428,27 @@ quint64 PolyglotDatabase::getHashFromBoard(const Board& board) const
         }
     }
 
-    if(board.canCastleShort(White))
-    {
-        key ^= RandomCastle[0];
-    }
-    if(board.canCastleLong(White))
-    {
-        key ^= RandomCastle[1];
-    }
-    if(board.canCastleShort(Black))
-    {
-        key ^= RandomCastle[2];
-    }
-    if(board.canCastleLong(Black))
-    {
-        key ^= RandomCastle[3];
-    }
+    //if(board.canCastleShort(White))
+    //{
+    //    key ^= RandomCastle[0];
+    //}
+    //if(board.canCastleLong(White))
+    //{
+    //    key ^= RandomCastle[1];
+    //}
+    //if(board.canCastleShort(Black))
+    //{
+    //    key ^= RandomCastle[2];
+    //}
+    //if(board.canCastleLong(Black))
+    //{
+    //    key ^= RandomCastle[3];
+    //}
 
-    if (board.canTakeEnPassant())
-    {
-        key ^= RandomEnPassant[board.enPassantSquare() & 7];
-    }
+    //if (board.canTakeEnPassant())
+    //{
+    //    key ^= RandomEnPassant[board.enPassantSquare() & 7];
+    //}
 
     if (board.toMove() == White)
     {

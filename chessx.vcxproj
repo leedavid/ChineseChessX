@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BA49BDB3-B7DE-3B7A-873E-A3DC139F4BD0}</ProjectGuid>
+    <RootNamespace>chessx</RootNamespace>
+    <Keyword>QtVS_v301</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>obj_rel\</IntermediateDirectory>
+    <PrimaryOutput>chessx</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>obj_dbg\</IntermediateDirectory>
+    <PrimaryOutput>chessx</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>QT5131</QtInstall>
+    <QtModules>core;xml;network;gui;svg;multimedia;widgets;printsupport</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>QT5131</QtInstall>
+    <QtModules>core;xml;network;gui;svg;multimedia;widgets;printsupport</QtModules>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">chessx</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">chessx</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;src\database;src\guess;src\gui;src\dialogs;src\quazip;D:/QT/5.13.1/MSVC2017_64/src/3rdparty/zlib;..\..\..\QT\5.13.1\MSVC2017_64\include\QtZlib;src\generated;..\..\..\QT\5.13.1\MSVC2017_64\include;..\..\..\QT\5.13.1\MSVC2017_64\include\QtSvg;..\..\..\QT\5.13.1\MSVC2017_64\include\QtPrintSupport;..\..\..\QT\5.13.1\MSVC2017_64\include\QtWidgets;..\..\..\QT\5.13.1\MSVC2017_64\include\QtMultimedia;..\..\..\QT\5.13.1\MSVC2017_64\include\QtGui;..\..\..\QT\5.13.1\MSVC2017_64\include\QtANGLE;..\..\..\QT\5.13.1\MSVC2017_64\include\QtNetwork;..\..\..\QT\5.13.1\MSVC2017_64\include\QtXml;..\..\..\QT\5.13.1\MSVC2017_64\include\QtCore;/include;..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>obj_rel\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;USE_SOUND;USE_C11;QUAZIP_STATIC;QT_NO_CAST_TO_ASCII;QT_USE_QSTRINGBUILDER;QT_NO_DEBUG_OUTPUT;NDEBUG;QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\chessx.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;USE_SOUND;USE_C11;QUAZIP_STATIC;QT_NO_CAST_TO_ASCII;QT_USE_QSTRINGBUILDER;QT_NO_DEBUG_OUTPUT;NDEBUG;QT_NO_DEBUG;QT_SVG_LIB;QT_PRINTSUPPORT_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./src/generated/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>src\generated</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <Compression>default</Compression>
+      <InitFuncName>resources</InitFuncName>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>src\generated</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>src\generated</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;src\database;src\guess;src\gui;src\dialogs;src\quazip;D:/QT/5.13.1/MSVC2017_64/src/3rdparty/zlib;..\..\..\QT\5.13.1\MSVC2017_64\include\QtZlib;src\generated;..\..\..\QT\5.13.1\MSVC2017_64\include;..\..\..\QT\5.13.1\MSVC2017_64\include\QtSvg;..\..\..\QT\5.13.1\MSVC2017_64\include\QtPrintSupport;..\..\..\QT\5.13.1\MSVC2017_64\include\QtWidgets;..\..\..\QT\5.13.1\MSVC2017_64\include\QtMultimedia;..\..\..\QT\5.13.1\MSVC2017_64\include\QtGui;..\..\..\QT\5.13.1\MSVC2017_64\include\QtANGLE;..\..\..\QT\5.13.1\MSVC2017_64\include\QtNetwork;..\..\..\QT\5.13.1\MSVC2017_64\include\QtXml;..\..\..\QT\5.13.1\MSVC2017_64\include\QtCore;/include;..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>obj_dbg\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;USE_SOUND;USE_C11;QUAZIP_STATIC;QT_NO_CAST_TO_ASCII;QT_USE_QSTRINGBUILDER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\chessx.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;USE_SOUND;USE_C11;QUAZIP_STATIC;QT_NO_CAST_TO_ASCII;QT_USE_QSTRINGBUILDER;QT_SVG_LIB;QT_PRINTSUPPORT_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtRcc>
+      <Compression>default</Compression>
+      <InitFuncName>resources</InitFuncName>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>src\generated</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./src/generated/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>src\generated</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>src\generated</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\quazip\JlCompress.cpp" />
+    <ClCompile Include="src\dialogs\aboutdlg.cpp" />
+    <ClCompile Include="src\dialogs\actiondialog.cpp" />
+    <ClCompile Include="src\database\analysis.cpp" />
+    <ClCompile Include="src\gui\analysiswidget.cpp" />
+    <ClCompile Include="src\database\arenabook.cpp" />
+    <ClCompile Include="src\database\bitboard.cpp" />
+    <ClCompile Include="src\database\board.cpp" />
+    <ClCompile Include="src\dialogs\boardsearchdialog.cpp" />
+    <ClCompile Include="src\gui\boardsetup.cpp" />
+    <ClCompile Include="src\gui\boardsetuptoolbutton.cpp" />
+    <ClCompile Include="src\gui\boardtheme.cpp" />
+    <ClCompile Include="src\gui\boardview.cpp" />
+    <ClCompile Include="src\gui\boardviewex.cpp" />
+    <ClCompile Include="src\gui\chartwidget.cpp" />
+    <ClCompile Include="src\gui\chessbrowser.cpp" />
+    <ClCompile Include="src\database\clipboarddatabase.cpp" />
+    <ClCompile Include="src\gui\colorlist.cpp" />
+    <ClCompile Include="src\dialogs\commentdialog.cpp" />
+    <ClCompile Include="src\guess\compileeco.cpp" />
+    <ClCompile Include="src\gui\ooo\converter.cpp" />
+    <ClCompile Include="src\dialogs\copydialog.cpp" />
+    <ClCompile Include="src\database\ctgbookwriter.cpp" />
+    <ClCompile Include="src\database\ctgdatabase.cpp" />
+    <ClCompile Include="src\database\database.cpp" />
+    <ClCompile Include="src\database\databaseconversion.cpp" />
+    <ClCompile Include="src\database\databaseinfo.cpp" />
+    <ClCompile Include="src\gui\databaselist.cpp" />
+    <ClCompile Include="src\gui\databaselistmodel.cpp" />
+    <ClCompile Include="src\database\datesearch.cpp" />
+    <ClCompile Include="src\gui\digitalclock.cpp" />
+    <ClCompile Include="src\dialogs\dlgsavebook.cpp" />
+    <ClCompile Include="src\gui\dockwidgetex.cpp" />
+    <ClCompile Include="src\gui\ooo\document.cpp" />
+    <ClCompile Include="src\database\downloadmanager.cpp" />
+    <ClCompile Include="src\database\duplicatesearch.cpp" />
+    <ClCompile Include="src\database\ecoinfo.cpp" />
+    <ClCompile Include="src\gui\ecolistwidget.cpp" />
+    <ClCompile Include="src\database\ecopositions.cpp" />
+    <ClCompile Include="src\database\editaction.cpp" />
+    <ClCompile Include="src\database\elosearch.cpp" />
+    <ClCompile Include="src\database\engine.cpp" />
+    <ClCompile Include="src\database\enginedata.cpp" />
+    <ClCompile Include="src\database\enginelist.cpp" />
+    <ClCompile Include="src\database\engineoptiondata.cpp" />
+    <ClCompile Include="src\gui\engineoptiondialog.cpp" />
+    <ClCompile Include="src\gui\engineoptionlist.cpp" />
+    <ClCompile Include="src\gui\engineoptionmodel.cpp" />
+    <ClCompile Include="src\database\eventinfo.cpp" />
+    <ClCompile Include="src\gui\eventlistwidget.cpp" />
+    <ClCompile Include="src\gui\exclusiveactiongroup.cpp" />
+    <ClCompile Include="src\gui\exttool.cpp" />
+    <ClCompile Include="src\database\ficsclient.cpp" />
+    <ClCompile Include="src\gui\ficsconsole.cpp" />
+    <ClCompile Include="src\database\ficsdatabase.cpp" />
+    <ClCompile Include="src\database\filter.cpp" />
+    <ClCompile Include="src\database\filtermodel.cpp" />
+    <ClCompile Include="src\database\filtersearch.cpp" />
+    <ClCompile Include="src\gui\ooo\formatproperty.cpp" />
+    <ClCompile Include="src\database\game.cpp" />
+    <ClCompile Include="src\gui\gamelist.cpp" />
+    <ClCompile Include="src\gui\gamelistsortmodel.cpp" />
+    <ClCompile Include="src\gui\gamewindow.cpp" />
+    <ClCompile Include="src\guess\guess.cpp" />
+    <ClCompile Include="src\guess\guessengine.cpp" />
+    <ClCompile Include="src\gui\helpbrowser.cpp" />
+    <ClCompile Include="src\gui\helpbrowsershell.cpp" />
+    <ClCompile Include="src\gui\historylabel.cpp" />
+    <ClCompile Include="src\database\historylist.cpp" />
+    <ClCompile Include="src\database\index.cpp" />
+    <ClCompile Include="src\database\indexitem.cpp" />
+    <ClCompile Include="src\gui\kbaction.cpp" />
+    <ClCompile Include="src\gui\ooo\kzip.cpp" />
+    <ClCompile Include="src\gui\listwidgetex.cpp" />
+    <ClCompile Include="src\gui\loadquery.cpp" />
+    <ClCompile Include="src\gui\logstream.cpp" />
+    <ClCompile Include="src\gui\main.cpp" />
+    <ClCompile Include="src\gui\mainwindow.cpp" />
+    <ClCompile Include="src\gui\mainwindowabout.cpp" />
+    <ClCompile Include="src\gui\mainwindowactions.cpp" />
+    <ClCompile Include="src\dialogs\matchparameterdlg.cpp" />
+    <ClCompile Include="src\database\memorydatabase.cpp" />
+    <ClCompile Include="src\gui\messagedialog.cpp" />
+    <ClCompile Include="src\guess\misc.cpp" />
+    <ClCompile Include="src\database\movedata.cpp" />
+    <ClCompile Include="src\guess\movelist.cpp" />
+    <ClCompile Include="src\database\nag.cpp" />
+    <ClCompile Include="src\database\numbersearch.cpp" />
+    <ClCompile Include="src\database\openingtree.cpp" />
+    <ClCompile Include="src\database\openingtreethread.cpp" />
+    <ClCompile Include="src\gui\openingtreewidget.cpp" />
+    <ClCompile Include="src\database\output.cpp" />
+    <ClCompile Include="src\database\outputoptions.cpp" />
+    <ClCompile Include="src\database\partialdate.cpp" />
+    <ClCompile Include="src\database\pdbtest.cpp" />
+    <ClCompile Include="src\database\pgndatabase.cpp" />
+    <ClCompile Include="src\database\piece.cpp" />
+    <ClCompile Include="src\gui\plaintextedit.cpp" />
+    <ClCompile Include="src\database\playerdata.cpp" />
+    <ClCompile Include="src\database\playerdatabase.cpp" />
+    <ClCompile Include="src\database\playerinfo.cpp" />
+    <ClCompile Include="src\gui\playerlistwidget.cpp" />
+    <ClCompile Include="src\database\polyglotdatabase.cpp" />
+    <ClCompile Include="src\database\polyglotwriter.cpp" />
+    <ClCompile Include="src\guess\position.cpp" />
+    <ClCompile Include="src\database\positionsearch.cpp" />
+    <ClCompile Include="src\dialogs\preferences.cpp" />
+    <ClCompile Include="src\dialogs\promotiondialog.cpp" />
+    <ClCompile Include="src\quazip\qioapi.cpp" />
+    <ClCompile Include="src\gui\qled.cpp" />
+    <ClCompile Include="src\quazip\quaadler32.cpp" />
+    <ClCompile Include="src\quazip\quacrc32.cpp" />
+    <ClCompile Include="src\quazip\quagzipfile.cpp" />
+    <ClCompile Include="src\quazip\quaziodevice.cpp" />
+    <ClCompile Include="src\quazip\quazip.cpp" />
+    <ClCompile Include="src\quazip\quazipdir.cpp" />
+    <ClCompile Include="src\quazip\quazipfile.cpp" />
+    <ClCompile Include="src\quazip\quazipnewinfo.cpp" />
+    <ClCompile Include="src\dialogs\quicksearch.cpp" />
+    <ClCompile Include="src\dialogs\recipientaddressdialog.cpp" />
+    <ClCompile Include="src\guess\recog.cpp" />
+    <ClCompile Include="src\database\refcount.cpp" />
+    <ClCompile Include="src\dialogs\renametagdialog.cpp" />
+    <ClCompile Include="src\database\result.cpp" />
+    <ClCompile Include="src\dialogs\savedialog.cpp" />
+    <ClCompile Include="src\database\search.cpp" />
+    <ClCompile Include="src\database\settings.cpp" />
+    <ClCompile Include="src\gui\shellhelper.cpp" />
+    <ClCompile Include="src\gui\simplelabel.cpp" />
+    <ClCompile Include="src\database\spellchecker.cpp" />
+    <ClCompile Include="src\database\streamdatabase.cpp" />
+    <ClCompile Include="src\gui\style.cpp" />
+    <ClCompile Include="src\gui\ooo\styleinformation.cpp" />
+    <ClCompile Include="src\gui\ooo\styleparser.cpp" />
+    <ClCompile Include="src\database\tablebase.cpp" />
+    <ClCompile Include="src\gui\tableview.cpp" />
+    <ClCompile Include="src\dialogs\tagdialog.cpp" />
+    <ClCompile Include="src\database\tags.cpp" />
+    <ClCompile Include="src\database\tagsearch.cpp" />
+    <ClCompile Include="src\database\telnetclient.cpp" />
+    <ClCompile Include="src\gui\textedit.cpp" />
+    <ClCompile Include="src\database\threadedguess.cpp" />
+    <ClCompile Include="src\gui\toolmainwindow.cpp" />
+    <ClCompile Include="src\gui\translatingslider.cpp" />
+    <ClCompile Include="src\database\uciengine.cpp" />
+    <ClCompile Include="src\quazip\unzip.cpp" />
+    <ClCompile Include="src\database\wbengine.cpp" />
+    <ClCompile Include="src\quazip\zip.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\gui\GameMimeData.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\JlCompress.h" />
+    <ClInclude Include="src\database\abk.h" />
+    <QtMoc Include="src\dialogs\aboutdlg.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\actiondialog.h">
+    </QtMoc>
+    <ClInclude Include="src\database\analysis.h" />
+    <QtMoc Include="src\gui\analysiswidget.h">
+    </QtMoc>
+    <QtMoc Include="src\database\arenabook.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\attacks.h" />
+    <ClInclude Include="src\database\bitboard.h" />
+    <ClInclude Include="src\database\bitfind.h" />
+    <ClInclude Include="src\database\board.h" />
+    <QtMoc Include="src\dialogs\boardsearchdialog.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\boardsetup.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\boardsetuptoolbutton.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\boardtheme.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\boardview.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\boardviewex.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\chartwidget.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\chessbrowser.h">
+    </QtMoc>
+    <ClInclude Include="src\database\circularbuffer.h" />
+    <QtMoc Include="src\database\clipboarddatabase.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\colorlist.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\commentdialog.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\common.h" />
+    <ClInclude Include="src\guess\compileeco.h" />
+    <ClInclude Include="src\gui\ooo\converter.h" />
+    <QtMoc Include="src\dialogs\copydialog.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\crypt.h" />
+    <ClInclude Include="src\database\ctg.h" />
+    <QtMoc Include="src\database\ctgbookwriter.h">
+    </QtMoc>
+    <QtMoc Include="src\database\ctgdatabase.h">
+    </QtMoc>
+    <QtMoc Include="src\database\database.h">
+    </QtMoc>
+    <ClInclude Include="src\database\databaseconversion.h" />
+    <QtMoc Include="src\database\databaseinfo.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\databaselist.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\databaselistmodel.h">
+    </QtMoc>
+    <QtMoc Include="src\database\datesearch.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\digitalclock.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\dlgsavebook.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\dockwidgetex.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\document.h" />
+    <QtMoc Include="src\database\downloadmanager.h">
+    </QtMoc>
+    <QtMoc Include="src\database\duplicatesearch.h">
+    </QtMoc>
+    <ClInclude Include="src\database\ecoinfo.h" />
+    <QtMoc Include="src\gui\ecolistwidget.h">
+    </QtMoc>
+    <ClInclude Include="src\database\ecopositions.h" />
+    <QtMoc Include="src\gui\ecothread.h">
+    </QtMoc>
+    <ClInclude Include="src\database\editaction.h" />
+    <QtMoc Include="src\database\elosearch.h">
+    </QtMoc>
+    <QtMoc Include="src\database\engine.h">
+    </QtMoc>
+    <ClInclude Include="src\database\enginedata.h" />
+    <ClInclude Include="src\database\enginelist.h" />
+    <ClInclude Include="src\database\engineoptiondata.h" />
+    <QtMoc Include="src\gui\engineoptiondialog.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\engineoptionlist.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\engineoptionmodel.h">
+    </QtMoc>
+    <ClInclude Include="src\database\engineparameter.h" />
+    <ClInclude Include="src\guess\error.h" />
+    <ClInclude Include="src\database\eventinfo.h" />
+    <QtMoc Include="src\gui\eventlistwidget.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\exclusiveactiongroup.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\exttool.h">
+    </QtMoc>
+    <QtMoc Include="src\database\ficsclient.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\ficsconsole.h">
+    </QtMoc>
+    <QtMoc Include="src\database\ficsdatabase.h">
+    </QtMoc>
+    <QtMoc Include="src\database\filter.h">
+    </QtMoc>
+    <QtMoc Include="src\database\filtermodel.h">
+    </QtMoc>
+    <ClInclude Include="src\database\filteroperator.h" />
+    <QtMoc Include="src\database\filtersearch.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\formatproperty.h" />
+    <QtMoc Include="src\database\game.h">
+    </QtMoc>
+    <ClInclude Include="src\database\gameid.h" />
+    <QtMoc Include="src\gui\gamelist.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\gamelistsortmodel.h" />
+    <ClInclude Include="src\database\gameundocommand.h" />
+    <QtMoc Include="src\gui\gamewindow.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\guess.h" />
+    <ClInclude Include="src\guess\guessengine.h" />
+    <ClInclude Include="src\guess\hash.h" />
+    <QtMoc Include="src\gui\helpbrowser.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\helpbrowsershell.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\historylabel.h">
+    </QtMoc>
+    <ClInclude Include="src\database\historylist.h" />
+    <QtMoc Include="src\database\index.h">
+    </QtMoc>
+    <ClInclude Include="src\database\indexitem.h" />
+    <ClInclude Include="src\quazip\ioapi.h" />
+    <QtMoc Include="src\gui\kbaction.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\kzip.h" />
+    <QtMoc Include="src\gui\listwidgetex.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\loadquery.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\logstream.h" />
+    <QtMoc Include="src\gui\mainwindow.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\matchparameterdlg.h">
+    </QtMoc>
+    <QtMoc Include="src\database\memorydatabase.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\messagedialog.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\misc.h" />
+    <ClInclude Include="src\database\move.h" />
+    <ClInclude Include="src\database\movedata.h" />
+    <ClInclude Include="src\guess\movelist.h" />
+    <ClInclude Include="src\database\nag.h" />
+    <QtMoc Include="src\database\numbersearch.h">
+    </QtMoc>
+    <QtMoc Include="src\database\openingtree.h">
+    </QtMoc>
+    <QtMoc Include="src\database\openingtreethread.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\openingtreewidget.h">
+    </QtMoc>
+    <QtMoc Include="src\database\output.h">
+    </QtMoc>
+    <ClInclude Include="src\database\outputoptions.h" />
+    <ClInclude Include="src\database\partialdate.h" />
+    <ClInclude Include="src\database\pdbtest.h" />
+    <QtMoc Include="src\database\pgndatabase.h">
+    </QtMoc>
+    <ClInclude Include="src\database\piece.h" />
+    <ClInclude Include="src\gui\plaintextedit.h" />
+    <ClInclude Include="src\database\playerdata.h" />
+    <ClInclude Include="src\database\playerdatabase.h" />
+    <ClInclude Include="src\database\playerinfo.h" />
+    <QtMoc Include="src\gui\playerlistwidget.h">
+    </QtMoc>
+    <QtMoc Include="src\database\polyglotdatabase.h">
+    </QtMoc>
+    <QtMoc Include="src\database\polyglotwriter.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\position.h" />
+    <QtMoc Include="src\database\positionsearch.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\preferences.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\promotiondialog.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\qled.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\quaadler32.h" />
+    <ClInclude Include="src\quazip\quachecksum32.h" />
+    <ClInclude Include="src\quazip\quacrc32.h" />
+    <QtMoc Include="src\quazip\quagzipfile.h">
+    </QtMoc>
+    <QtMoc Include="src\quazip\quaziodevice.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\quazip.h" />
+    <ClInclude Include="src\quazip\quazip_global.h" />
+    <ClInclude Include="src\quazip\quazipdir.h" />
+    <QtMoc Include="src\quazip\quazipfile.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\quazipfileinfo.h" />
+    <ClInclude Include="src\quazip\quazipnewinfo.h" />
+    <QtMoc Include="src\dialogs\quicksearch.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\recipientaddressdialog.h">
+    </QtMoc>
+    <ClInclude Include="src\guess\recog.h" />
+    <ClInclude Include="src\database\refcount.h" />
+    <QtMoc Include="src\dialogs\renametagdialog.h">
+    </QtMoc>
+    <ClInclude Include="src\database\result.h" />
+    <QtMoc Include="src\dialogs\savedialog.h">
+    </QtMoc>
+    <QtMoc Include="src\database\search.h">
+    </QtMoc>
+    <QtMoc Include="src\database\settings.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\shellhelper.h" />
+    <ClInclude Include="src\gui\simplelabel.h" />
+    <ClInclude Include="src\database\spellchecker.h" />
+    <ClInclude Include="src\guess\sqlist.h" />
+    <ClInclude Include="src\guess\sqmove.h" />
+    <ClInclude Include="src\guess\sqset.h" />
+    <ClInclude Include="src\database\square.h" />
+    <ClInclude Include="src\database\streamdatabase.h" />
+    <QtMoc Include="src\gui\style.h">
+    </QtMoc>
+    <ClInclude Include="src\gui\ooo\styleinformation.h" />
+    <ClInclude Include="src\gui\ooo\styleparser.h" />
+    <QtMoc Include="src\database\tablebase.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\tableview.h">
+    </QtMoc>
+    <QtMoc Include="src\dialogs\tagdialog.h">
+    </QtMoc>
+    <ClInclude Include="src\database\tags.h" />
+    <QtMoc Include="src\database\tagsearch.h">
+    </QtMoc>
+    <QtMoc Include="src\database\telnetclient.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\textbrowserex.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\textedit.h">
+    </QtMoc>
+    <QtMoc Include="src\database\threadedguess.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\toolmainwindow.h">
+    </QtMoc>
+    <QtMoc Include="src\gui\translatingslider.h">
+    </QtMoc>
+    <ClInclude Include="src\database\uciengine.h" />
+    <ClInclude Include="src\quazip\unzip.h" />
+    <ClInclude Include="src\database\version.h" />
+    <QtMoc Include="src\database\wbengine.h">
+    </QtMoc>
+    <ClInclude Include="src\quazip\zip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\generated\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;src\generated\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\generated\moc_predefs.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\QT\5.13.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;src\generated\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\generated\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="i18n\chessx_cz.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_cz.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_cz.ts -qm i18n/chessx_cz.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_cz.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_cz.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_cz.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_cz.ts -qm i18n/chessx_cz.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_cz.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_cz.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_da.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_da.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_da.ts -qm i18n/chessx_da.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_da.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_da.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_da.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_da.ts -qm i18n/chessx_da.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_da.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_da.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_de.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_de.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_de.ts -qm i18n/chessx_de.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_de.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_de.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_de.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_de.ts -qm i18n/chessx_de.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_de.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_de.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_es.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_es.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_es.ts -qm i18n/chessx_es.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_es.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_es.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_es.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_es.ts -qm i18n/chessx_es.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_es.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_es.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_fr.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_fr.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_fr.ts -qm i18n/chessx_fr.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_fr.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_fr.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_fr.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_fr.ts -qm i18n/chessx_fr.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_fr.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_fr.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_it.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_it.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_it.ts -qm i18n/chessx_it.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_it.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_it.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_it.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_it.ts -qm i18n/chessx_it.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_it.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_it.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="i18n\chessx_ru.ts">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_ru.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_ru.ts -qm i18n/chessx_ru.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lrelease i18n/chessx_ru.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">i18n\chessx_ru.qm;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_ru.ts;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/QT/5.13.1/MSVC2017_64/bin\lrelease.exe i18n\chessx_ru.ts -qm i18n/chessx_ru.qm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lrelease i18n/chessx_ru.ts</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">i18n\chessx_ru.qm;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\dialogs\aboutdlg.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\actiondialog.ui">
+    </QtUic>
+    <QtUic Include="src\gui\analysiswidget.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\boardsearchdialog.ui">
+    </QtUic>
+    <QtUic Include="src\gui\boardsetup.ui">
+    </QtUic>
+    <QtUic Include="src\gui\boardviewex.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\commentdialog.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\copydialog.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\dlgsavebook.ui">
+    </QtUic>
+    <QtUic Include="src\gui\engineoptiondialog.ui">
+    </QtUic>
+    <QtUic Include="src\gui\ficsconsole.ui">
+    </QtUic>
+    <QtUic Include="src\gui\gamewindow.ui">
+    </QtUic>
+    <QtUic Include="src\gui\helpbrowsershell.ui">
+    </QtUic>
+    <QtUic Include="src\gui\loadquery.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\matchparameterdlg.ui">
+    </QtUic>
+    <QtUic Include="src\gui\openingtreewidget.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\preferences.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\promotiondialog.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\quicksearch.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\recipientaddressdialog.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\renametagdialog.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\savedialog.ui">
+    </QtUic>
+    <QtUic Include="src\gui\tagdetailwidget.ui">
+    </QtUic>
+    <QtUic Include="src\dialogs\tagdialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\images\FlagFrance.png" />
+    <None Include="data\images\FlagGermany.png" />
+    <None Include="data\images\FlagPoland.png" />
+    <None Include="data\images\FlagUK.png" />
+    <None Include="data\help\about-dark.css" />
+    <None Include="data\help\about.css" />
+    <None Include="data\help\about0.html" />
+    <None Include="data\help\about1.html" />
+    <None Include="data\help\about1a.html" />
+    <None Include="data\help\about2.html" />
+    <None Include="data\help\about3.html" />
+    <None Include="data\help\about4.html" />
+    <None Include="data\help\about5.html" />
+    <None Include="data\help\about6.html" />
+    <None Include="data\images\accept.png" />
+    <None Include="data\images\accessories_text_editor.png" />
+    <None Include="data\images\active.png" />
+    <None Include="data\themes\alpha.png" />
+    <None Include="data\themes\outline\alpha.png" />
+    <None Include="data\themes\shadow\alpha.png" />
+    <None Include="data\themes\boards\aluminium.png" />
+    <None Include="data\images\annotate.png" />
+    <None Include="data\images\arrow_down_double.png" />
+    <None Include="data\images\arrow_green.png" />
+    <None Include="data\images\arrow_none.png" />
+    <None Include="data\images\arrow_red.png" />
+    <None Include="data\images\arrow_up_double.png" />
+    <None Include="data\images\arrow_yellow.png" />
+    <None Include="data\images\back.png" />
+    <None Include="data\themes\berlin.png" />
+    <None Include="data\themes\outline\berlin.png" />
+    <None Include="data\themes\shadow\berlin.png" />
+    <None Include="data\images\black_chess.png" />
+    <None Include="data\images\black_wall.png" />
+    <None Include="data\themes\boards\brazilwood.png" />
+    <None Include="data\images\brush_erase.png" />
+    <None Include="data\images\brush_green.png" />
+    <None Include="data\images\brush_red.png" />
+    <None Include="data\images\brush_yellow.png" />
+    <None Include="data\images\bug_add.png" />
+    <None Include="data\images\button_ffw.png" />
+    <None Include="data\images\button_first.png" />
+    <None Include="data\images\button_last.png" />
+    <None Include="data\images\button_rew.png" />
+    <None Include="data\images\camera.png" />
+    <None Include="data\styles\checkbox.png" />
+    <None Include="data\themes\boards\cherry.png" />
+    <None Include="data\chessx.eco" />
+    <None Include="data\chessx.gtm" />
+    <None Include="data\images\chessx.png" />
+    <None Include="i18n\chessx_cz.qm" />
+    <None Include="i18n\chessx_da.qm" />
+    <None Include="i18n\chessx_de.qm" />
+    <None Include="i18n\chessx_fr.qm" />
+    <None Include="i18n\chessx_it.qm" />
+    <None Include="i18n\chessx_ru.qm" />
+    <None Include="data\images\chip.png" />
+    <None Include="data\images\circle_black.svg" />
+    <None Include="data\images\circle_blue.svg" />
+    <None Include="data\images\circle_green.svg" />
+    <None Include="data\images\circle_grey.svg" />
+    <None Include="data\images\circle_orange.svg" />
+    <None Include="data\images\circle_red.svg" />
+    <None Include="data\images\circle_yellow.svg" />
+    <None Include="data\images\close_board.png" />
+    <None Include="data\images\computer.png" />
+    <None Include="data\images\decline.png" />
+    <None Include="data\sounds\ding1.wav" />
+    <None Include="data\styles\down_arrow.png" />
+    <None Include="data\images\draw.png" />
+    <None Include="data\images\edit_copy.png" />
+    <None Include="data\images\edit_cut.png" />
+    <None Include="data\images\edit_find.png" />
+    <None Include="data\images\edit_find_tag.png" />
+    <None Include="data\images\edit_mail.png" />
+    <None Include="data\images\edit_out.png" />
+    <None Include="data\images\edit_paste.png" />
+    <None Include="data\images\textedit\editcopy.png" />
+    <None Include="data\images\textedit\editcut.png" />
+    <None Include="data\images\textedit\editpaste.png" />
+    <None Include="data\images\textedit\editredo.png" />
+    <None Include="data\images\textedit\editresize.png" />
+    <None Include="data\images\textedit\editundo.png" />
+    <None Include="data\images\engine.png" />
+    <None Include="data\images\textedit\exportpdf.png" />
+    <None Include="data\sounds\fanfare_x.wav" />
+    <None Include="data\themes\shadow\fantasy.png" />
+    <None Include="data\images\fics.png" />
+    <None Include="data\images\textedit\filenew.png" />
+    <None Include="data\images\fileopen.png" />
+    <None Include="data\images\textedit\fileopen.png" />
+    <None Include="data\images\textedit\fileprint.png" />
+    <None Include="data\images\textedit\filesave.png" />
+    <None Include="data\images\filter.png" />
+    <None Include="data\images\filter_reset.png" />
+    <None Include="data\images\filter_rev.png" />
+    <None Include="data\images\flip-horizontal.png" />
+    <None Include="data\images\flip-vertical.png" />
+    <None Include="data\images\flip_board.png" />
+    <None Include="data\images\folder.png" />
+    <None Include="data\images\folder_closed.png" />
+    <None Include="data\images\folder_favorite.png" />
+    <None Include="data\images\folder_favorite2.png" />
+    <None Include="data\images\folder_favorite3.png" />
+    <None Include="data\images\folder_grey.png" />
+    <None Include="data\images\folder_new.png" />
+    <None Include="data\images\folder_open.png" />
+    <None Include="data\images\folder_web.png" />
+    <None Include="data\images\format_indent_less.png" />
+    <None Include="data\images\forward.png" />
+    <None Include="data\themes\shadow\fritzSWS.png" />
+    <None Include="data\images\go_down_black.png" />
+    <None Include="data\images\go_jump.png" />
+    <None Include="data\images\go_up_black.png" />
+    <None Include="data\styles\handle.png" />
+    <None Include="data\images\help_blue.png" />
+    <None Include="data\images\hint.png" />
+    <None Include="data\images\home.png" />
+    <None Include="data\templates\html-default.template" />
+    <None Include="data\images\insert_move.png" />
+    <None Include="data\images\internet.png" />
+    <None Include="data\images\label_blue_new.png" />
+    <None Include="data\themes\boards\lanta.png" />
+    <None Include="data\themes\boards\lapis.png" />
+    <None Include="data\templates\latex-default.template" />
+    <None Include="data\themes\leipzig.png" />
+    <None Include="data\themes\outline\leipzig.png" />
+    <None Include="data\themes\shadow\leipzig.png" />
+    <None Include="data\images\list_add.png" />
+    <None Include="data\themes\boards\mahogony.png" />
+    <None Include="data\themes\boards\maple.png" />
+    <None Include="data\themes\boards\marble.png" />
+    <None Include="data\images\match.png" />
+    <None Include="data\themes\merida.png" />
+    <None Include="data\themes\outline\merida.png" />
+    <None Include="data\themes\shadow\merida.png" />
+    <None Include="data\sounds\move.wav" />
+    <None Include="data\images\new_board.png" />
+    <None Include="data\images\new_game.png" />
+    <None Include="data\templates\notation-default.template" />
+    <None Include="data\styles\orange.css" />
+    <None Include="data\images\pen.png" />
+    <None Include="data\templates\pgn-default.template" />
+    <None Include="data\images\pin.ico" />
+    <None Include="data\images\plus.png" />
+    <None Include="data\images\print.png" />
+    <None Include="data\images\query_move.png" />
+    <None Include="data\images\rating.png" />
+    <None Include="data\images\redo_yellow.png" />
+    <None Include="data\images\replace_move.png" />
+    <None Include="data\images\replay.png" />
+    <QtRcc Include="resources.qrc">
+    </QtRcc>
+    <None Include="data\images\respond.png" />
+    <None Include="data\themes\boards\sand.png" />
+    <None Include="data\themes\boards\sandlewood.png" />
+    <None Include="data\images\save.png" />
+    <None Include="data\images\setup_board.png" />
+    <None Include="data\images\show_targets.png" />
+    <None Include="data\images\show_threat.png" />
+    <None Include="data\themes\boards\slate.png" />
+    <None Include="data\themes\shadow\spatial.png" />
+    <None Include="data\images\square_green.png" />
+    <None Include="data\images\square_none.png" />
+    <None Include="data\images\square_red.png" />
+    <None Include="data\images\square_yellow.png" />
+    <None Include="data\images\startup.png" />
+    <None Include="data\images\swap-color.png" />
+    <None Include="data\images\text_clear.png" />
+    <None Include="data\images\textedit\textbold.png" />
+    <None Include="data\images\textedit\textcenter.png" />
+    <None Include="data\images\textedit\textitalic.png" />
+    <None Include="data\images\textedit\textjustify.png" />
+    <None Include="data\images\textedit\textleft.png" />
+    <None Include="data\images\textedit\textright.png" />
+    <None Include="data\images\textedit\textunder.png" />
+    <None Include="data\images\threat_black.png" />
+    <None Include="data\images\threat_white.png" />
+    <None Include="data\images\time_clear.png" />
+    <None Include="data\images\training.png" />
+    <None Include="data\images\undo_yellow.png" />
+    <None Include="data\images\white_wall.png" />
+    <None Include="data\themes\boards\wood.png" />
+    <None Include="data\sounds\woodthunk.wav" />
+    <None Include="data\images\textedit\zoomin.png" />
+    <None Include="data\images\textedit\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doxyfile" />
+    <None Include="INSTALL" />
+    <None Include="License.txt" />
+    <None Include="README.developers" />
+    <None Include="TODO" />
+    <None Include="mac_osx\fix_paths.sh" />
+    <None Include="mac_osx\mac_deploy_dyn" />
+    <None Include="unix\make_tarball" />
+    <None Include="mac_osx\qt_menu.nib" />
+    <None Include="data\lang\readme-lang.txt" />
+    <None Include="mac_osx\svnlist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\chessx.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

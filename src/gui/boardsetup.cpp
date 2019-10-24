@@ -216,98 +216,98 @@ void BoardSetupDialog::setBoard(const Board& b)
     ui.boardView->setBoard(b);
     ui.moveSpin->setValue(b.moveNumber());
     ui.halfmoveSpin->setValue(b.halfMoveClock());
-    if(b.enPassantSquare() == NoEPSquare)
-    {
-        ui.epCombo->setCurrentIndex(0);
-    }
-    else if(b.toMove() == White && b.pieceAt(b.enPassantSquare() - 8) == BlackPawn &&
-            b.pieceAt(b.enPassantSquare()) == Empty && b.pieceAt(b.enPassantSquare() + 8) == Empty)
-    {
-        ui.epCombo->setCurrentIndex(b.enPassantSquare() % 8 + 1);
-    }
-    else if(b.toMove() == Black && b.pieceAt(b.enPassantSquare() + 8) == WhitePawn &&
-            b.pieceAt(b.enPassantSquare()) == Empty && b.pieceAt(b.enPassantSquare() - 8) == Empty)
-    {
-        ui.epCombo->setCurrentIndex(b.enPassantSquare() % 8 + 1);
-    }
-    else
-    {
-        ui.epCombo->setCurrentIndex(0);
-    }
-    ui.wkCastleCheck->setChecked(b.canCastleShort(White));
-    ui.wqCastleCheck->setChecked(b.canCastleLong(White));
-    ui.bkCastleCheck->setChecked(b.canCastleShort(Black));
-    ui.bqCastleCheck->setChecked(b.canCastleLong(Black));
+    //if(b.enPassantSquare() == NoEPSquare)
+    //{
+    //    ui.epCombo->setCurrentIndex(0);
+    //}
+    //else if(b.toMove() == White && b.pieceAt(b.enPassantSquare() - 8) == BlackPawn &&
+    //        b.pieceAt(b.enPassantSquare()) == Empty && b.pieceAt(b.enPassantSquare() + 8) == Empty)
+    //{
+    //    ui.epCombo->setCurrentIndex(b.enPassantSquare() % 8 + 1);
+    //}
+    //else if(b.toMove() == Black && b.pieceAt(b.enPassantSquare() + 8) == WhitePawn &&
+    //        b.pieceAt(b.enPassantSquare()) == Empty && b.pieceAt(b.enPassantSquare() - 8) == Empty)
+    //{
+    //    ui.epCombo->setCurrentIndex(b.enPassantSquare() % 8 + 1);
+    //}
+    //else
+    //{
+    //    ui.epCombo->setCurrentIndex(0);
+    //}
+    //ui.wkCastleCheck->setChecked(b.canCastleShort(White));
+    //ui.wqCastleCheck->setChecked(b.canCastleLong(White));
+    //ui.bkCastleCheck->setChecked(b.canCastleShort(Black));
+    //ui.bqCastleCheck->setChecked(b.canCastleLong(Black));
     m_toMove = b.toMove();
 
-    ui.btCheck960->setChecked(b.chess960());
-    ui.chess960pos->setEnabled(b.chess960());
-    ui.randomChess960->setEnabled(b.chess960());
+    //ui.btCheck960->setChecked(b.chess960());
+    //ui.chess960pos->setEnabled(b.chess960());
+    //ui.randomChess960->setEnabled(b.chess960());
 
-    if (b.chess960())
-    {
-        int ccPos = b.chess960Pos();
-        ui.chess960pos->setValue(ccPos);
-    }
+    //if (b.chess960())
+    //{
+    //    int ccPos = b.chess960Pos();
+    //    ui.chess960pos->setValue(ccPos);
+    //}
 
-    ui.castleFile00->setEnabled(b.hasAmbiguousCastlingRooks() &&
-                                (b.canCastleShort(White) || b.canCastleShort(Black)));
-    ui.castleFile000->setEnabled(b.hasAmbiguousCastlingRooks() &&
-                                 (b.canCastleLong(White) || b.canCastleLong(Black)));
+    //ui.castleFile00->setEnabled(b.hasAmbiguousCastlingRooks() &&
+    //                            (b.canCastleShort(White) || b.canCastleShort(Black)));
+    //ui.castleFile000->setEnabled(b.hasAmbiguousCastlingRooks() &&
+    //                             (b.canCastleLong(White) || b.canCastleLong(Black)));
 
-    char index00 = 0;
-    if(b.canCastleShort(White))
-    {
-        index00 = 'a'+File(b.CastlingRook(1));
-    }
-    else if(b.canCastleShort(Black))
-    {
-        index00 = 'a'+File(b.CastlingRook(3));
-    }
-    char index000 = 0;
-    if(b.canCastleLong(White))
-    {
-        index000 = 'a'+File(b.CastlingRook(0));
-    }
-    else if(b.canCastleLong(Black))
-    {
-        index000 = 'a'+File(b.CastlingRook(2));
-    }
+    //char index00 = 0;
+    //if(b.canCastleShort(White))
+    //{
+    //    index00 = 'a'+File(b.CastlingRook(1));
+    //}
+    //else if(b.canCastleShort(Black))
+    //{
+    //    index00 = 'a'+File(b.CastlingRook(3));
+    //}
+    //char index000 = 0;
+    //if(b.canCastleLong(White))
+    //{
+    //    index000 = 'a'+File(b.CastlingRook(0));
+    //}
+    //else if(b.canCastleLong(Black))
+    //{
+    //    index000 = 'a'+File(b.CastlingRook(2));
+    //}
 
-    ui.castleFile00->clear();
-    ui.castleFile000->clear();
-    if (b.chess960())
-    {
-        for (char i='a';i<='f';++i)
-        {
-            if (b.HasRookOnFileForCastling(i-'a', true))
-            {
-                ui.castleFile000->addItem(QString(i));
-            }
-        }
-        if (!ui.castleFile000->count()) ui.castleFile000->setEnabled(false);
-        for (char i='c';i<='h';++i)
-        {
-            if (b.HasRookOnFileForCastling(i-'a', false))
-            {
-                ui.castleFile00->addItem(QString(i));
-            }
-        }
-        if (!ui.castleFile00->count()) ui.castleFile00->setEnabled(false);
-        if (index00 && ui.castleFile00->findText(QString(index00)))
-        {
-            ui.castleFile00->setCurrentText(QString(index00));
-        }
-        if (index000 && ui.castleFile000->findText(QString(index000)))
-        {
-            ui.castleFile000->setCurrentText(QString(index000));
-        }
-    }
-    else
-    {
-        ui.castleFile00->addItem("h");
-        ui.castleFile000->addItem("a");
-    }
+    //ui.castleFile00->clear();
+    //ui.castleFile000->clear();
+    //if (b.chess960())
+    //{
+    //    for (char i='a';i<='f';++i)
+    //    {
+    //        if (b.HasRookOnFileForCastling(i-'a', true))
+    //        {
+    //            ui.castleFile000->addItem(QString(i));
+    //        }
+    //    }
+    //    if (!ui.castleFile000->count()) ui.castleFile000->setEnabled(false);
+    //    for (char i='c';i<='h';++i)
+    //    {
+    //        if (b.HasRookOnFileForCastling(i-'a', false))
+    //        {
+    //            ui.castleFile00->addItem(QString(i));
+    //        }
+    //    }
+    //    if (!ui.castleFile00->count()) ui.castleFile00->setEnabled(false);
+    //    if (index00 && ui.castleFile00->findText(QString(index00)))
+    //    {
+    //        ui.castleFile00->setCurrentText(QString(index00));
+    //    }
+    //    if (index000 && ui.castleFile000->findText(QString(index000)))
+    //    {
+    //        ui.castleFile000->setCurrentText(QString(index000));
+    //    }
+    //}
+    //else
+    //{
+    //    ui.castleFile00->addItem("h");
+    //    ui.castleFile000->addItem("a");
+    //}
 
     showSideToMove();
     setStatusMessage();
@@ -324,7 +324,7 @@ void BoardSetupDialog::slotReset()
     Board b;
     b.setStandardPosition();
     setBoard(b);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::accept()
@@ -359,7 +359,7 @@ void BoardSetupDialog::slotClear()
     b.setAt(e1, WhiteKing);
     b.setAt(e8, BlackKing);
     setBoard(b);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::slotSelected(Square square, int button)
@@ -383,7 +383,7 @@ void BoardSetupDialog::slotSelected(Square square, int button)
     }
     board.setAt(square, piece);
     setBoard(board);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::showSideToMove()
@@ -426,7 +426,7 @@ void BoardSetupDialog::slotDroppedPiece(Square s, Piece p)
     Board b = ui.boardView->board();
     b.setAt(s, p);
     setBoard(b);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::slotMovePiece(Square from, Square to)
@@ -436,7 +436,7 @@ void BoardSetupDialog::slotMovePiece(Square from, Square to)
     b.removeFrom(from);
     b.setAt(to, p);
     setBoard(b);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::slotCopyPiece(Square from, Square to)
@@ -445,7 +445,7 @@ void BoardSetupDialog::slotCopyPiece(Square from, Square to)
     Piece p = b.pieceAt(from);
     b.setAt(to, p);
     setBoard(b);
-    slotCastlingRights();
+    //slotCastlingRights();
 }
 
 void BoardSetupDialog::slotInvalidMove(Square from)
@@ -561,85 +561,85 @@ void BoardSetupDialog::slotPasteFen()
     }
     else
     {
-        if (b.canCastleShort(White))
-        {
-            ui.castleFile00->setCurrentText(QString('a'+File(b.CastlingRook(1))));
-        }
-        else if (b.canCastleShort(Black))
-        {
-            ui.castleFile00->setCurrentText(QString('a'+File(b.CastlingRook(3))));
-        }
-        if (b.canCastleLong(White))
-        {
-            ui.castleFile000->setCurrentText(QString('a'+File(b.CastlingRook(0))));
-        }
-        else if (b.canCastleLong(Black))
-        {
-            ui.castleFile000->setCurrentText(QString('a'+File(b.CastlingRook(2))));
-        }
+        //if (b.canCastleShort(White))
+        //{
+        //    ui.castleFile00->setCurrentText(QString('a'+File(b.CastlingRook(1))));
+        //}
+        //else if (b.canCastleShort(Black))
+        //{
+        //    ui.castleFile00->setCurrentText(QString('a'+File(b.CastlingRook(3))));
+        //}
+        //if (b.canCastleLong(White))
+        //{
+        //    ui.castleFile000->setCurrentText(QString('a'+File(b.CastlingRook(0))));
+        //}
+        //else if (b.canCastleLong(Black))
+        //{
+        //    ui.castleFile000->setCurrentText(QString('a'+File(b.CastlingRook(2))));
+        //}
         setBoard(b);
     }
 }
 
-char BoardSetupDialog::castlingFile00() const
-{
-    return ui.castleFile00->isEnabled() ? ui.castleFile00->currentText().at(0).toLatin1() : 0;
-}
+//char BoardSetupDialog::castlingFile00() const
+//{
+//    return ui.castleFile00->isEnabled() ? ui.castleFile00->currentText().at(0).toLatin1() : 0;
+//}
+//
+//char BoardSetupDialog::castlingFile000() const
+//{
+//    return ui.castleFile000->isEnabled() ? ui.castleFile000->currentText().at(0).toLatin1() : 0;
+//}
 
-char BoardSetupDialog::castlingFile000() const
-{
-    return ui.castleFile000->isEnabled() ? ui.castleFile000->currentText().at(0).toLatin1() : 0;
-}
-
-void BoardSetupDialog::slotCastlingRights()
-{
-    Board b(board());
-    CastlingRights cr = 0;
-    // Do not test rook positions to allow for Chess960 setups
-
-    if(ui.wkCastleCheck->isChecked())
-    {
-        cr += WhiteKingside;
-    }
-    if(ui.wqCastleCheck->isChecked())
-    {
-        cr += WhiteQueenside;
-    }
-    if(ui.bkCastleCheck->isChecked())
-    {
-        cr += BlackKingside;
-    }
-    if(ui.bqCastleCheck->isChecked())
-    {
-        cr += BlackQueenside;
-    }
-    b.setCastlingRights(cr);
-    b.setCastlingRooks(castlingFile000(),castlingFile00());
-    setBoard(b);
-}
-
-void BoardSetupDialog::slotEnPassantSquare()
-{
-    Board b(board());
-    if(ui.epCombo->currentIndex() == 0)
-    {
-        b.clearEnPassantSquare();
-    }
-    else
-    {
-        Square shift = (b.toMove() == White) ? h5 : h2;
-        b.setEnPassantSquare(shift + ui.epCombo->currentIndex());
-    }
-    setBoard(b);
-}
-
-void BoardSetupDialog::slotChess960()
-{
-    Board b(board());
-    b.setChess960(ui.btCheck960->isChecked());
-    setBoard(b);
-    slotCastlingRights();
-}
+//void BoardSetupDialog::slotCastlingRights()
+//{
+//    Board b(board());
+//    CastlingRights cr = 0;
+//    // Do not test rook positions to allow for Chess960 setups
+//
+//    if(ui.wkCastleCheck->isChecked())
+//    {
+//        cr += WhiteKingside;
+//    }
+//    if(ui.wqCastleCheck->isChecked())
+//    {
+//        cr += WhiteQueenside;
+//    }
+//    if(ui.bkCastleCheck->isChecked())
+//    {
+//        cr += BlackKingside;
+//    }
+//    if(ui.bqCastleCheck->isChecked())
+//    {
+//        cr += BlackQueenside;
+//    }
+//    b.setCastlingRights(cr);
+//    b.setCastlingRooks(castlingFile000(),castlingFile00());
+//    setBoard(b);
+//}
+//
+//void BoardSetupDialog::slotEnPassantSquare()
+//{
+//    Board b(board());
+//    if(ui.epCombo->currentIndex() == 0)
+//    {
+//        b.clearEnPassantSquare();
+//    }
+//    else
+//    {
+//        Square shift = (b.toMove() == White) ? h5 : h2;
+//        b.setEnPassantSquare(shift + ui.epCombo->currentIndex());
+//    }
+//    setBoard(b);
+//}
+//
+//void BoardSetupDialog::slotChess960()
+//{
+//    Board b(board());
+//    b.setChess960(ui.btCheck960->isChecked());
+//    setBoard(b);
+//    slotCastlingRights();
+//}
 
 void BoardSetupDialog::slotHalfmoveClock()
 {

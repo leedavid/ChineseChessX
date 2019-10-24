@@ -387,8 +387,10 @@ Move CtgDatabase::byte_to_move(const Board& pos, uint8_t byte) const
     // Find the piece. Note: the board may be mirrored/flipped.
     bool flip_board = pos.blackToMove();
     Color white = pos.toMove();
-    bool mirror_board = (File(pos.kingSquare(white)) < FILE_E) &&
-        (pos.castlingRights() == 0); /* pieces.white.0 is the white king - determine if in left half of board */
+	bool mirror_board = (File(pos.kingSquare(white)) < FILE_E);
+	
+	   //&&
+       // (pos.castlingRights() == 0); /* pieces.white.0 is the white king - determine if in left half of board */
     unsigned char file_from = -1, file_to = -1, rank_from = -1, rank_to = -1;
 
     // Handle castling.
@@ -471,8 +473,9 @@ void CtgDatabase::position_to_ctg_signature(const Board& pos, ctg_signature_t* s
     // on the queenside with no castling rights for either side.
     bool flip_board = pos.blackToMove();
     Color white = pos.toMove();
-    bool mirror_board = (File(pos.kingSquare(white)) < FILE_E) &&
-        (pos.castlingRights() == 0);
+	bool mirror_board = (File(pos.kingSquare(white)) < FILE_E);
+	//&&
+        //(pos.castlingRights() == 0);
 
 
     // For each board square, append the huffman bit sequence for its contents.
@@ -505,39 +508,39 @@ void CtgDatabase::position_to_ctg_signature(const Board& pos, ctg_signature_t* s
 
     // Encode castling and en passant rights. These must sit flush at the end
     // of the final byte, so we also have to figure out how much to pad.
-    int ep = -1;
+    //int ep = -1;
     int flag_bit_length = 0;
-    if (pos.enPassantSquare() != InvalidSquare)
-    {
-        bool epfound = false;
-        MoveList ml = pos.generateMoves();
-        foreach (Move mx, ml)
-        {
-            if (mx.isEnPassant())
-            {
-                epfound = true;
-                break;
-            }
-        }
+    //if (pos.enPassantSquare() != InvalidSquare)
+    //{
+    //    bool epfound = false;
+    //    MoveList ml = pos.generateMoves();
+    //    foreach (Move mx, ml)
+    //    {
+    //        if (mx.isEnPassant())
+    //        {
+    //            epfound = true;
+    //            break;
+    //        }
+    //    }
 
-        if (epfound)
-        {
-            ep = File(pos.enPassantSquare());
-            if (mirror_board) ep = 7 - ep;
-            flag_bit_length = 3;
-        }
-    }
-    int castle = 0;
-    if (pos.canCastleShort(white)) castle += 4;
-    if (pos.canCastleLong(white)) castle += 8;
-    if (pos.canCastleShort(oppositeColor(white))) castle += 1;
-    if (pos.canCastleLong(oppositeColor(white))) castle += 2;
-    if (castle) flag_bit_length += 4;
-    uint8_t flag_bits = castle;
-    if (ep != -1) {
-        flag_bits <<= 3;
-        for (int i=0; i<3; ++i, ep>>=1) if (ep&1) flag_bits |= (1<<(2-i));
-    }
+    //    if (epfound)
+    //    {
+    //        ep = File(pos.enPassantSquare());
+    //        if (mirror_board) ep = 7 - ep;
+    //        flag_bit_length = 3;
+    //    }
+    //}
+    //int castle = 0;
+    //if (pos.canCastleShort(white)) castle += 4;
+    //if (pos.canCastleLong(white)) castle += 8;
+    //if (pos.canCastleShort(oppositeColor(white))) castle += 1;
+    //if (pos.canCastleLong(oppositeColor(white))) castle += 2;
+    //if (castle) flag_bit_length += 4;
+    //uint8_t flag_bits = castle;
+    //if (ep != -1) {
+    //    flag_bits <<= 3;
+    //    for (int i=0; i<3; ++i, ep>>=1) if (ep&1) flag_bits |= (1<<(2-i));
+    //}
 
     //printf("\nflag bits: %d\n", flag_bits);
     //printf("bit_position: %d\n", bit_position%8);
@@ -557,14 +560,14 @@ void CtgDatabase::position_to_ctg_signature(const Board& pos, ctg_signature_t* s
     //printf("padding %d bits\n", pad_bits);
     append_bits_reverse(sig, 0, bit_position, pad_bits);
     bit_position += pad_bits;
-    append_bits_reverse(sig, flag_bits, bit_position, flag_bit_length);
+    append_bits_reverse(sig, 0, bit_position, flag_bit_length);
     bit_position += flag_bit_length;
     sig->buf_len = (bit_position + 7) / 8;
 
     // Write header byte
     sig->buf[0] = ((uint8_t)(sig->buf_len));
-    if (ep != -1) sig->buf[0] |= 1<<5;
-    if (castle) sig->buf[0] |= 1<<6;
+    //if (ep != -1) sig->buf[0] |= 1<<5;
+    //if (castle) sig->buf[0] |= 1<<6;
 }
 
 // ---------------------------------------------------------
